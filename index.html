@@ -13,10 +13,10 @@
     <script src="./docs/js/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="./docs/js/examples-base.js"></script>
     <script type="text/javascript" src="./docs/js/highlight.min.js"></script>
-    <!-- ncpClientId는 등록 환경에 따라 일반(ncpClientId), 공공(govClientId), 금융(finClientId)으로 나뉩니다. 사용하는 환경에 따라 키 이름을 변경하여 사용하세요. 참고: clientId(네이버 개발자 센터)는 지원 종료 -->
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=83bfuniegk"></script>
     <!-- CSS Link -->
     <link rel="stylesheet" type="text/css" href="./docs/css/examples-base.css" />
+    <link rel="stylesheet" type="text/css" href="./docs/css/index.css" />
 </head>
 <body>
 <style type="text/css">
@@ -24,62 +24,44 @@
     #wrap .buttons .control-btn { margin:0 5px 5px 0; }
 </style>
 <!-- 큰 DIV 버티컬 flex 등 -->
-<div class = "">
-    <!-- Nav Bar -->
-    <nav>
-
-    </nav>
+<div class="container">
     <div id="wrap" class="section">
-        <h2>지도 이동하기 TEST 입니다.</h2>
-        <p>총학생회 X 멋쟁이사자처럼</p>
-        <div id="map" style="width:100%;height:600px;">
-            <div class="buttons">
-                <input id="to-bookack" type="button" value="북악관으로 fitBounds" class="control-btn" />
-                <input id="to-20" type="button" value="20레벨로 setZoom" class="control-btn" />
-                <input id="to-gilum" type="button" value="길음역으로 fitBounds" class="control-btn" />
-                <input id="to-sunshinuniv" type="button" value="성신여대로 panToBounds" class="control-btn" />
-                <input id="panBy" type="button" value="panBy로 조금씩 이동하기" class="control-btn" />
-                <input id="reset" type="button" value="reset" class="control-btn" />
+        <!-- Nav Bar -->
+        <nav>
+            Nav Bar
+        </nav>
+        <div class = "title">
+            <p>서경대학교 제휴 업체 한눈에 보기🔥
+                <button>
+                    더보기...
+                </button>
+
+            </p>
+        </div>
+        <div style="width:350px;height:350px;">
+            <a href="./maps.html">
+                <img src="./src/assets/MainTestImg.png" alt=""> 
+            </a>
+        </div>
+
+        <div>
+            <div class="title">
+                <p>지역별 제휴 업체 모아서 확인하기 🔥</p>
+                <p>Click!</p>
+            </div>
+            <div class="card_contents">
+                <div class="cards">
+                    TEST CARD1
+                </div>
+                <div class="cards">
+                    <img src="" alt="">
+                    TEST CARD2
+                </div>
+                
             </div>
         </div>
+
     </div>
 </div>
-<!-- 네이버 지도 API SCRIPT -->
-<script id="code">
-    var map = new naver.maps.Map('map', {
-        center: new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
-        zoom: 12
-    });
-    var bookack = new naver.maps.LatLng(37.616009, 127.011884),
-        gilum = new naver.maps.LatLng(37.604389, 127.025590),
-        reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
-        sunshinuniv = new naver.maps.LatLng(37.591358, 127.022072);
-    $("#to-bookack").on("click", function(e) {
-        e.preventDefault();
-        map.setZoom(15, true);
-        map.panTo(bookack);
-    })
-    $("#to-gilum").on("click", function(e) {
-        e.preventDefault();
-        map.panTo(gilum);
-    })
-    $("#to-sunshinuniv").on("click", function(e) {
-        e.preventDefault();
-        map.panTo(sunshinuniv);
-    })
-    $("#to-20").on("click", function(e) {
-        e.preventDefault();
-        map.setZoom(20, true);
-    });
-    $("#panBy").on("click", function(e) {
-        e.preventDefault();
-        map.panBy(new naver.maps.Point(10, 10));
-    });
-    $("#reset").on("click", function(e) {
-        e.preventDefault();
-        map.setZoom(7, true);
-        map.setCenter(37.60700258639104, 126.95625001298839);
-    });
-</script>
 </body>
 </html>
