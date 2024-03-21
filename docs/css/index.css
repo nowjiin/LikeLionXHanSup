@@ -1,0 +1,14 @@
+.cards {
+  margin: 20px;
+}
+.nav {
+  box-sizing: border-box;
+}
+.card_contents {
+  display: flex;
+  overflow-x: auto;
+  background-img: url(../../src/assets/store.png);
+}
+html {
+  font-size: 20px;
+}
