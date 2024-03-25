@@ -29,11 +29,11 @@
   </div>
   <div>
       <div class="buttons">
-          <input id="to-skuniv" type="button" value="서경대" class="control-btn" />
-          <input id="to-jeongneungmarket" type="button" value="정릉시장" class="control-btn" />
-          <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
-          <input id="to-gilum" type="button" value="길음역" class="control-btn" />
+          <input id="to-skuniv" type="button" value="서경대 앞" class="control-btn" />
+          <input id="to-jeongneungmarket" type="button" value="보국문역(정릉골)" class="control-btn" />
           <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />     
+          <input id="to-gilum" type="button" value="기타" class="control-btn" />
+          <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
           <input id="reset" type="button" value="reset" class="control-btn" />
       </div>
       <div id="map" style="width:100%;height:90vh;"></div>
@@ -58,17 +58,17 @@
     sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
     jeongneungmarket = new naver.maps.LatLng(37.608643, 127.009053),
     // 여기 부터 음식점
-    // kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
-    // mkpocha = new naver.maps.LatLng(37.6105983,127.01427),
-    // tongtongpig = new naver.maps.LatLng(37.6104824 ,127.0143755),
-    // hola = new naver.maps.LatLng(37.6104563 ,127.0151146),
-    // wawapocha = new naver.maps.LatLng(37.6117386 ,127.0131451),
-    // mygreek = new naver.maps.LatLng(37.610395, 127.014684),
-    // grandmadarak = new naver.maps.LatLng(37.610447, 127.014368),
-    piglove = new naver.maps.LatLng(37.61048500000002, 127.01407914934563),
-    songgangru = new naver.maps.LatLng(37.565710, 126.938590);
-    // skpocha = new naver.maps.LatLng(37.610268, 127.01456),
-    // ebari = new naver.maps.LatLng(37.612023, 127.013426);
+    kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
+    mkpocha = new naver.maps.LatLng(37.6105983,127.01427),
+    tongtongpig = new naver.maps.LatLng(37.6104824 ,127.0143755),
+    hola = new naver.maps.LatLng(37.6104563 ,127.0151146),
+    wawapocha = new naver.maps.LatLng(37.6117386 ,127.0131451),
+    mygreek = new naver.maps.LatLng(37.610395, 127.014684),
+    grandmadarak = new naver.maps.LatLng(37.610447, 127.014368),
+    piglove = new naver.maps.LatLng(37.6103857, 127.014516),
+    songgangru = new naver.maps.LatLng(37.6111966, 127.0136037);
+    skpocha = new naver.maps.LatLng(37.610268, 127.01456),
+    ebari = new naver.maps.LatLng(37.612023, 127.013426);
 
     //버튼 클릭 이벤트 처리
     $("#to-skuniv").on("click", function(e) {
@@ -129,19 +129,20 @@
   var position = positions = [
     skuniv, // 북악
     gilum,
-    sunshinuniv,
-    //jeongneungmarket, //정릉시장
-    //kmaratang, //경성 마라탕
-    //mkpocha, //민규형 포차
-    //tongtongpig, //통통 돼지
-    //hola, //올라
-    //wawapocha, //와와닭발
-    //mygreek, //마이그릭
-    //grandmadarak, //할머니 다락방
+    sunshinuniv, //성신여대
+    jeongneungmarket, //정릉시장
+  //여기서부터 음식점
+    kmaratang, //경성 마라탕
+    mkpocha, //민규형 포차
+    tongtongpig, //통통 돼지
+    hola, //올라
+    wawapocha, //와와닭발
+    mygreek, //마이그릭
+    grandmadarak, //할머니 다락방
     piglove, //퇘사랑
     songgangru, // 송강루
-    //skpocha, //서경포차
-    //ebari, //이 바리 꼴로리
+    skpocha, //서경포차
+    ebari, //이 바리 꼴로리
     // new naver.maps.LatLng(latitude, longitude),
     // ...
 ];
@@ -164,14 +165,58 @@ var markerInfos = [
         <div>성신여대 정보</div>'
     },
     {
+        position: kmaratang,
+        content: '<h3>경성 마라탕</h3>\
+        <div>경성마라탕 정보</div>'
+    },
+    {
+        position: mkpocha,
+        content: '<h3>민규형 포차</h3>\
+        <div>민규형 포차 정보</div>'
+    },
+    {
+        position: tongtongpig,
+        content: '<h3>통통돼지 정보</h3>\
+        <div>통통돼지 정보</div>'
+    },
+    {
+        position: hola,
+        content: '<h3>올라 정보</h3>\
+        <div>올라 정보</div>'
+    },
+    {
+        position: wawapocha,
+        content: '<h3>와와 닭발 정보</h3>\
+        <div>와와닭발 정보</div>'
+    },
+    {
+        position: mygreek,
+        content: '<h3>마이그릭 정보</h3>\
+        <div>마이그릭 정보</div>'
+    },
+    {
+        position: grandmadarak,
+        content: '<h3>할머니다락방 정보</h3>\
+        <div>할머니다락방 정보</div>'
+    },
+    {
         position: piglove,
-        content: '<h3>퇘사랑</h3>\
+        content: '<h3>퇘사랑 정보</h3>\
         <div>퇘사랑 정보</div>'
     },
     {
         position: songgangru,
-        content: '<h3>송강루</h3>\
+        content: '<h3>송강루 정보</h3>\
         <div>송강루 정보</div>'
+    },{
+        position: skpocha,
+        content: '<h3>서경포차 정보</h3>\
+        <div>서경포차 정보</div>'
+    },
+    {
+        position: ebari,
+        content: '<h3>이 바리 꼴로리 정보</h3>\
+        <div>올라 정보</div>'
     }
 ];
 
