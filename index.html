@@ -47,8 +47,8 @@
 <script>
   //시작 위치 설정
   var map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
-    zoom: 12
+    center: new naver.maps.LatLng(37.592698, 127.016554),
+    zoom: 16
   });
   //var로 식당별 위,경도 설정
   var 
@@ -73,7 +73,7 @@
     //버튼 클릭 이벤트 처리
     $("#to-skuniv").on("click", function(e) {
       e.preventDefault();
-      map.setZoom(15, true);
+      map.setZoom(16, true);
       map.panTo(skuniv);
     })
     $("#to-gilum").on("click", function(e) {
@@ -86,6 +86,7 @@
      })
     $("#to-sunshinuniv").on("click", function(e) {
       e.preventDefault();
+      map.setZoom(16, true);
       map.panTo(sunshinuniv);
     })
     $("#to-20").on("click", function(e) {
@@ -97,6 +98,31 @@
       map.setZoom(7, true);
       map.setCenter(37.60700258639104, 126.95625001298839);
     });
+    var polyline = new naver.maps.Polyline({
+    map: map,
+    path: [
+        new naver.maps.LatLng(37.588011, 127.017786),
+        new naver.maps.LatLng(37.593792, 127.011656),
+        new naver.maps.LatLng(37.595507, 127.017621),
+        new naver.maps.LatLng(37.593781, 127.020344),
+        new naver.maps.LatLng(37.589483, 127.019808),
+        new naver.maps.LatLng(37.588011, 127.017786)
+      ]
+    });
+    var polyline = new naver.maps.Polyline({
+    map: map,
+    path: [
+        new naver.maps.LatLng(37.614883, 127.011667), //신한은행(우체국)
+        new naver.maps.LatLng(37.612010, 127.011537),
+        new naver.maps.LatLng(37.611710, 127.011587),
+        new naver.maps.LatLng(37.609816, 127.010387),
+        new naver.maps.LatLng(37.609356, 127.007737), //
+        new naver.maps.LatLng(37.613301, 127.007002), //정릉4동 주민센터
+        new naver.maps.LatLng(37.614883, 127.011667)  //신한은행(우체국)
+    ]
+});
+
+
 
   //marker
   var HOME_PATH = window.HOME_PATH || '.';
