@@ -38,11 +38,6 @@
         </div>
         <div id="map" style="width:100%;height:90vh;"></div>
     </div>
-
-
-
-
-
 <script>
   var map = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
@@ -89,20 +84,41 @@
     // ...
 ];
   
-positions.forEach(function(position) {
-    var markerOptions = {
-        position: position.destinationPoint(90, 15),
-        map: map,
-        icon: {
-            url: HOME_PATH + '/src/assets/pin.png',
-            size: new naver.maps.Size(50, 52),
-            origin: new naver.maps.Point(0, 0),
-            anchor: new naver.maps.Point(25, 26)
-        }
-    };
-    var marker = new naver.maps.Marker(markerOptions);
-});
+  positions.forEach(function(position) {
+      var markerOptions = {
+          position: position.destinationPoint(90, 15),
+          map: map,
+          icon: {
+              url: HOME_PATH + '/src/assets/pin.png',
+              size: new naver.maps.Size(50, 52),
+              origin: new naver.maps.Point(0, 0),
+              anchor: new naver.maps.Point(25, 26)
+          }
+      };
+      var marker = new naver.maps.Marker(markerOptions);
+  });
+  // 모든 버튼 요소를 가져옵니다.
+  var buttons = document.querySelectorAll('.control-btn');
 
+  // 각 버튼에 대해 클릭 이벤트를 추가합니다.
+  buttons.forEach(function(button) {
+      button.addEventListener('click', function() {
+          // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원합니다.
+          buttons.forEach(function(btn) {
+              btn.style.backgroundColor = '#ffffff';
+              btn.style.borderColor = '#e8e9ed';
+              btn.style.color = '#5c5d61';
+          });
+          
+          // 클릭된 버튼의 배경색을 변경합니다.
+          button.style.backgroundColor = '#ff4d26';
+          // 클릭된 버튼의 테두리를 제거합니다.
+          button.style.borderColor = 'transparent';
+          // 클릭된 버튼의 글자색을 변경합니다.
+          button.style.color = '#ffffff';
+          // 이후 추가적인 동작을 정의할 수 있습니다.
+      });
+  });
 </script>
 </body>
 </html>
