@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./docs/css/styles.css" />
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2152T3V29C"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2152T3V29C&submodules=geocoder"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -24,37 +24,65 @@
 </script>
 
 <body>
-    <div class="title">
-        제목
-    </div>
-    <div>
-        <div class="buttons">
-            <input id="to-bookack" type="button" value="북악관으로 fitBounds" class="control-btn" />
-            <input id="to-20" type="button" value="20레벨로 setZoom" class="control-btn" />
-            <input id="to-gilum" type="button" value="길음역으로 fitBounds" class="control-btn" />
-            <input id="to-sunshinuniv" type="button" value="성신여대로 panToBounds" class="control-btn" />                
-            <input id="panBy" type="button" value="panBy로 조금씩 이동하기" class="control-btn" />
-            <input id="reset" type="button" value="reset" class="control-btn" />
+  <div id="navbar">
+    LIKELION X HANSUP
+  </div>
+  <div>
+      <div class="buttons">
+          <input id="to-skuniv" type="button" value="서경대" class="control-btn" />
+          <input id="to-jeongneungmarket" type="button" value="정릉시장" class="control-btn" />
+          <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
+          <input id="to-gilum" type="button" value="길음역" class="control-btn" />
+          <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />     
+          <input id="reset" type="button" value="reset" class="control-btn" />
+      </div>
+      <div id="map" style="width:100%;height:90vh;"></div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <p>This is Modal 1</p>
         </div>
-        <div id="map" style="width:100%;height:90vh;"></div>
     </div>
+  </div>
 <script>
+  //시작 위치 설정
   var map = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
     zoom: 12
   });
-  var bookack = new naver.maps.LatLng(37.616009, 127.011884),
+  //var로 식당별 위,경도 설정
+  var 
+    skuniv = new naver.maps.LatLng(37.616009, 127.011884),
     gilum = new naver.maps.LatLng(37.604389, 127.025590),
     reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
-    sunshinuniv = new naver.maps.LatLng(37.591358, 127.022072);
-    $("#to-bookack").on("click", function(e) {
+    sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
+    jeongneungmarket = new naver.maps.LatLng(37.608643, 127.009053),
+    // 여기 부터 음식점
+    // kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
+    // mkpocha = new naver.maps.LatLng(37.6105983,127.01427),
+    // tongtongpig = new naver.maps.LatLng(37.6104824 ,127.0143755),
+    // hola = new naver.maps.LatLng(37.6104563 ,127.0151146),
+    // wawapocha = new naver.maps.LatLng(37.6117386 ,127.0131451),
+    // mygreek = new naver.maps.LatLng(37.610395, 127.014684),
+    // grandmadarak = new naver.maps.LatLng(37.610447, 127.014368),
+    piglove = new naver.maps.LatLng(37.61048500000002, 127.01407914934563),
+    songgangru = new naver.maps.LatLng(37.565710, 126.938590);
+    // skpocha = new naver.maps.LatLng(37.610268, 127.01456),
+    // ebari = new naver.maps.LatLng(37.612023, 127.013426);
+
+    //버튼 클릭 이벤트 처리
+    $("#to-skuniv").on("click", function(e) {
       e.preventDefault();
       map.setZoom(15, true);
-      map.panTo(bookack);
+      map.panTo(skuniv);
     })
     $("#to-gilum").on("click", function(e) {
       e.preventDefault();
       map.panTo(gilum);
+     })
+     $("#to-jeongneungmarket").on("click", function(e) {
+      e.preventDefault();
+      map.panTo(jeongneungmarket);
      })
     $("#to-sunshinuniv").on("click", function(e) {
       e.preventDefault();
@@ -64,42 +92,90 @@
       e.preventDefault();
       map.setZoom(20, true);
     });
-    $("#panBy").on("click", function(e) {
-      e.preventDefault();
-      map.panBy(new naver.maps.Point(10, 10));
-    });
     $("#reset").on("click", function(e) {
       e.preventDefault();
       map.setZoom(7, true);
       map.setCenter(37.60700258639104, 126.95625001298839);
     });
 
-    //marker 표시 예제
+  //marker
   var HOME_PATH = window.HOME_PATH || '.';
   var position = positions = [
-    new naver.maps.LatLng(37.616009, 127.011884), // 북악
-    new naver.maps.LatLng(37.604389, 127.025590), // 길음
-    new naver.maps.LatLng(37.591358, 127.022072),// 성신여대
+    skuniv, // 북악
+    gilum,
+    sunshinuniv,
+    //jeongneungmarket, //정릉시장
+    //kmaratang, //경성 마라탕
+    //mkpocha, //민규형 포차
+    //tongtongpig, //통통 돼지
+    //hola, //올라
+    //wawapocha, //와와닭발
+    //mygreek, //마이그릭
+    //grandmadarak, //할머니 다락방
+    piglove, //퇘사랑
+    songgangru, // 송강루
+    //skpocha, //서경포차
+    //ebari, //이 바리 꼴로리
     // new naver.maps.LatLng(latitude, longitude),
     // ...
 ];
   
-  positions.forEach(function(position) {
-      var markerOptions = {
-          position: position.destinationPoint(90, 15),
-          map: map,
-          icon: {
-              url: HOME_PATH + '/src/assets/pin.png',
-              size: new naver.maps.Size(50, 52),
-              origin: new naver.maps.Point(0, 0),
-              anchor: new naver.maps.Point(25, 26)
-          }
-      };
-      var marker = new naver.maps.Marker(markerOptions);
-  });
+// 각 마커에 대한 정보를 정의합니다.
+var markerInfos = [
+    {
+        position: skuniv,
+        content: '<h3>서경대학교</h3>\
+                  <div>서경대 정보</div>'
+    },
+    {
+        position: gilum,
+        content: '<h3>길음역</h3>\
+                  <div>길음역 정보</div>'
+    },
+    {
+        position: sunshinuniv,
+        content: '<h3>성신여대</h3>\
+        <div>성신여대 정보</div>'
+    },
+    {
+        position: piglove,
+        content: '<h3>퇘사랑</h3>\
+        <div>퇘사랑 정보</div>'
+    },
+    {
+        position: songgangru,
+        content: '<h3>송강루</h3>\
+        <div>송강루 정보</div>'
+    }
+];
+
+// 각 마커를 생성하고 지도에 추가합니다.
+markerInfos.forEach(function(info) {
+    var markerOptions = {
+        position: info.position,
+        map: map,
+        icon: {
+            url: HOME_PATH + '/src/assets/pin.png',
+            size: new naver.maps.Size(50, 52),
+            origin: new naver.maps.Point(0, 0),
+            anchor: new naver.maps.Point(25, 26)
+        }
+    };
+    var marker = new naver.maps.Marker(markerOptions);
+
+    // 클릭 이벤트를 추가합니다.
+    naver.maps.Event.addListener(marker, 'click', function() {
+        if (!marker.infowindow) {
+            marker.infowindow = new naver.maps.InfoWindow({
+                content: info.content
+            });
+        }
+        marker.infowindow.open(map, marker);
+    });
+});
+
   // 모든 버튼 요소를 가져옵니다.
   var buttons = document.querySelectorAll('.control-btn');
-
   // 각 버튼에 대해 클릭 이벤트를 추가합니다.
   buttons.forEach(function(button) {
       button.addEventListener('click', function() {
@@ -109,7 +185,6 @@
               btn.style.borderColor = '#e8e9ed';
               btn.style.color = '#5c5d61';
           });
-          
           // 클릭된 버튼의 배경색을 변경합니다.
           button.style.backgroundColor = '#ff4d26';
           // 클릭된 버튼의 테두리를 제거합니다.
