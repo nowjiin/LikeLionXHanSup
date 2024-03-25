@@ -47,12 +47,12 @@
 <script>
   //시작 위치 설정
   var map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(37.592698, 127.016554),
+    center: new naver.maps.LatLng(37.611087, 127.014065),
     zoom: 16
   });
   //var로 식당별 위,경도 설정
   var 
-    skuniv = new naver.maps.LatLng(37.616009, 127.011884),
+    skuniv = new naver.maps.LatLng(37.611087, 127.014065),
     gilum = new naver.maps.LatLng(37.604389, 127.025590),
     reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
     sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
@@ -73,7 +73,7 @@
     //버튼 클릭 이벤트 처리
     $("#to-skuniv").on("click", function(e) {
       e.preventDefault();
-      map.setZoom(16, true);
+      map.setZoom(18, true);
       map.panTo(skuniv);
     })
     $("#to-gilum").on("click", function(e) {
@@ -120,8 +120,21 @@
         new naver.maps.LatLng(37.613301, 127.007002), //정릉4동 주민센터
         new naver.maps.LatLng(37.614883, 127.011667)  //신한은행(우체국)
     ]
-});
-
+  });
+  var polyline = new naver.maps.Polyline({
+    map: map,
+    path: [
+        new naver.maps.LatLng(37.612369, 127.013418), //연꽃 어린이집(polyline시작)
+        new naver.maps.LatLng(37.611811, 127.015123), //아파트쪽 두번째선
+        new naver.maps.LatLng(37.610224, 127.015986), //밑 세번째선
+        new naver.maps.LatLng(37.609877, 127.014903), // 네번째
+        new naver.maps.LatLng(37.609941, 127.014361), // 다섯번째
+        new naver.maps.LatLng(37.610570, 127.013985), // 5번째
+        new naver.maps.LatLng(37.610947, 127.013135),  // 6번째
+        new naver.maps.LatLng(37.611658, 127.012345),  // 6번째
+        new naver.maps.LatLng(37.612369, 127.013418)  // 6번째
+    ]
+  });
 
 
   //marker
