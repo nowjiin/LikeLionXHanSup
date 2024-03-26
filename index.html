@@ -25,23 +25,31 @@
 
 <body>
   <div id="navbar">
-    LIKELION X HANSUP
+    <div class = "title_container">
+      <div class = "title">서경제휴zip</div>
+      <div class = "colab">한숲 X 멋쟁이사자처럼</div>
+    </div>
+    <div class="subtitle">
+      서경대학교 제휴상권 모아보기
+    </div>
   </div>
+
   <div>
-      <div class="buttons">
-          <input id="to-skuniv" type="button" value="서경대 앞" class="control-btn" />
-          <input id="to-jeongneungmarket" type="button" value="보국문역(정릉골)" class="control-btn" />
-          <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />     
-          <input id="to-gilum" type="button" value="기타" class="control-btn" />
-          <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
-          <input id="reset" type="button" value="reset" class="control-btn" />
+    <div class="buttons">
+      <input id="to-all" type="button" value="전체" class="control-btn" />
+      <input id="to-skuniv" type="button" value="서경대 앞" class="control-btn" />
+      <input id="to-jeongneungmarket" type="button" value="보국문역(정릉골)" class="control-btn" />
+      <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />     
+      <input id="to-gilum" type="button" value="기타" class="control-btn" />
+      <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
+      <input id="reset" type="button" value="reset" class="control-btn" />
+    </div>
+    <div id="map" style="width:100%;height:90vh;"></div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <p>This is Modal 1</p>
       </div>
-      <div id="map" style="width:100%;height:90vh;"></div>
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <p>This is Modal 1</p>
-        </div>
     </div>
   </div>
 <script>
@@ -52,12 +60,14 @@
   });
   //var로 식당별 위,경도 설정
   var 
+    all = new naver.maps.LatLng(37.611087, 127.014065),
     skuniv = new naver.maps.LatLng(37.611087, 127.014065),
     gilum = new naver.maps.LatLng(37.604389, 127.025590),
     reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
     sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
     jeongneungmarket = new naver.maps.LatLng(37.608643, 127.009053),
     // 여기 부터 음식점
+    // 학교 앞 상권
     kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
     mkpocha = new naver.maps.LatLng(37.6105983,127.01427),
     tongtongpig = new naver.maps.LatLng(37.6104824 ,127.0143755),
@@ -69,8 +79,31 @@
     songgangru = new naver.maps.LatLng(37.6111966, 127.0136037);
     skpocha = new naver.maps.LatLng(37.610268, 127.01456),
     ebari = new naver.maps.LatLng(37.612023, 127.013426);
+    // 정릉골 상권
+
+    // 성신여대 상권
+    iasi = new naver.maps.LatLng(37.5912475, 127.0177866),
+    witchkitchen = new naver.maps.LatLng(37.5925366, 127.0176514),
+    kangkumok = new naver.maps.LatLng(37.5917114, 127.0170225),
+    kimtaewan = new naver.maps.LatLng(37.591136, 127.0166329),
+    choidaepae = new naver.maps.LatLng(37.5920665, 127.0170747),
+    vistro = new naver.maps.LatLng(37.5918422, 127.0179869),
+    lalanoodle = new naver.maps.LatLng(37.5908858, 127.0196889),
+    sukhan = new naver.maps.LatLng(37.5915536, 127.0168843),
+    miu = new naver.maps.LatLng(37.5894858, 127.0190102),
+    choi = new naver.maps.LatLng(37.592279, 127.0179879),
+    rainbowbeer = new naver.maps.LatLng(37.591758, 127.017576),
+    heroboardgame = new naver.maps.LatLng(37.590872, 127.018815),
+    ilu = new naver.maps.LatLng(37.5917375, 127.0171492),
+
+
 
     //버튼 클릭 이벤트 처리
+    $("#to-all").on("click", function(e) {
+      e.preventDefault();
+      map.setZoom(18, true);
+      map.panTo(all);
+    })
     $("#to-skuniv").on("click", function(e) {
       e.preventDefault();
       map.setZoom(18, true);
@@ -80,7 +113,7 @@
       e.preventDefault();
       map.panTo(gilum);
      })
-     $("#to-jeongneungmarket").on("click", function(e) {
+    $("#to-jeongneungmarket").on("click", function(e) {
       e.preventDefault();
       map.panTo(jeongneungmarket);
      })
@@ -98,6 +131,7 @@
       map.setZoom(7, true);
       map.setCenter(37.60700258639104, 126.95625001298839);
     });
+    //성신여대 polyline
     var polyline = new naver.maps.Polyline({
     map: map,
     path: [
@@ -109,6 +143,7 @@
         new naver.maps.LatLng(37.588011, 127.017786)
       ]
     });
+    //보국문 polyline
     var polyline = new naver.maps.Polyline({
     map: map,
     path: [
@@ -121,6 +156,7 @@
         new naver.maps.LatLng(37.614883, 127.011667)  //신한은행(우체국)
     ]
   });
+  //학교앞 상권 polyline
   var polyline = new naver.maps.Polyline({
     map: map,
     path: [
@@ -136,15 +172,18 @@
     ]
   });
 
-
   //marker
   var HOME_PATH = window.HOME_PATH || '.';
-  var position = positions = [
+  var position = [
     skuniv, // 북악
     gilum,
     sunshinuniv, //성신여대
     jeongneungmarket, //정릉시장
-  //여기서부터 음식점
+    // new naver.maps.LatLng(latitude, longitude),
+    // ...
+  ];
+  var sku_position = [
+    //서경대 앞 음식점 목록
     kmaratang, //경성 마라탕
     mkpocha, //민규형 포차
     tongtongpig, //통통 돼지
@@ -156,90 +195,241 @@
     songgangru, // 송강루
     skpocha, //서경포차
     ebari, //이 바리 꼴로리
-    // new naver.maps.LatLng(latitude, longitude),
-    // ...
-];
+  ];
+  var sswu_position = [
+    iasi, //이야시
+    witchkitchen, //마녀주방
+    kangkumok, //강금옥
+    kimtaewan, //김태완스시
+    choidaepae, //최대패
+    vistro, //비스트로
+    lalanoodle, //라라면가
+    sukhan, //서
+    miu, //미우
+    choi, //최씨 양식?
+    rainbowbeer, //무지개맥주
+    heroboardgame, //히어로 보드게임
+    ilu,//일루
+  ];
   
 // 각 마커에 대한 정보를 정의합니다.
-var markerInfos = [
-    {
-        position: skuniv,
-        content: '<h3>서경대학교</h3>\
-                  <div>서경대 정보</div>'
-    },
-    {
-        position: gilum,
-        content: '<h3>길음역</h3>\
-                  <div>길음역 정보</div>'
-    },
-    {
-        position: sunshinuniv,
-        content: '<h3>성신여대</h3>\
+var sku_marker = [
+  {
+    position: skuniv,
+    content: '<h3>서경대학교</h3>\
+      <div>서경대 정보</div>'
+  }
+];
+var sswu_marker = [
+  {
+      position: sunshinuniv,
+      content: '<h3>성신여대</h3>\
         <div>성신여대 정보</div>'
-    },
+  }
+];
+var etc_marker = [
+  {
+    position: gilum,
+    content: '<h3>길음역</h3>\
+      <div>길음역 정보</div>'
+  }
+];
+
+//핀 정보 설정
+var sku_markerInfos = [
     {
-        position: kmaratang,
+        sku_position: kmaratang,
         content: '<h3>경성 마라탕</h3>\
         <div>경성마라탕 정보</div>'
     },
     {
-        position: mkpocha,
+        sku_position: mkpocha,
         content: '<h3>민규형 포차</h3>\
         <div>민규형 포차 정보</div>'
     },
     {
-        position: tongtongpig,
+        sku_position: tongtongpig,
         content: '<h3>통통돼지 정보</h3>\
         <div>통통돼지 정보</div>'
     },
     {
-        position: hola,
+        sku_position: hola,
         content: '<h3>올라 정보</h3>\
         <div>올라 정보</div>'
     },
     {
-        position: wawapocha,
+        sku_position: wawapocha,
         content: '<h3>와와 닭발 정보</h3>\
         <div>와와닭발 정보</div>'
     },
     {
-        position: mygreek,
+        sku_position: mygreek,
         content: '<h3>마이그릭 정보</h3>\
         <div>마이그릭 정보</div>'
     },
     {
-        position: grandmadarak,
+        sku_position: grandmadarak,
         content: '<h3>할머니다락방 정보</h3>\
         <div>할머니다락방 정보</div>'
     },
     {
-        position: piglove,
+        sku_position: piglove,
         content: '<h3>퇘사랑 정보</h3>\
         <div>퇘사랑 정보</div>'
     },
     {
-        position: songgangru,
+        sku_position: songgangru,
         content: '<h3>송강루 정보</h3>\
         <div>송강루 정보</div>'
     },{
-        position: skpocha,
+        sku_position: skpocha,
         content: '<h3>서경포차 정보</h3>\
         <div>서경포차 정보</div>'
     },
     {
-        position: ebari,
+        sku_position: ebari,
         content: '<h3>이 바리 꼴로리 정보</h3>\
         <div>올라 정보</div>'
     }
 ];
+var sswu_markerInfos = [
+    {
+        sswu_position: iasi,
+        content: '<h3>이야시</h3>\
+        <div>이야시 정보</div>'
+    },
+    {
+        sswu_position: witchkitchen,
+        content: '<h3>마녀주방 성신여대점</h3>\
+        <div>마녀주방 정보</div>'
+    },
+    {
+        sswu_position: kangkumok,
+        content: '<h3>강금복 성신여대점</h3>\
+        <div>강금복</div>'
+    },
+    {
+        sswu_position: kimtaewan,
+        content: '<h3>김태완스시 성신여대점</h3>\
+        <div>김태완스시</div>'
+    },
+    {
+        sswu_position: choidaepae,
+        content: '<h3>최대패 성신여대점</h3>\
+        <div>최대패</div>'
+    },
+    {
+        sswu_position: vistro,
+        content: '<h3>vistro 성신여대점</h3>\
+        <div>vistro</div>'
+    },
+    {
+        sswu_position: lalanoodle,
+        content: '<h3>lalanoodle 성신여대점</h3>\
+        <div>lalanoodle</div>'
+    },
+    {
+        sswu_position: sukhan,
+        content: '<h3>sukhan 성신여대점</h3>\
+        <div>sukhan</div>'
+    },
+    {
+        sswu_position: miu,
+        content: '<h3>miu 성신여대점</h3>\
+        <div>miu</div>'
+    },
+    {
+        sswu_position: choi,
+        content: '<h3>choi 성신여대점</h3>\
+        <div>choi</div>'
+    },
+    {
+        sswu_position: rainbowbeer,
+        content: '<h3>rainbowbeer 성신여대점</h3>\
+        <div>rainbowbeer</div>'
+    },
+    {
+        sswu_position: heroboardgame,
+        content: '<h3>heroboardgame 성신여대점</h3>\
+        <div>heroboardgame</div>'
+    },
+    {
+        sswu_position: ilu,
+        content: '<h3>ilu 성신여대점</h3>\
+        <div>ilu</div>'
+    },
+];
+
+//지역별 마커
+//서경대 찍기
+var markerOptions = {
+  position: skuniv,
+  map: map,
+  icon: {
+    url: HOME_PATH + '/src/assets/pin_sku.png',
+    size: new naver.maps.Size(50, 52),
+    origin: new naver.maps.Point(0, 0),
+    anchor: new naver.maps.Point(25, 26)
+  }
+  };
+var marker = new naver.maps.Marker(markerOptions);
+//성신여대 찍기
+var markerOptions = {
+  position: sunshinuniv,
+  map: map,
+  icon: {
+    url: HOME_PATH + '/src/assets/pin_sswu.png',
+    size: new naver.maps.Size(50, 52),
+    origin: new naver.maps.Point(0, 0),
+    anchor: new naver.maps.Point(25, 26)
+  }
+  };
+var marker = new naver.maps.Marker(markerOptions);
+//보국문역 (정릉골)
+var markerOptions = {
+  position: jeongneungmarket,
+  map: map,
+  icon: {
+    url: HOME_PATH + '/src/assets/pin_jeongneung.png',
+    size: new naver.maps.Size(50, 52),
+    origin: new naver.maps.Point(0, 0),
+    anchor: new naver.maps.Point(25, 26)
+  }
+  };
+var marker = new naver.maps.Marker(markerOptions);
 
 // 각 마커를 생성하고 지도에 추가합니다.
-markerInfos.forEach(function(info) {
+//서경대 앞 마커
+sku_markerInfos.forEach(function(info) {
     var markerOptions = {
-        position: info.position,
+        position: info.sku_position,
         map: map,
         icon: {
-            url: HOME_PATH + '/src/assets/pin.png',
+            url: HOME_PATH + '/src/assets/pin_green.png',
+            size: new naver.maps.Size(50, 52),
+            origin: new naver.maps.Point(0, 0),
+            anchor: new naver.maps.Point(25, 26)
+        }
+    };
+    var marker = new naver.maps.Marker(markerOptions);
+    // 클릭 이벤트를 추가합니다.
+    naver.maps.Event.addListener(marker, 'click', function() {
+        if (!marker.infowindow) {
+            marker.infowindow = new naver.maps.InfoWindow({
+                content: info.content
+            });
+        }
+        marker.infowindow.open(map, marker);
+    });
+});
+
+//성신여대역 마커
+sswu_markerInfos.forEach(function(info) {
+    var markerOptions = {
+        position: info.sswu_position,
+        map: map,
+        icon: {
+            url: HOME_PATH + '/src/assets/pin_purple.png',
             size: new naver.maps.Size(50, 52),
             origin: new naver.maps.Point(0, 0),
             anchor: new naver.maps.Point(25, 26)
