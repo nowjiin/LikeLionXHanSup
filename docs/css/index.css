@@ -26,7 +26,7 @@
 .title {
   margin-top: 10px;
   margin-left: 20px;
-  width: 50%;
+  width: 65%;
   color: #f68c30;
   align-items: center;
   font-weight: bold;
@@ -41,10 +41,11 @@
   background: linear-gradient(to right, #fc9c37, #cf2c05);
   color: white;
   font-size: 12px;
-  height: 25%;
+  height: 35%;
   width: 100%;
   font-family: Pretendard;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .buttons {
   display: flex; /* 요소들을 플렉스 박스로 배치합니다 */

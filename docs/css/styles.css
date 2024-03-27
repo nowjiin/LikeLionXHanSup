@@ -15,4 +15,5 @@
 body {
   font-family: "Pretendard-Regular", sans-serif; /* 폰트를 전체 페이지에 적용합니다 */
   margin: 0px;
+  width: 100%;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    
     <link href="./src/assets/LOGO.png" rel="icon" type="image/x-icon">
     <title>서경대 제휴상권 | 멋사 | 총학생회</title>
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i"></script>
@@ -44,23 +45,23 @@
       <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
       <input id="reset" type="button" value="reset" class="control-btn" />
     </div>
-    <div id="map" style="width:100%;height:90vh;"></div>
-    <div id="modal1" class="modal">
+    <div id="map" style="width:100%;height:75vh;margin: 0px;"></div>
+    <!-- <div id="modal1" class="modal">
       <div class="modal-content">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
           <p>This is Modal 1</p>
       </div>
-    </div>
+    </div> -->
   </div>
 <script>
   //시작 위치 설정
   var map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(37.611087, 127.014065),
-    zoom: 16
+    center: new naver.maps.LatLng(37.598550, 127.015065),
+    zoom: 14
   });
   //var로 식당별 위,경도 설정
   var 
-    all = new naver.maps.LatLng(37.611087, 127.014065),
+    all = new naver.maps.LatLng(37.598550, 127.015065),
     skuniv = new naver.maps.LatLng(37.611087, 127.014065),
     gilum = new naver.maps.LatLng(37.604389, 127.025590),
     reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
@@ -79,6 +80,7 @@
     songgangru = new naver.maps.LatLng(37.6111966, 127.0136037);
     skpocha = new naver.maps.LatLng(37.610268, 127.01456),
     ebari = new naver.maps.LatLng(37.612023, 127.013426);
+    
     // 정릉골 상권
 
     // 성신여대 상권
@@ -96,17 +98,20 @@
     heroboardgame = new naver.maps.LatLng(37.590872, 127.018815),
     ilu = new naver.maps.LatLng(37.5917375, 127.0171492),
 
-
-
     //버튼 클릭 이벤트 처리
+    $("#to-all").css({
+      backgroundColor: '#ff4d26',
+      borderColor: 'transparent',
+      color: '#ffffff'
+    });
     $("#to-all").on("click", function(e) {
       e.preventDefault();
-      map.setZoom(18, true);
+      map.setZoom(14, true);
       map.panTo(all);
     })
     $("#to-skuniv").on("click", function(e) {
       e.preventDefault();
-      map.setZoom(18, true);
+      map.setZoom(17, true);
       map.panTo(skuniv);
     })
     $("#to-gilum").on("click", function(e) {
@@ -160,15 +165,15 @@
   var polyline = new naver.maps.Polyline({
     map: map,
     path: [
-        new naver.maps.LatLng(37.612369, 127.013418), //연꽃 어린이집(polyline시작)
-        new naver.maps.LatLng(37.611811, 127.015123), //아파트쪽 두번째선
-        new naver.maps.LatLng(37.610224, 127.015986), //밑 세번째선
+        new naver.maps.LatLng(37.612369, 127.013418), // 연꽃 어린이집(polyline시작)
+        new naver.maps.LatLng(37.611811, 127.015123), // 아파트쪽 두번째선
+        new naver.maps.LatLng(37.610224, 127.015986), // 밑 세번째선
         new naver.maps.LatLng(37.609877, 127.014903), // 네번째
         new naver.maps.LatLng(37.609941, 127.014361), // 다섯번째
         new naver.maps.LatLng(37.610570, 127.013985), // 5번째
-        new naver.maps.LatLng(37.610947, 127.013135),  // 6번째
-        new naver.maps.LatLng(37.611658, 127.012345),  // 6번째
-        new naver.maps.LatLng(37.612369, 127.013418)  // 6번째
+        new naver.maps.LatLng(37.610947, 127.013135), // 7번째
+        new naver.maps.LatLng(37.611658, 127.012345), // 8번째
+        new naver.maps.LatLng(37.612369, 127.013418)  // 연꽃 어린이집(polyline시작)
     ]
   });
 
@@ -437,7 +442,7 @@ sswu_markerInfos.forEach(function(info) {
     };
     var marker = new naver.maps.Marker(markerOptions);
 
-    // 클릭 이벤트를 추가합니다.
+    // 클릭 이벤트 추가
     naver.maps.Event.addListener(marker, 'click', function() {
         if (!marker.infowindow) {
             marker.infowindow = new naver.maps.InfoWindow({
@@ -448,22 +453,22 @@ sswu_markerInfos.forEach(function(info) {
     });
 });
 
-  // 모든 버튼 요소를 가져옵니다.
+  // 모든 버튼 요소를 가져옴.
   var buttons = document.querySelectorAll('.control-btn');
-  // 각 버튼에 대해 클릭 이벤트를 추가합니다.
+  // 각 버튼에 대해 클릭 이벤트를 추가.
   buttons.forEach(function(button) {
       button.addEventListener('click', function() {
-          // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원합니다.
+          // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원.
           buttons.forEach(function(btn) {
               btn.style.backgroundColor = '#ffffff';
               btn.style.borderColor = '#e8e9ed';
               btn.style.color = '#5c5d61';
           });
-          // 클릭된 버튼의 배경색을 변경합니다.
+          // 클릭된 버튼의 배경색을 변경.
           button.style.backgroundColor = '#ff4d26';
-          // 클릭된 버튼의 테두리를 제거합니다.
+          // 클릭된 버튼의 테두리를 제거.
           button.style.borderColor = 'transparent';
-          // 클릭된 버튼의 글자색을 변경합니다.
+          // 클릭된 버튼의 글자색을 변경.
           button.style.color = '#ffffff';
           // 이후 추가적인 동작을 정의할 수 있습니다.
       });
