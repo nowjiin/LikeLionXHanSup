@@ -5,7 +5,7 @@
   width: 100%;
   margin-bottom: 10px;
   font-family: yg-jalnan;
-  background-image: url("../src/assets/title_bg.png");
+  background-image: url("../../assets/title_bg_green.png");
   background-size: contain; /* 이미지를 컨테이너에 맞추기 위해 설정 */
   background-repeat: no-repeat; /* 이미지 반복 없음 */
   background-position: right center; /* 이미지를 오른쪽 중앙에 배치 */
