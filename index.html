@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     
-    <link href="./src/assets/LOGO.png" rel="icon" type="image/x-icon">
+    <link href="./assets/LOGO.png" rel="icon" type="image/x-icon">
     <title>서경대 제휴상권 | 멋사 | 총학생회</title>
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i"></script>
     <script src="./docs/js/jquery-1.9.1.js"></script>
@@ -24,8 +24,8 @@
   });
 </script>
 
-<body>
-  <div id="navbar">
+<body">
+  <div id="navbar" style="width: 100%; height: 20%;">
     <div class = "title_container">
       <div class = "title">서경제휴zip</div>
       <div class = "colab">한숲 X 멋쟁이사자처럼</div>
@@ -35,7 +35,6 @@
     </div>
   </div>
 
-  <div>
     <div class="buttons">
       <input id="to-all" type="button" value="전체" class="control-btn" />
       <input id="to-skuniv" type="button" value="서경대 앞" class="control-btn" />
@@ -45,14 +44,13 @@
       <input id="to-20" type="button" value="20레벨로 Zoom" class="control-btn" />
       <input id="reset" type="button" value="reset" class="control-btn" />
     </div>
-    <div id="map" style="width:100%;height:75vh;margin: 0px;"></div>
+    <div id="map" style="width:100%;height:70vh; margin: 0px;"></div>
     <!-- <div id="modal1" class="modal">
       <div class="modal-content">
           <span class="close" onclick="closeModal('modal1')">&times;</span>
           <p>This is Modal 1</p>
       </div>
     </div> -->
-  </div>
 <script>
   //시작 위치 설정
   var map = new naver.maps.Map('map', {
@@ -82,6 +80,36 @@
     ebari = new naver.maps.LatLng(37.612023, 127.013426);
     
     // 정릉골 상권
+    donbuza = new naver.maps.LatLng(37.610419,127.009644), //정릉돈부자
+    jueunson = new naver.maps.LatLng(37.613675, 127.009906), //주은이네손맛
+    rapleraple = new naver.maps.LatLng(37.613652, 127.009983), //라플라플
+    yangsanbak = new naver.maps.LatLng(37.6136407, 127.0100206), //양산박
+    taepeungyang = new naver.maps.LatLng(37.613259, 127.01039), //태평양수산
+    zzangsi = new naver.maps.LatLng(37.612993, 127.010401), //짱시 스낵
+    sumakarong = new naver.maps.LatLng(37.612963, 127.010374), //수마카롱
+    esulro = new naver.maps.LatLng(37.612561, 127.010126), //이슬로
+    jini = new naver.maps.LatLng(37.612535, 127.009847), //지니
+    miso = new naver.maps.LatLng(37.61236, 127.009742), //미소농수산물
+    mantasushi = new naver.maps.LatLng(37.612198, 127.00962), //만타 스시
+    thedual = new naver.maps.LatLng(37.6120971, 127.0095129), //더듀얼로스터즈
+
+    ttgaejil = new naver.maps.LatLng(37.611876, 127.009653), //뜨개질방
+    jeongneunggalbi = new naver.maps.LatLng(37.6117827, 127.0095842), //정릉갈비
+    bok2oldchiken = new naver.maps.LatLng(37.6120971, 127.0095129), //복이 옛날통닭
+    humanchikenggichi = new naver.maps.LatLng(37.6120971, 127.0095129), //인류닭꼬치
+    onebilliard = new naver.maps.LatLng(37.6120971, 127.0095129), //원당구장
+    goldcodari = new naver.maps.LatLng(37.6120971, 127.0095129), //황금코다리 정릉점
+    sul2rang = new naver.maps.LatLng(37.6120971, 127.0095129), //술이랑
+    pizzaschool = new naver.maps.LatLng(37.6120971, 127.0095129), //피자스쿨 정릉점
+    happy0in = new naver.maps.LatLng(37.6120971, 127.0095129), //해피공인중개사무소
+    miramcos = new naver.maps.LatLng(37.6120971, 127.0095129), //미람코스메틱
+    hopepocha = new naver.maps.LatLng(37.6120971, 127.0095129), //보국문 호프포차
+    sunnong = new naver.maps.LatLng(37.6120971, 127.0095129), //태양농산물
+    janggogi = new naver.maps.LatLng(37.6120971, 127.0095129), //장고기
+
+
+
+
 
     // 성신여대 상권
     iasi = new naver.maps.LatLng(37.5912475, 127.0177866),
@@ -371,7 +399,7 @@ var markerOptions = {
   position: skuniv,
   map: map,
   icon: {
-    url: HOME_PATH + '/src/assets/pin_sku.png',
+    url: HOME_PATH + '/assets/pin_sku.png',
     size: new naver.maps.Size(50, 52),
     origin: new naver.maps.Point(0, 0),
     anchor: new naver.maps.Point(25, 26)
@@ -383,7 +411,7 @@ var markerOptions = {
   position: sunshinuniv,
   map: map,
   icon: {
-    url: HOME_PATH + '/src/assets/pin_sswu.png',
+    url: HOME_PATH + '/assets/pin_sswu.png',
     size: new naver.maps.Size(50, 52),
     origin: new naver.maps.Point(0, 0),
     anchor: new naver.maps.Point(25, 26)
@@ -395,7 +423,7 @@ var markerOptions = {
   position: jeongneungmarket,
   map: map,
   icon: {
-    url: HOME_PATH + '/src/assets/pin_jeongneung.png',
+    url: HOME_PATH + '/assets/pin_jeongneung.png',
     size: new naver.maps.Size(50, 52),
     origin: new naver.maps.Point(0, 0),
     anchor: new naver.maps.Point(25, 26)
@@ -410,7 +438,7 @@ sku_markerInfos.forEach(function(info) {
         position: info.sku_position,
         map: map,
         icon: {
-            url: HOME_PATH + '/src/assets/pin_green.png',
+            url: HOME_PATH + '/assets/pin_green.png',
             size: new naver.maps.Size(50, 52),
             origin: new naver.maps.Point(0, 0),
             anchor: new naver.maps.Point(25, 26)
@@ -434,7 +462,7 @@ sswu_markerInfos.forEach(function(info) {
         position: info.sswu_position,
         map: map,
         icon: {
-            url: HOME_PATH + '/src/assets/pin_purple.png',
+            url: HOME_PATH + '/assets/pin_purple.png',
             size: new naver.maps.Size(50, 52),
             origin: new naver.maps.Point(0, 0),
             anchor: new naver.maps.Point(25, 26)
