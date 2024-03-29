@@ -319,8 +319,11 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             sswu_position: choi,
-            content: '<h3>choi 성신여대점</h3>\
-            <div>choi</div>'
+            content: '<div class="modal-content">' +
+            '<span class="close">&times;</span>' +
+            '<h2>마커 정보</h2>' +
+            '<p>마커에 대한 정보를 여기에 넣으세요.</p>' +
+            '</div>'
         },
         {
             sswu_position: rainbowbeer,
@@ -447,4 +450,4 @@ document.addEventListener("DOMContentLoaded", function() {
               // 이후 추가적인 동작을 정의할 수 있습니다.
           });
       });
-    });
+});
