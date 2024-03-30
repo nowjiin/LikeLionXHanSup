@@ -1,163 +1,129 @@
-#navbar {
+/* 모달 스타일 */
+.modal {
+  position: fixed;
+  width: 95%; /* 너비를 화면 전체에 맞춤 */
+  display: none; /* 초기에는 숨겨진 상태 */
+  z-index: 1000;
+  bottom: 0;
+  left: 0; /* left 속성 삭제 */
+  right: 0; /* 오른쪽 끝까지 확장 */
+  background-color: #fff;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  max-height: 50vh;
+  margin: 0 auto; /* 수평 가운데 정렬 */
+  transition: max-height 0.3s ease-out, transform 0.3s ease-out; /* transform 추가 */
+}
+.close{
+  padding-top: 9px;
+  padding-left: 9px;
+  margin: 10px;
+}
+#sub-title{
+  border: 2px solid #FF4D26;
+  width: fit-content; 
+  padding: 3px;
+  font-size: 12px;
+  margin-left: 5%;
+  border-radius: 3px;
+  margin-bottom: 2%;
+  color: #FF4D26;
+  font-weight: bold;
+}
+#modal-title{
+  margin-bottom: 10px;
+  margin-left: 5%;
+  margin-top: 0px;
+}
+#image_container{
+  text-align: center;
+}
+#image{
+  height: 30vh;
+  width: 95%;
+  border-radius: 5px;
+  padding-bottom: 2%;
+}
+
+#content-container{
+  background-color: #F2F3F5;
+  /* border-radius: 10%; */
+  padding: 2%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  width: 90%;
+  font-size: 12px;
+}
+/* 모달이 열릴 때 크기가 커지는 애니메이션 클래스 */
+#modal.open {
+  display: block; /* 모달이 열릴 때 표시됨 */
+  max-height: 100%;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+#modal-content1{
+  margin-bottom: 3px;
+}
+#modal-content2{
+  margin-bottom: 3px;
+}
+#modal-content3{
+  margin-bottom: 3px;
+}
+/* 모달 컨테이너 스타일 */
+.modal-container {
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 16px;
   display: flex;
   flex-direction: column;
-  height: auto;
+  pointer-events: auto;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  height: 100px;
+}
+
+.modal-header {
+  height: 40px;
   width: 100%;
-  margin-bottom: 10px;
-  font-family: yg-jalnan;
-  background-image: url("../../assets/title_bg_green.png");
-  background-size: contain; /* 이미지를 컨테이너에 맞추기 위해 설정 */
-  background-repeat: no-repeat; /* 이미지 반복 없음 */
-  background-position: right center; /* 이미지를 오른쪽 중앙에 배치 */
-}
-.title_container {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  margin: auto;
+  position: relative;
   display: flex;
-  padding-left: 2vw;
-
-}
-.colab {
-  display: flex;
-  align-items: end;
-  width: 50%;
-  justify-content: right;
-  font-size: 12px;
-  color: #6f7075;
-  font-family: Pretendard;
-  padding: 3px;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttons {
-  display: flex;
-  position: absolute;
-  background-color: #fff;
-  z-index: 2;
-  top: 60px;
-  right: 3.2vw;
-  left: 3.2vw;
-  margin: auto;
-  box-shadow: 0 0 5px #b9b9b9;
-  border-radius: 5px;
-  font-size: 17px;
-  justify-content: space-between;
-  padding: 0;
-  color: #424141;
-  font-weight: 500;
-}
-/* 스크롤 바 */
-.buttons::-webkit-scrollbar {
-  height: 4px; /* 스크롤 바의 너비를 설정합니다 */
+.drag-indicator {
+  width: 18px;
+  height: 4px;
+  border-radius: 99px;
+  background-color: rgb(221, 221, 221);
+  transition: transform 0.3s ease-out;
 }
 
-/* 스크롤 바의 track (슬라이더를 따라 이동하는 트랙) */
-.buttons::-webkit-scrollbar-track {
-  background-color: transparent; /* 트랙의 배경색을 투명하게 설정합니다 */
+.drag-indicator:hover {
+  transform: translateX(2px) rotate(45deg);
 }
 
-/* 스크롤 바의 thumb (슬라이더) */
-.buttons::-webkit-scrollbar-thumb {
-  background-color: #888; /* 슬라이더의 배경색을 설정합니다 */
-  border-radius: 5px; /* 슬라이더의 모서리를 둥글게 만듭니다 */
-}
-.control-btn {
-  padding: 10px 20px; /* 버튼의 내부 여백을 설정합니다 */
-  border-radius: 100px;
-  font-size: 16px; /* 버튼의 글꼴 크기를 설정합니다 */
-  border: 1px solid #e8e9ed; /* 버튼의 테두리 스타일을 설정합니다 */
-  background-color: #ffffff; /* 버튼의 배경색을 설정합니다 */
-  color: #5c5d61; /* 버튼의 글꼴 색상을 설정합니다 */
-  cursor: pointer; /* 마우스 커서를 손가락 형태로 설정합니다 */
-  margin-right: 5px; /* 버튼 간의 오른쪽 여백을 설정합니다 */
-  font-family: "Pretendard-Regular", sans-serif; /* 폰트를 버튼 내부 텍스트에도 적용합니다 */
+.drag-indicator:last-child:hover {
+  transform: translateX(-2px) rotate(-45deg);
 }
 
-.control-btn:hover {
-  background-color: #ff4d26; /* 마우스를 올렸을 때의 버튼 배경색을 설정합니다 */
-  border-color: transparent; /* 마우스를 올렸을 때의 테두리 색상을 설정합니다 */
-  color: #ffffff;
-}
-
-.control-btn:active {
-  background-color: #ff4d26; /* 버튼이 클릭되었을 때의 배경색을 설정합니다 */
-  border-color: transparent; /* 버튼이 클릭되었을 때의 테두리 색상을 설정합니다 */
-  color: #ffffff; /* 버튼이 클릭되었을 때의 텍스트 색상을 설정합니다 */
-}
-
-/* 모달 스타일 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* 모달 내용 스타일 */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0px;
+  position: relative;
+  overflow-y: auto;
 }
 
-/* 닫기 버튼 스타일 */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.modal-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/*------------------------------ 모달 -------------------------------- */
-/* 모달 스타일 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-/* 모달 내용 스타일 */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-/* 닫기 버튼 스타일 */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-/*------------------------------ 모달 -------------------------------- */

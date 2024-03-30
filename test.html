@@ -7,11 +7,12 @@
     
     <link href="./assets/LOGO.png" rel="icon" type="image/x-icon">
     <title>서경대 제휴상권 | 멋사 | 총학생회</title>
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i&submodules=geocoder"></script>
     <script src="./docs/js/jquery-1.9.1.js"></script>
-    <script src="./docs/js/start.js"></script>
+    <script src="./docs/js/test.js"></script>
     
     <link rel="stylesheet" href="./docs/css/index.css" />
+    <link rel="stylesheet" href="./docs/css/modal.css" />
     <link rel="stylesheet" href="./docs/css/styles.css" />
 </head>
 <!-- Google tag (gtag.js) -->
@@ -25,7 +26,59 @@
     'cookie_flags': 'max-age=7200;secure;samesite=none'
   });
 </script>
+<!-- <script>
+  이게 내위치 정보 넣는거 넣다가 실패함
+  var curtBtn = '<img src = "" alt = "ㅇ">';
+  var curtLoca = "";
+  var cstmCtrl = new naver.maps.CustomControl(curtBtn, {
+    position: naver.maps.Position.RIGHT_TOP
+  })
+  //custom controller map에 설정
+  cstmCtrl.setMap(map);
 
+  //클릭 이벤트 리스너 설정
+  naver.maps.Event.addDOMListener(cstmCtrl.getElement(), 'click', function(){
+    if(curtLoca){
+      //얻은 좌표 중심으로 설정
+      map.setCenter(curtLoca);
+      map.setZoom(17);
+    }
+    else{
+      alert("위치 엑세스 거부")
+    }
+    //getCUrrentPosition 성공 callback
+    var onSuccessGeolocation = function(position){
+      //현제 위치
+      curtLoca = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      //얻은 좌표를 지도의 중심으로
+      map.setCenter(curtLoca);
+      map.setZoom(17);
+
+      //현재 위치에 마커 표시
+      new naver.map.Marker({
+        position: curtLoca,
+        map: map,
+        icon : {}
+      });
+  }
+  var onErrorGeolocation = function(){
+    var agent = navigator.userAgent.toLowerCase, name = navigator.appName;
+    if(name == "Microsoft Internet Explorer"){
+      alert("지원하지 않는 브라우저")
+    }
+    else{
+      console.log('현재 위치 가져오는데 에러')
+    }
+  }
+  // 혀재 위치 좌표로 지도 이동.
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation);
+  }
+  else{
+    console.log("GEO not supported")
+  }
+</script> -->
 <body>
     <div class = "title_container">
       <div class = "title">서경제휴zip</div>
@@ -44,5 +97,25 @@
       <input id="reset" type="button" value="reset" class="control-btn" />
     </div>
     <div id="map" style="width:100%;height:70vh; margin: 0px;"></div>
+
+    <!-- 모달과 모달 배경 -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span> <!-- 닫힘 버튼 추가 -->
+        <h2 id="modal-title">Modal Title</h3>
+        <div id = "sub-title">sub-title</div>
+        <div id="image_container">
+          <img id="image"alt="이미징">
+        </div>
+        <div id="content-container">
+          <div id="modal-content1">Modal Content</div>
+          <div id="modal-content2">Modal Content</div>
+          <div id="modal-content3">Modal Content</div>
+          <div id="modal-content4">Modal Content</div>
+          
+        </div> 
+      </div> 
+    </div>
+
 </body>
 </html>

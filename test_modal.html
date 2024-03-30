@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Modal Sheet</title>
+<style>
+  .modal-container {
+    z-index: 2;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 16px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    height: 100px; /* 초기 높이 설정 */
+  }
+
+  .modal-header {
+    height: 40px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drag-indicator {
+    width: 18px;
+    height: 4px;
+    border-radius: 99px;
+    background-color: rgb(221, 221, 221);
+    transition: transform 0.3s ease-out;
+  }
+
+  .drag-indicator:hover {
+    transform: translateX(2px) rotate(45deg);
+  }
+
+  .drag-indicator:last-child:hover {
+    transform: translateX(-2px) rotate(-45deg);
+  }
+
+  .modal-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0px;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  .modal-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+
+<div id="modal" class="modal-container">
+  <div class="modal-header">
+    <span class="drag-indicator"></span>
+    <span class="drag-indicator"></span>
+  </div>
+  <div class="modal-content">
+    <div class="modal-item">Item 0</div>
+    <div class="modal-item">Item 1</div>
+    <!-- Add more items here -->
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById('modal');
+  var startY;
+  var startHeight;
+  var isDragging = false;
+
+  modal.addEventListener('touchstart', function(event) {
+    isDragging = true;
+    startY = event.touches[0].clientY;
+    startHeight = modal.offsetHeight;
+  });
+
+  modal.addEventListener('touchmove', function(event) {
+    if (!isDragging) return;
+
+    var deltaY = event.touches[0].clientY - startY;
+    var newHeight = startHeight - deltaY;
+
+    // 최소 높이 설정
+    if (newHeight < 100) {
+      newHeight = 100;
+    }
+
+    modal.style.height = newHeight + 'px';
+  });
+
+  modal.addEventListener('touchend', function(event) {
+    isDragging = false;
+  });
+</script>
+
+</body>
+</html>
