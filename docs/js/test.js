@@ -221,7 +221,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/kmaratang.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)',
-            content3: '- 쿠폰10장 꿔바로우 제공'            
+            content3: '- 쿠폰10장 꿔바로우 제공',
+            content4: '',            
+            content5: '',
+            content6: ''            
         },
         {
             sku_position: mkpocha,
@@ -230,7 +233,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/default.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 안주류 2만원 이상 결제시 황도 제공',
-            content3: '' 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sku_position: tongtongpig,
@@ -239,7 +245,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/tongtongpig.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 고기 3+1 제공(기간X)',
-            content3: '- 현금 결제시 5% 할인' 
+            content3: '- 현금 결제시 5% 할인',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sku_position: hola,
@@ -249,7 +258,9 @@ document.addEventListener("DOMContentLoaded", function() {
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
             content3: '- 생맥주 3500원, 병소주 4000원', 
-            content4: '- 10만원 이상 주문시 서비스 제공', 
+            content4: '- 10만원 이상 주문시 서비스 제공',
+            content5: '',   
+            content6: ''   
 
         },
         {
@@ -261,6 +272,8 @@ document.addEventListener("DOMContentLoaded", function() {
             content2: '- 4만원 이상 주문시 간단한 안주 제공',
             content3: '- 요청시 소주 라벨링 작업(좋은데이)', 
             content4: '- 15명 이상 현수막 제작', 
+            content5: '- 컨디션 스틱 한병당 1개',
+            content6: '- 현금결제시 3% 자체 적립',
 
         },
         {
@@ -270,8 +283,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/mygreek.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 10% 할인(단, 할인 품목 제외)',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sku_position: grandmadarak,
@@ -280,8 +295,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/grandmadarak.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 1인 1음료 주문시 디저트 10% 할인',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sku_position: piglove,
@@ -290,8 +307,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/piglove.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sku_position: songgangru,
@@ -300,8 +319,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/songgangru.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 매장 직접 전화 주문시 세트메뉴 할인',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },{
             sku_position: skpocha,
             title :'서경포차',
@@ -309,8 +330,10 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/skpocha.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sku_position: ebari,
@@ -319,78 +342,168 @@ document.addEventListener("DOMContentLoaded", function() {
             image_url : './assets/sku_markerInfos_img/ebari.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 1만원 이상 현금 및 계좌이체시 5% 할인(최대 3000원)',
-            content3: '', 
-            content4: '', 
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         }
     ];
     var sswu_markerInfos = [
         {
             sswu_position: iasi,
-            content: '<h3>이야시</h3>\
-            <div>이야시 정보</div>'
+            title :'이자카야 이야시',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/iasi.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 테이블당 아이스 홍시 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: witchkitchen,
-            content: '<h3>마녀주방 성신여대점</h3>\
-            <div>마녀주방 정보</div>'
+            title :'마녀주방',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/witch.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 학생 인증시 탄산음료 or 에이드 1잔 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sswu_position: kangkumok,
-            content: '<h3>강금복 성신여대점</h3>\
-            <div>강금복</div>'
+            title :'강금옥쭈꾸미',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/kangkumok.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 2인분 주문시 볶음밥 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: kimtaewan,
-            content: '<h3>김태완스시 성신여대점</h3>\
-            <div>김태완스시</div>'
+            title :'김태완스시 성신여대점',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/kimtaewan.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 랜덤초밥 제공 or 튀김류 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: choidaepae,
-            content: '<h3>최대패 성신여대점</h3>\
-            <div>최대패</div>'
+            title :'최대패',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/choi.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 테이블당 소주 한 병 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: vistro,
-            content: '<h3>vistro 성신여대점</h3>\
-            <div>vistro</div>'
+            title :'비스트로홈',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/vistro.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 테이블당 디저트 빙수 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sswu_position: lalanoodle,
-            content: '<h3>lalanoodle 성신여대점</h3>\
-            <div>lalanoodle</div>'
+            title :'라라면가 ',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/lala.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 매장 방문시 2인 기준 음료수 제공, 공기밥 무료 제공/포장',    
+            content3: '- 배달(배민한집배달, 배민, 쿠팡이츠)시 요청사항에 원하는 음료 작성시 제공',
+            content4: '', 
+            content5: '', 
+            content6: '' 
         },
-        {
+        {//
             sswu_position: sukhan,
-            content: '<h3>sukhan 성신여대점</h3>\
-            <div>sukhan</div>'
+            title :'석관 인생곱창',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/sukhon.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 서경대생 2인 이상 포함 방문 후 5만원 이상 주문시 10% 할인',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: miu,
-            content: '<h3>miu 성신여대점</h3>\
-            <div>miu</div>'
+            title :'미우',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/miu.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 테이블당 소주 한 병 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sswu_position: choi,
-            content: '<div class="modal-content">' +
-            '<span class="close">&times;</span>' +
-            '<h2>마커 정보</h2>' +
-            '<p>마커에 대한 정보를 여기에 넣으세요.</p>' +
-            '</div>'
+            title :'쵸이양식',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/choi_yangsik.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 음식 주문 후 인스타 태그 시 음료 제공',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: rainbowbeer,
-            content: '<h3>rainbowbeer 성신여대점</h3>\
-            <div>rainbowbeer</div>'
+            title :'무지개맥주',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/rainbow.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 서경대생 2인 이상 포함 방문 후 5만원 이상 주문시 10% 할인',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
         {
             sswu_position: heroboardgame,
-            content: '<h3>heroboardgame 성신여대점</h3>\
-            <div>heroboardgame</div>'
+            title :'히어로보드게임카페',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/hero.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 최종 결제시 20% 할인',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''   
         },
         {
             sswu_position: ilu,
-            content: '<h3>ilu 성신여대점</h3>\
-            <div>ilu</div>'
+            title :'ILU:일루',
+            sub_title : '성신여대 상권',
+            image_url : './assets/sswu_markerInfos_img/ilu.jpg',
+            content1: '🔥제휴 내용🔥',
+            content2: '- 10% 할인',
+            content3: '',
+            content4: '',            
+            content5: '',
+            content6: ''  
         },
     ];
     
@@ -451,6 +564,9 @@ document.addEventListener("DOMContentLoaded", function() {
             
             openModal(info);        
         });
+        naver.maps.Event.addListener(map, 'click', function() {
+            closeModal(); // 지도 클릭 시 모달 닫기
+        });
     });
     
     //성신여대역 마커
@@ -470,6 +586,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // 클릭 이벤트 추가
         naver.maps.Event.addListener(marker, 'click', function() {
             openModal(info);        
+        });
+        naver.maps.Event.addListener(map, 'click', function() {
+            closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
     
@@ -495,9 +614,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-naver.maps.Event.addListener(map, 'click', function() {
-    closeModal(); // 지도 클릭 시 모달 닫기
-});
+
 
 function openModal(markerInfo) {
     var modalTitle = document.getElementById('modal-title');
@@ -508,6 +625,9 @@ function openModal(markerInfo) {
     var modalContent2 = document.getElementById('modal-content2');
     var modalContent3 = document.getElementById('modal-content3');
     var modalContent4 = document.getElementById('modal-content4');
+    var modalContent5 = document.getElementById('modal-content5');
+    var modalContent6 = document.getElementById('modal-content6');
+
 
 
     modalTitle.innerText = markerInfo.title;
@@ -517,20 +637,29 @@ function openModal(markerInfo) {
     modalContent2.innerText = markerInfo.content2;
     modalContent3.innerText = markerInfo.content3;
     modalContent4.innerText = markerInfo.content4;
+    modalContent5.innerText = markerInfo.content5;
+    modalContent6.innerText = markerInfo.content6;
 
 
     modal.style.display = 'block';
 }
 
-
+// 모달을 닫는 함수
 function closeModal() {
+    var modal = document.getElementById('modal');
+    var modalOverlay = document.getElementById('modal-overlay');
     modal.style.display = 'none';
-    overlay.style.display = 'none';
+    modalOverlay.style.display = 'none';
 }
 
+// 모달 외부를 클릭했을 때 모달을 닫는 이벤트 추가
+document.getElementById('modal-overlay').addEventListener('click', closeModal);
+
+// 지도를 클릭했을 때 모달을 닫는 이벤트 추가
 naver.maps.Event.addListener(map, 'click', function() {
     closeModal(); // 지도 클릭 시 모달 닫기
 });
+
 
 window.onclick = function(event) {
     if (event.target == modal) {
