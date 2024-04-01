@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var 
         all = new naver.maps.LatLng(37.598550, 127.015065),
         skuniv = new naver.maps.LatLng(37.611087, 127.014065),
-        gilum = new naver.maps.LatLng(37.604389, 127.025590),
-        reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
+        jeongneungmarket = new naver.maps.LatLng(37.612378, 127.009394),
         sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
-        jeongneungmarket = new naver.maps.LatLng(37.608643, 127.009053),
+        etc = new naver.maps.LatLng(37.604389, 127.025590),
+        reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
         // 여기 부터 음식점
         // 학교 앞 상권
         kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
         mygreek = new naver.maps.LatLng(37.610395, 127.014684),
         grandmadarak = new naver.maps.LatLng(37.610447, 127.014368),
         piglove = new naver.maps.LatLng(37.6103857, 127.014516),
-        songgangru = new naver.maps.LatLng(37.6111966, 127.0136037);
+        songgangru = new naver.maps.LatLng(37.6111966, 127.0136037),
         skpocha = new naver.maps.LatLng(37.610268, 127.01456),
-        ebari = new naver.maps.LatLng(37.612023, 127.013426);
+        ebari = new naver.maps.LatLng(37.612023, 127.013426),
         
         // 정릉골 상권
         donbuza = new naver.maps.LatLng(37.610419,127.009644),
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         choi = new naver.maps.LatLng(37.592279, 127.0179879),
         rainbowbeer = new naver.maps.LatLng(37.591758, 127.017576),
         heroboardgame = new naver.maps.LatLng(37.590872, 127.018815),
-        ilu = new naver.maps.LatLng(37.5917375, 127.0171492),
+        ilu = new naver.maps.LatLng(37.5917375, 127.0171492);
     
         //버튼 클릭 이벤트 처리
         $("#to-all").css({
@@ -80,25 +80,25 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             map.setZoom(14, true);
             map.panTo(all);
-        })
+        });
         $("#to-skuniv").on("click", function(e) {
             e.preventDefault();
             map.setZoom(17, true);
             map.panTo(skuniv);
-        })
-        $("#to-gilum").on("click", function(e) {
+        });
+        $("#to-etc").on("click", function(e) {
             e.preventDefault();
-            map.panTo(gilum);
-        })
+            map.panTo(etc);
+        });
         $("#to-jeongneungmarket").on("click", function(e) {
             e.preventDefault();
             map.panTo(jeongneungmarket);
-        })
+        });
         $("#to-sunshinuniv").on("click", function(e) {
             e.preventDefault();
             map.setZoom(16, true);
             map.panTo(sunshinuniv);
-        })
+        });
         $("#reset").on("click", function(e) {
             e.preventDefault();
             map.setZoom(7, true);
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var HOME_PATH = window.HOME_PATH || '.';
     var position = [
         skuniv, // 북악
-        gilum,
+        etc,
         sunshinuniv, //성신여대
         jeongneungmarket, //정릉시장
         // new naver.maps.LatLng(latitude, longitude),
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
     var etc_marker = [
         {
-        position: gilum,
+        position: etc,
         content: '<h3>길음역</h3>\
                 <div>길음역 정보</div>'
         }
