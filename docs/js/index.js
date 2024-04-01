@@ -99,10 +99,6 @@ document.addEventListener("DOMContentLoaded", function() {
             map.setZoom(16, true);
             map.panTo(sunshinuniv);
         })
-        $("#to-20").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(20, true);
-        });
         $("#reset").on("click", function(e) {
             e.preventDefault();
             map.setZoom(7, true);
@@ -975,6 +971,32 @@ document.addEventListener("DOMContentLoaded", function() {
               // 이후 추가적인 동작을 정의할 수 있습니다.
         });
     });
+
+    //여기부터
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="/assets/my_location.png" alt="내 위치"></a>';
+    naver.maps.Event.once(map, 'init', function() {
+        //customControl 객체 이용하기
+        var customControl = new naver.maps.CustomControl(locationBtnHtml, {
+            position: naver.maps.Position.TOP_RIGHT
+        });
+    
+        customControl.setMap(map);
+    
+        naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
+            map.setCenter(new naver.maps.LatLng(37.3595953, 127.1053971));
+        });
+    
+        //Map 객체의 controls 활용하기
+        //var $locationBtn = $(locationBtnHtml),
+        //locationBtnEl = $locationBtn[0];
+    
+        //map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
+    
+        //naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
+        //map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
+    //});
+    });
+    //여기까지 내 위치 마커 표시(버튼)
 });
 
 // ----------------------------------------------------------------
