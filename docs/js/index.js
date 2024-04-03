@@ -1601,8 +1601,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    //여기부터
-    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="/assets/my_location.png" alt="내 위치"></a>';
+    //여기부터----------------------------------------------------------------------------
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="../../assets/my_location.png" alt="내 위치"></a>';
     naver.maps.Event.once(map, 'init', function() {
         //customControl 객체 이용하기
         var customControl = new naver.maps.CustomControl(locationBtnHtml, {
@@ -1612,18 +1612,13 @@ document.addEventListener("DOMContentLoaded", function() {
         customControl.setMap(map);
     
         naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
-            map.setCenter(new naver.maps.LatLng(37.3595953, 127.1053971));
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var currentPosition = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                // 현재 위치로 맵 이동
+                map.panTo(currentPosition);
+            });
+            map.setZoom(16, true);
         });
-    
-        //Map 객체의 controls 활용하기
-        //var $locationBtn = $(locationBtnHtml),
-        //locationBtnEl = $locationBtn[0];
-    
-        //map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
-    
-        //naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
-        //map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
-    //});
     });
     //여기까지 내 위치 마커 표시(버튼)
 });
@@ -1642,8 +1637,6 @@ function openModal(markerInfo) {
     var modalContent5 = document.getElementById('modal-content5');
     var modalContent6 = document.getElementById('modal-content6');
 
-
-
     modalTitle.innerText = markerInfo.title;
     modalsub_title.innerText = markerInfo.sub_title;
     modalImage.src = markerInfo.image_url;
@@ -1653,7 +1646,6 @@ function openModal(markerInfo) {
     modalContent4.innerText = markerInfo.content4;
     modalContent5.innerText = markerInfo.content5;
     modalContent6.innerText = markerInfo.content6;
-
 
     modal.style.display = 'block';
 }
@@ -1674,11 +1666,8 @@ naver.maps.Event.addListener(map, 'click', function() {
     closeModal(); // 지도 클릭 시 모달 닫기
 });
 
-
 window.onclick = function(event) {
     if (event.target == modal) {
         closeModal();
     }
 };
-
-
