@@ -613,7 +613,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // 여기부터 마커
-    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src=".././assets/my_location.png" alt="내 위치"></a>';
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="../../../assets/my_location.png" alt="내 위치"></a>';
     naver.maps.Event.once(map, 'init', function() {
         //customControl 객체 이용하기
         var customControl = new naver.maps.CustomControl(locationBtnHtml, {
