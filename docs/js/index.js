@@ -1564,7 +1564,7 @@ document.addEventListener("DOMContentLoaded", function() {
             position: info.market_position,
             map: map,
             icon: {
-                url: HOME_PATH + '/assets/pin.png',
+                url: HOME_PATH + '/assets/pin_yellow.png',
                 size: new naver.maps.Size(50, 52),
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
@@ -1602,7 +1602,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     //여기부터----------------------------------------------------------------------------
-    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="https://map.pstatic.net/ncp/v1.05/common/images/mylocation/btn_location_on@2x.png" alt="내 위치"></a>';
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="./my_location.png" alt="내 위치"></a>';
     naver.maps.Event.once(map, 'init', function() {
         //customControl 객체 이용하기
         var customControl = new naver.maps.CustomControl(locationBtnHtml, {
