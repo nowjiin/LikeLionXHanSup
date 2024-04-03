@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         center: new naver.maps.LatLng(37.598550, 127.015065),
         zoom: 14
     });
-
-      //var로 식당별 위,경도 설정
+    //var로 식당별 위,경도 설정
     var 
         all = new naver.maps.LatLng(37.598550, 127.015065),
         skuniv = new naver.maps.LatLng(37.611087, 127.014065),
@@ -298,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function() {
             content3: '',
             content4: '',            
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {
             sku_position: piglove,
@@ -612,6 +611,44 @@ document.addEventListener("DOMContentLoaded", function() {
               // 이후 추가적인 동작을 정의할 수 있습니다.
         });
     });
+
+    //여기부터
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="/assets/my_location.png" alt="내 위치"></a>';
+    naver.maps.Event.once(map, 'init', function() {
+      //customControl 객체 이용하기
+      var customControl = new naver.maps.CustomControl(locationBtnHtml, {
+          position: naver.maps.Position.TOP_RIGHT
+      });
+  
+      customControl.setMap(map);
+  
+      naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
+
+        const currentMyLocation = { lat: 37.123, lng: 127.456 }; // 예시 현재 위치
+          map = new naver.maps.Map("map", {
+            center: new naver.maps.LatLng(currentMyLocation.lat, currentMyLocation.lng),
+            zoomControlOptions: {
+              position: naver.maps.Position.TOP_RIGHT,
+            },
+            mapDataControl: false,
+          });
+        
+
+        
+        // map.setCenter(new naver.maps.LatLng(37.3595953, 127.1053971));
+      });
+  
+      //Map 객체의 controls 활용하기
+    //   var $locationBtn = $(locationBtnHtml),
+    //       locationBtnEl = $locationBtn[0];
+  
+      //map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
+  
+    //   naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
+    //       map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
+    //   });
+    });
+  //여기까지 내 위치 마커 표시(버튼)
 });
 
 
@@ -628,8 +665,6 @@ function openModal(markerInfo) {
     var modalContent5 = document.getElementById('modal-content5');
     var modalContent6 = document.getElementById('modal-content6');
 
-
-
     modalTitle.innerText = markerInfo.title;
     modalsub_title.innerText = markerInfo.sub_title;
     modalImage.src = markerInfo.image_url;
@@ -639,7 +674,6 @@ function openModal(markerInfo) {
     modalContent4.innerText = markerInfo.content4;
     modalContent5.innerText = markerInfo.content5;
     modalContent6.innerText = markerInfo.content6;
-
 
     modal.style.display = 'block';
 }

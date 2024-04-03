@@ -26,59 +26,6 @@
     'cookie_flags': 'max-age=7200;secure;samesite=none'
   });
 </script>
-<!-- <script>
-  이게 내위치 정보 넣는거 넣다가 실패함
-  var curtBtn = '<img src = "" alt = "ㅇ">';
-  var curtLoca = "";
-  var cstmCtrl = new naver.maps.CustomControl(curtBtn, {
-    position: naver.maps.Position.RIGHT_TOP
-  })
-  //custom controller map에 설정
-  cstmCtrl.setMap(map);
-
-  //클릭 이벤트 리스너 설정
-  naver.maps.Event.addDOMListener(cstmCtrl.getElement(), 'click', function(){
-    if(curtLoca){
-      //얻은 좌표 중심으로 설정
-      map.setCenter(curtLoca);
-      map.setZoom(17);
-    }
-    else{
-      alert("위치 엑세스 거부")
-    }
-    //getCUrrentPosition 성공 callback
-    var onSuccessGeolocation = function(position){
-      //현제 위치
-      curtLoca = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-      //얻은 좌표를 지도의 중심으로
-      map.setCenter(curtLoca);
-      map.setZoom(17);
-
-      //현재 위치에 마커 표시
-      new naver.map.Marker({
-        position: curtLoca,
-        map: map,
-        icon : {}
-      });
-  }
-  var onErrorGeolocation = function(){
-    var agent = navigator.userAgent.toLowerCase, name = navigator.appName;
-    if(name == "Microsoft Internet Explorer"){
-      alert("지원하지 않는 브라우저")
-    }
-    else{
-      console.log('현재 위치 가져오는데 에러')
-    }
-  }
-  // 혀재 위치 좌표로 지도 이동.
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(onSuccessGeolocation, onErrorGeolocation);
-  }
-  else{
-    console.log("GEO not supported")
-  }
-</script> -->
 <body>
     <div class = "title_container">
       <div class = "title">서경제휴zip</div>
