@@ -612,43 +612,36 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    //여기부터
-    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="/assets/my_location.png" alt="내 위치"></a>';
+    // 여기부터 마커
+    var locationBtnHtml = '<a href="#" class="btn_mylct"><img src=".././assets/my_location.png" alt="내 위치"></a>';
     naver.maps.Event.once(map, 'init', function() {
-      //customControl 객체 이용하기
-      var customControl = new naver.maps.CustomControl(locationBtnHtml, {
-          position: naver.maps.Position.TOP_RIGHT
-      });
-  
-      customControl.setMap(map);
-  
-      naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
+        //customControl 객체 이용하기
+        var customControl = new naver.maps.CustomControl(locationBtnHtml, {
+            position: naver.maps.Position.TOP_RIGHT
+        });
+    
+        customControl.setMap(map);
+    
+        naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var currentPosition = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                // 현재 위치로 맵 이동
+                map.panTo(currentPosition);
 
-        const currentMyLocation = { lat: 37.123, lng: 127.456 }; // 예시 현재 위치
-          map = new naver.maps.Map("map", {
-            center: new naver.maps.LatLng(currentMyLocation.lat, currentMyLocation.lng),
-            zoomControlOptions: {
-              position: naver.maps.Position.TOP_RIGHT,
-            },
-            mapDataControl: false,
-          });
-        
-
-        
-        // map.setCenter(new naver.maps.LatLng(37.3595953, 127.1053971));
-      });
-  
-      //Map 객체의 controls 활용하기
-    //   var $locationBtn = $(locationBtnHtml),
-    //       locationBtnEl = $locationBtn[0];
-  
-      //map.controls[naver.maps.Position.LEFT_CENTER].push(locationBtnEl);
-  
-    //   naver.maps.Event.addDOMListener(locationBtnEl, 'click', function() {
-    //       map.setCenter(new naver.maps.LatLng(37.3595953, 127.1553971));
-    //   });
+                var marker = new naver.maps.Marker({
+                    position: currentPosition,
+                    map: map,
+                    icon: {
+                        image: 'https://map.pstatic.net/ncp/v1.05/markers/blue/pin2.png',
+                        size: new naver.maps.Size(32, 37),
+                        anchor: new naver.maps.Point(16, 35)
+                    }
+                });
+            });
+            map.setZoom(16, true);
+        });
     });
-  //여기까지 내 위치 마커 표시(버튼)
+    // 여기까지 마커---------------------------------------------------
 });
 
 
