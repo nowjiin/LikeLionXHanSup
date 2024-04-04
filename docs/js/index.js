@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
         all = new naver.maps.LatLng(37.598550, 127.015065),
         skuniv = new naver.maps.LatLng(37.611087, 127.014065),
         jeongneungmarket = new naver.maps.LatLng(37.612378, 127.009394),
+        jeongneung = new naver.maps.LatLng(37.608723, 127.008514),
         sunshinuniv = new naver.maps.LatLng(37.592698, 127.016554),
-        etc = new naver.maps.LatLng(37.608851, 127.008738),
-        reset = new naver.maps.LatLng(37.60700258639104, 126.95625001298839),
+        etc = new naver.maps.LatLng(37.609510, 127.009012),
         // 여기 부터 음식점
         // 학교 앞 상권
         kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
@@ -109,9 +109,10 @@ document.addEventListener("DOMContentLoaded", function() {
         chosunbutumak = new naver.maps.LatLng(37.608189, 127.008918),
         jeongneungzzuggume = new naver.maps.LatLng(37.607967, 127.008958),
         cookieforest = new naver.maps.LatLng(37.608403, 127.008564),
-        gogosanghae = new naver.maps.LatLng(37.609138, 127.00787);
-
-
+        gogosanghae = new naver.maps.LatLng(37.609138, 127.00787),
+        //기타
+        dongkyeonggudong = new naver.maps.LatLng(37.60957, 127.0196195),
+        onensijang = new naver.maps.LatLng(37.6386984, 127.0253296);
         //버튼 클릭 이벤트 처리
         $("#to-all").css({
             backgroundColor: '#ff4d26',
@@ -137,6 +138,11 @@ document.addEventListener("DOMContentLoaded", function() {
             e.preventDefault();
             map.setZoom(17, true);
             map.panTo(jeongneungmarket);
+        });
+        $("#to-jeongneung").on("click", function(e) {
+            e.preventDefault();
+            map.setZoom(17, true);
+            map.panTo(jeongneung);
         });
         $("#to-sunshinuniv").on("click", function(e) {
             e.preventDefault();
@@ -317,7 +323,11 @@ document.addEventListener("DOMContentLoaded", function() {
         jeongneungzzuggume, //정릉쭈꾸미
         cookieforest, //쿠기 포레스트
         gogosanghae, //고고상회
-    ]
+    ];
+    var etc_position = [
+        dongkyeonggudong,
+        onensijang,
+    ];
     // 각 마커에 대한 정보를 정의합니다.
     var sku_marker = [
         {
@@ -1468,7 +1478,32 @@ document.addEventListener("DOMContentLoaded", function() {
             content5:'',
             content6:''
         },
-
+    ]
+    var etc_markerInfos = [
+        {//
+            etc_position: dongkyeonggudong,
+            title:'이름',
+            sub_title:'기타 제휴 상권',
+            image_url:'./assets/market_markerInfos_img/',
+            content1: '🔥제휴 내용🔥',
+            content2:'- 3만원 결제 시 10% 할인',
+            content3:'',
+            content4:'',
+            content5:'',
+            content6:''
+        },
+        {//
+            etc_position: onensijang,
+            title:'이름',
+            sub_title:'기타 제휴 상권',
+            image_url:'./assets/market_markerInfos_img/',
+            content1: '🔥제휴 내용🔥',
+            content2:'- 3만원 결제 시 10% 할인',
+            content3:'',
+            content4:'',
+            content5:'',
+            content6:''
+        },
     ]
     //지역별 마커
     //서경대 마커
@@ -1508,6 +1543,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     var marker = new naver.maps.Marker(markerOptions);
     
+    var marker = new naver.maps.Marker(markerOptions);
     // 각 마커를 생성하고 지도에 추가합니다.
     // 서경대 앞 마커
     sku_markerInfos.forEach(function(info) {
@@ -1582,6 +1618,28 @@ document.addEventListener("DOMContentLoaded", function() {
             map: map,
             icon: {
                 url: HOME_PATH + '/assets/pin_yellow.png',
+                size: new naver.maps.Size(50, 52),
+                origin: new naver.maps.Point(0, 0),
+                anchor: new naver.maps.Point(25, 26)
+            }
+        };
+        var marker = new naver.maps.Marker(markerOptions);
+        // 클릭 이벤트 추가
+        naver.maps.Event.addListener(marker, 'click', function() {
+            openModal(info);        
+        });
+        naver.maps.Event.addListener(map, 'click', function() {
+            closeModal(); // 지도 클릭 시 모달 닫기
+        });
+    });
+
+    //rlxk 마커
+    etc_markerInfos.forEach(function(info) {
+        var markerOptions = {
+            position: info.etc_position,
+            map: map,
+            icon: {
+                url: HOME_PATH + '/assets/pin.png',
                 size: new naver.maps.Size(50, 52),
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
