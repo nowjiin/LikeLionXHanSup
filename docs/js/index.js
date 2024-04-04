@@ -164,13 +164,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var polyline = new naver.maps.Polyline({
         map: map,
         path: [
-            new naver.maps.LatLng(37.614883, 127.011667), //신한은행(우체국)
-            new naver.maps.LatLng(37.612010, 127.011537),
-            new naver.maps.LatLng(37.611710, 127.011587),
-            new naver.maps.LatLng(37.609816, 127.010387),
-            new naver.maps.LatLng(37.609356, 127.007737), //
-            new naver.maps.LatLng(37.613301, 127.007002), //정릉4동 주민센터
-            new naver.maps.LatLng(37.614883, 127.011667)  //신한은행(우체국)
+            new naver.maps.LatLng(37.613853, 127.010299), //무슨 아동센터
+            new naver.maps.LatLng(37.612010, 127.011537), //GS25
+            new naver.maps.LatLng(37.611710, 127.011587), //정릉4동 성당
+            new naver.maps.LatLng(37.609961, 127.009354), //
+            //new naver.maps.LatLng(37.609816, 127.010387),
+            new naver.maps.LatLng(37.610765, 127.008496),
+            new naver.maps.LatLng(37.611839, 127.007750),
+            new naver.maps.LatLng(37.612734, 127.008789), //
+            new naver.maps.LatLng(37.613764, 127.009723), //
+            new naver.maps.LatLng(37.613853, 127.010299), //무슨 아동센터
         ]
     });
     //학교앞 상권 polyline
@@ -186,6 +189,20 @@ document.addEventListener("DOMContentLoaded", function() {
             new naver.maps.LatLng(37.610947, 127.013135), // 7번째
             new naver.maps.LatLng(37.611658, 127.012345), // 8번째
             new naver.maps.LatLng(37.612369, 127.013418)  // 연꽃 어린이집(polyline시작)
+        ]
+    });
+    //정릉시장 상권 polyline
+    var polyline = new naver.maps.Polyline({
+        map: map,
+        path: [
+            new naver.maps.LatLng(37.608133, 127.010238), // 농협은행 정릉지점
+            new naver.maps.LatLng(37.607680, 127.008988), // 브런치펍
+            new naver.maps.LatLng(37.607916, 127.008475), // 유명타운
+            new naver.maps.LatLng(37.608138, 127.007618), // 큐리어스
+            new naver.maps.LatLng(37.609408, 127.007160), // 데이롱커피
+            new naver.maps.LatLng(37.609759, 127.007836), // 북악 어린이집
+            new naver.maps.LatLng(37.609365, 127.009026), // 같이가치
+            new naver.maps.LatLng(37.608133, 127.010238), // 농협은행 정릉지점
         ]
     });
     
