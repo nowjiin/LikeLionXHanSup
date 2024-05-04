@@ -1516,7 +1516,7 @@ document.addEventListener("DOMContentLoaded", function () {
             size: new naver.maps.Size(50, 52),
             origin: new naver.maps.Point(0, 0),
             anchor: new naver.maps.Point(25, 26)
-        }
+        },
     };
     var marker = new naver.maps.Marker(markerOptions);
     //성신여대 마커
@@ -1544,7 +1544,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     var marker = new naver.maps.Marker(markerOptions);
 
-    var marker = new naver.maps.Marker(markerOptions);
     // 각 마커를 생성하고 지도에 추가합니다.
     // 서경대 앞 마커
     sku_markerInfos.forEach(function (info) {
@@ -1557,11 +1556,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
             }
+            // content: '<div style="display: inline-block; width: 70px; height: 35px; background-color:#F2F0EA; text-align:center; border:1px solid #6C483B; border-radius: 999px; padding: 1px 5px;"><div style="display: flex; align-items: center;"><img src="./assets/pin_small.png"><div style="font-weight: bold;">' + title + '</div></div></div>'
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트를 추가합니다.
         naver.maps.Event.addListener(marker, 'click', function () {
-
             openModal(info);
         });
         naver.maps.Event.addListener(map, 'click', function () {
