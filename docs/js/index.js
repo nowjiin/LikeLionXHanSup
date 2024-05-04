@@ -358,6 +358,7 @@ document.addEventListener("DOMContentLoaded", function() {
             title :'경성마라탕',
             sub_title : '서경대 상권',
             image_url : './assets/sku_markerInfos_img/kmaratang.jpg',
+            address : '서울 성북구 서경로 96 2층',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)',
             content3: '- 쿠폰10장 꿔바로우 제공',
@@ -1711,6 +1712,7 @@ function openModal(markerInfo) {
     var modalContent4 = document.getElementById('modal-content4');
     var modalContent5 = document.getElementById('modal-content5');
     var modalContent6 = document.getElementById('modal-content6');
+    var naverMapButtonContainer = document.getElementById('naverMapButton');
 
     modalTitle.innerText = markerInfo.title;
     modalsub_title.innerText = markerInfo.sub_title;
@@ -1722,7 +1724,12 @@ function openModal(markerInfo) {
     modalContent5.innerText = markerInfo.content5;
     modalContent6.innerText = markerInfo.content6;
 
-    modal.style.display = 'block';
+    var naverMapButton = document.createElement("button");
+    naverMapButton.textContent = "네이버 지도로 이동";
+    naverMapButton.onclick = openNaverMap;
+    naverMapButtonContainer.appendChild(naverMapButton);
+
+    document.getElementById('modal').style.display = 'block';   
 }
 
 // 모달을 닫는 함수
@@ -1746,3 +1753,15 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+
+  // 네이버 지도로 이동하는 함수
+function openNaverMap() {
+    // 가게 주소
+    var address = markerInfo.address;
+
+    // 네이버 앱으로 이동하는 URL
+    var naverAppUrl = "intent://map/geocode?query=" + encodeURI(address) + "#Intent;scheme=navermaps;package=com.nhn.android.nmap;end";
+
+    // 네이버 앱으로 이동 또는 웹에서 네이버 지도 열기
+    window.location.href = naverAppUrl;
+}
