@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    
-    <link href="./assets/LOGO.png" rel="icon" type="image/x-icon">
-    <title>서경대 제휴상권 | 멋사 | 총학생회</title>
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i"></script>
-    <script src="./docs/js/jquery-1.9.1.js"></script>
-    <script src="./docs/js/preload.js"></script>
-    <script src="./docs/js/index.js"></script>
 
-    <link rel="stylesheet" href="./docs/css/index.css" />
-    <link rel="stylesheet" href="./docs/css/styles.css" />
-    <link rel="stylesheet" href="./docs/css/modal.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+  <link href="./assets/LOGO.png" rel="icon" type="image/x-icon">
+  <title>서경대 제휴상권 | 멋사 | 총학생회</title>
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=x114wiu09i"></script>
+  <script src="./docs/js/jquery-1.9.1.js"></script>
+  <script src="./docs/js/preload.js"></script>
+  <script src="./docs/js/index.js"></script>
+
+  <link rel="stylesheet" href="./docs/css/index.css" />
+  <link rel="stylesheet" href="./docs/css/styles.css" />
+  <link rel="stylesheet" href="./docs/css/modal.css" />
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2152T3V29C&submodules=geocoder"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-2152T3V29C', {
     'cookie_flags': 'max-age=7200;secure;samesite=none'
@@ -29,49 +31,62 @@
 
 <body>
   <div id="navbar" style="width: 100%; height: 20%;">
-    <div class = "title_container">
-      <div class = "title">서경제휴zip</div>
-      <div class = "colab">한숲 X 멋쟁이사자처럼</div>
+    <div class="title_container">
+      <div class="title">서경제휴zip</div>
+      <div class="colab">한숲 X 멋쟁이사자처럼</div>
     </div>
-    <div class="subtitle">
-      서경대학교 제휴상권 모아보기
-    </div>
+    <a href="">
+      <div class="subtitle-container">
+        <div class="subtitle-title">
+          <div class="subtitle-text">
+            서경대학교 X 총학생회
+          </div>
+          <div class="subtitle-subtext">
+            제휴상권 -> 한눈에 보러가기 !
+          </div>
+        </div>
+        <div>
+          전체 보기
+        </div>
+      </div>
+    </a>
   </div>
   <div class="buttons">
     <input id="to-all" type="button" value="전체" class="control-btn" />
     <input id="to-skuniv" type="button" value="서경대 앞" class="control-btn" />
     <input id="to-jeongneungmarket" type="button" value="보국문역(정릉골)" class="control-btn" />
     <input id="to-jeongneung" type="button" value="정릉시장" class="control-btn" />
-    <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />     
+    <input id="to-sunshinuniv" type="button" value="성신여대" class="control-btn" />
     <input id="to-etc" type="button" value="기타" class="control-btn" />
   </div>
   <div id="map" style="width:100%;height:80vh; margin: 0px;"></div>
   <div>
-    제작자 : 
+    제작자 :
   </div>
   <!-- 모달과 모달 배경 -->
-  <div id ="modal-overlay"></div>
+  <div id="modal-overlay"></div>
   <div id="modal" class="modal">
     <div class="modal-content">
       <!-- 닫힘 버튼 -->
-      <span class="close" onclick="closeModal()">&times;</span> 
+      <span class="close" onclick="closeModal()">&times;</span>
       <h2 id="modal-title">Modal Title</h3>
-      <div id = "sub-title">sub-title</div>
-      <div id="image_container">
-        <img id="image"alt="이미징">
-      </div>
-      <div id="content-container">
-        <div id="modal-content1">Modal Content</div>
+        <div id="sub-title">sub-title</div>
+        <div id="image_container">
+          <img id="image" alt="이미징">
+        </div>
+        <div id="content-container">
+          <div id="modal-content1">Modal Content</div>
 
-        <div id="modal-content2">Modal Content</div>
-        <div id="modal-content3">Modal Content</div>
-        <div id="modal-content4">Modal Content</div>
-        <div id="modal-content5">Modal Content</div>
-        <div id="modal-content6">Modal Content</div>
-        <div id="naverMapButton"></div>
+          <div id="modal-content2">Modal Content</div>
+          <div id="modal-content3">Modal Content</div>
+          <div id="modal-content4">Modal Content</div>
+          <div id="modal-content5">Modal Content</div>
+          <div id="modal-content6">Modal Content</div>
+          <div id="naverMapButton"></div>
 
-      </div> 
-    </div> 
+        </div>
+    </div>
   </div>
 </body>
+
 </html>

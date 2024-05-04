@@ -6,13 +6,18 @@
   margin-bottom: 10px;
   font-family: yg-jalnan;
   background-image: url("../../assets/title_bg_green.png");
-  background-size: contain; /* 이미지를 컨테이너에 맞추기 위해 설정 */
-  background-repeat: no-repeat; /* 이미지 반복 없음 */
-  background-position: right center; /* 이미지를 오른쪽 중앙에 배치 */
+  background-size: contain;
+  /* 이미지를 컨테이너에 맞추기 위해 설정 */
+  background-repeat: no-repeat;
+  /* 이미지 반복 없음 */
+  background-position: right center;
+  /* 이미지를 오른쪽 중앙에 배치 */
 }
+
 .title_container {
   display: flex;
 }
+
 .colab {
   display: flex;
   align-items: end;
@@ -23,6 +28,7 @@
   font-family: Pretendard;
   padding: 3px;
 }
+
 .title {
   margin-top: 10px;
   margin-left: 20px;
@@ -34,61 +40,98 @@
   display: flex;
   height: 75%;
 }
-.subtitle {
+
+.subtitle-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #fc9c37, #cf2c05);
-  color: white;
-  font-size: 12px;
-  height: 35%;
-  width: 100%;
+
+  background: linear-gradient(to right, #EDDA34, #6BC924);
+
   font-family: Pretendard;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: 12px;
+
+  height: 35%;
+
+  padding: 8px 15px 8px 15px;
 }
+
+.subtitle-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subtitle-subtext {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .buttons {
-  display: flex; /* 요소들을 플렉스 박스로 배치합니다 */
-  flex-wrap: nowrap; /* 요소들이 한 줄에 나타나도록 설정합니다 */
-  overflow-x: auto; /* 가로 스크롤이 나타나도록 설정합니다 */
-  padding-bottom: 10px; /* 아래쪽 여백을 추가하여 스크롤이 가려지지 않도록 합니다 */
-  max-width: 100%; /* 최대 너비를 설정하여 넘치는 경우 스크롤이 나타나도록 합니다 */
+  display: flex;
+  /* 요소들을 플렉스 박스로 배치합니다 */
+  flex-wrap: nowrap;
+  /* 요소들이 한 줄에 나타나도록 설정합니다 */
+  overflow-x: auto;
+  /* 가로 스크롤이 나타나도록 설정합니다 */
+  padding-bottom: 10px;
+  /* 아래쪽 여백을 추가하여 스크롤이 가려지지 않도록 합니다 */
+  max-width: 100%;
+  /* 최대 너비를 설정하여 넘치는 경우 스크롤이 나타나도록 합니다 */
 }
+
 /* 스크롤 바 */
 .buttons::-webkit-scrollbar {
-  height: 4px; /* 스크롤 바의 너비를 설정합니다 */
+  height: 4px;
+  /* 스크롤 바의 너비를 설정합니다 */
 }
 
 /* 스크롤 바의 track (슬라이더를 따라 이동하는 트랙) */
 .buttons::-webkit-scrollbar-track {
-  background-color: transparent; /* 트랙의 배경색을 투명하게 설정합니다 */
+  background-color: transparent;
+  /* 트랙의 배경색을 투명하게 설정합니다 */
 }
 
 /* 스크롤 바의 thumb (슬라이더) */
 .buttons::-webkit-scrollbar-thumb {
-  background-color: #888; /* 슬라이더의 배경색을 설정합니다 */
-  border-radius: 5px; /* 슬라이더의 모서리를 둥글게 만듭니다 */
+  background-color: #888;
+  /* 슬라이더의 배경색을 설정합니다 */
+  border-radius: 5px;
+  /* 슬라이더의 모서리를 둥글게 만듭니다 */
 }
+
 .control-btn {
-  padding: 10px 20px; /* 버튼의 내부 여백을 설정합니다 */
+  padding: 10px 20px;
+  /* 버튼의 내부 여백을 설정합니다 */
   border-radius: 100px;
-  font-size: 16px; /* 버튼의 글꼴 크기를 설정합니다 */
-  border: 1px solid #e8e9ed; /* 버튼의 테두리 스타일을 설정합니다 */
-  background-color: #ffffff; /* 버튼의 배경색을 설정합니다 */
-  color: #5c5d61; /* 버튼의 글꼴 색상을 설정합니다 */
-  cursor: pointer; /* 마우스 커서를 손가락 형태로 설정합니다 */
-  margin-right: 5px; /* 버튼 간의 오른쪽 여백을 설정합니다 */
-  font-family: "Pretendard-Regular", sans-serif; /* 폰트를 버튼 내부 텍스트에도 적용합니다 */
+  font-size: 16px;
+  /* 버튼의 글꼴 크기를 설정합니다 */
+  border: 1px solid #e8e9ed;
+  /* 버튼의 테두리 스타일을 설정합니다 */
+  background-color: #ffffff;
+  /* 버튼의 배경색을 설정합니다 */
+  color: #5c5d61;
+  /* 버튼의 글꼴 색상을 설정합니다 */
+  cursor: pointer;
+  /* 마우스 커서를 손가락 형태로 설정합니다 */
+  margin-right: 5px;
+  /* 버튼 간의 오른쪽 여백을 설정합니다 */
+  font-family: "Pretendard-Regular", sans-serif;
+  /* 폰트를 버튼 내부 텍스트에도 적용합니다 */
 }
 
 .control-btn:hover {
-  background-color: #ff4d26; /* 마우스를 올렸을 때의 버튼 배경색을 설정합니다 */
-  border-color: transparent; /* 마우스를 올렸을 때의 테두리 색상을 설정합니다 */
+  background-color: #ff4d26;
+  /* 마우스를 올렸을 때의 버튼 배경색을 설정합니다 */
+  border-color: transparent;
+  /* 마우스를 올렸을 때의 테두리 색상을 설정합니다 */
   color: #ffffff;
 }
 
 .control-btn:active {
-  background-color: #ff4d26; /* 버튼이 클릭되었을 때의 배경색을 설정합니다 */
-  border-color: transparent; /* 버튼이 클릭되었을 때의 테두리 색상을 설정합니다 */
-  color: #ffffff; /* 버튼이 클릭되었을 때의 텍스트 색상을 설정합니다 */
+  background-color: #ff4d26;
+  /* 버튼이 클릭되었을 때의 배경색을 설정합니다 */
+  border-color: transparent;
+  /* 버튼이 클릭되었을 때의 테두리 색상을 설정합니다 */
+  color: #ffffff;
+  /* 버튼이 클릭되었을 때의 텍스트 색상을 설정합니다 */
 }

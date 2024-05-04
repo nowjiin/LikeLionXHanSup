@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var map = new naver.maps.Map('map', {
         center: new naver.maps.LatLng(37.598550, 127.015065),
         zoom: 14
     });
 
-      //var로 식당별 위,경도 설정
-    var 
+    //var로 식당별 위,경도 설정
+    var
         all = new naver.maps.LatLng(37.598550, 127.015065),
         skuniv = new naver.maps.LatLng(37.611087, 127.014065),
         jeongneungmarket = new naver.maps.LatLng(37.612378, 127.009394),
@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
         etc = new naver.maps.LatLng(37.609510, 127.009012),
         // 여기 부터 음식점
         // 학교 앞 상권
-        kmaratang = new naver.maps.LatLng(37.6115258,127.0136753),
-        mkpocha = new naver.maps.LatLng(37.6105983,127.01427),
-        tongtongpig = new naver.maps.LatLng(37.6104824 ,127.0143755),
-        hola = new naver.maps.LatLng(37.6104563 ,127.0151146),
-        wawapocha = new naver.maps.LatLng(37.6117386 ,127.0131451),
+        kmaratang = new naver.maps.LatLng(37.6115258, 127.0136753),
+        mkpocha = new naver.maps.LatLng(37.6105983, 127.01427),
+        tongtongpig = new naver.maps.LatLng(37.6104824, 127.0143755),
+        hola = new naver.maps.LatLng(37.6104563, 127.0151146),
+        wawapocha = new naver.maps.LatLng(37.6117386, 127.0131451),
         mygreek = new naver.maps.LatLng(37.610395, 127.014684),
         grandmadarak = new naver.maps.LatLng(37.610447, 127.014368),
         piglove = new naver.maps.LatLng(37.6103857, 127.014516),
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ebari = new naver.maps.LatLng(37.612023, 127.013426),
         jokbal = new naver.maps.LatLng(37.610355, 127.015119),
         // 정릉골 상권
-        donbuza = new naver.maps.LatLng(37.610419,127.009644),
+        donbuza = new naver.maps.LatLng(37.610419, 127.009644),
         jueunson = new naver.maps.LatLng(37.613675, 127.009906),
         rapleraple = new naver.maps.LatLng(37.613652, 127.009983),
         yangsanbak = new naver.maps.LatLng(37.6136407, 127.0100206),
@@ -113,47 +113,47 @@ document.addEventListener("DOMContentLoaded", function() {
         //기타
         dongkyeonggudong = new naver.maps.LatLng(37.60957, 127.0196195),
         onensijang = new naver.maps.LatLng(37.6386984, 127.0253296);
-        //버튼 클릭 이벤트 처리
-        $("#to-all").css({
-            backgroundColor: '#ff4d26',
-            borderColor: 'transparent',
-            color: '#ffffff'
-        });
-        $("#to-all").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(14, true);
-            map.panTo(all);
-        });
-        $("#to-skuniv").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(17, true);
-            map.panTo(skuniv);
-        });
-        $("#to-etc").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(17, true);
-            map.panTo(etc);
-        });
-        $("#to-jeongneungmarket").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(17, true);
-            map.panTo(jeongneungmarket);
-        });
-        $("#to-jeongneung").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(17, true);
-            map.panTo(jeongneung);
-        });
-        $("#to-sunshinuniv").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(16, true);
-            map.panTo(sunshinuniv);
-        });
-        $("#reset").on("click", function(e) {
-            e.preventDefault();
-            map.setZoom(7, true);
-            map.setCenter(37.60700258639104, 126.95625001298839);
-        });
+    //버튼 클릭 이벤트 처리
+    $("#to-all").css({
+        backgroundColor: '#ff4d26',
+        borderColor: 'transparent',
+        color: '#ffffff'
+    });
+    $("#to-all").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(14, true);
+        map.panTo(all);
+    });
+    $("#to-skuniv").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(17, true);
+        map.panTo(skuniv);
+    });
+    $("#to-etc").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(17, true);
+        map.panTo(etc);
+    });
+    $("#to-jeongneungmarket").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(17, true);
+        map.panTo(jeongneungmarket);
+    });
+    $("#to-jeongneung").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(17, true);
+        map.panTo(jeongneung);
+    });
+    $("#to-sunshinuniv").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(16, true);
+        map.panTo(sunshinuniv);
+    });
+    $("#reset").on("click", function (e) {
+        e.preventDefault();
+        map.setZoom(7, true);
+        map.setCenter(37.60700258639104, 126.95625001298839);
+    });
     //성신여대 polyline
     var polyline = new naver.maps.Polyline({
         map: map,
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
             new naver.maps.LatLng(37.608133, 127.010238), // 농협은행 정릉지점
         ]
     });
-    
+
     //마커 marker
     var HOME_PATH = window.HOME_PATH || '.';
     var position = [
@@ -331,8 +331,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // 각 마커에 대한 정보를 정의합니다.
     var sku_marker = [
         {
-        position: skuniv,
-        content: '<h3>서경대학교</h3>\
+            position: skuniv,
+            content: '<h3>서경대학교</h3>\
             <div>서경대 정보</div>'
         }
     ];
@@ -345,1165 +345,1165 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
     var etc_marker = [
         {
-        position: etc,
-        content: '<h3>길음역</h3>\
+            position: etc,
+            content: '<h3>길음역</h3>\
                 <div>길음역 정보</div>'
         }
     ];
-    
+
     //핀 정보 설정
     var sku_markerInfos = [
         {//
             sku_position: kmaratang,
-            title :'경성마라탕',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/kmaratang.jpg',
-            address : '서울 성북구 서경로 96 2층',
+            title: '경성마라탕',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/kmaratang.jpg',
+            address: '서울 성북구 서경로 96 2층',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)',
             content3: '- 쿠폰10장 꿔바로우 제공',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''            
+            content6: ''
         },
         {//
             sku_position: mkpocha,
-            title :'민규형 포차',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/mkpocha.jpg',
+            title: '민규형 포차',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/mkpocha.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 안주류 2만원 이상 결제시 황도 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sku_position: tongtongpig,
-            title :'통통 돼지 ',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/tongtongpig.jpg',
+            title: '통통 돼지 ',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/tongtongpig.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 고기 3+1 제공(기간X)',
             content3: '- 현금 결제시 5% 할인',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sku_position: hola,
-            title :'올라',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/hola.jpg',
+            title: '올라',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/hola.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
-            content3: '- 생맥주 3500원, 병소주 4000원', 
+            content3: '- 생맥주 3500원, 병소주 4000원',
             content4: '- 10만원 이상 주문시 서비스 제공',
-            content5: '',   
-            content6: ''   
+            content5: '',
+            content6: ''
 
         },
         {//
             sku_position: wawapocha,
-            title :'와와 닭발 & 포차',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/wawapocha.jpg',
+            title: '와와 닭발 & 포차',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/wawapocha.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 4만원 이상 주문시 간단한 안주 제공',
-            content3: '- 요청시 소주 라벨링 작업(좋은데이)', 
-            content4: '- 15명 이상 현수막 제작', 
+            content3: '- 요청시 소주 라벨링 작업(좋은데이)',
+            content4: '- 15명 이상 현수막 제작',
             content5: '- 컨디션 스틱 한병당 1개',
             content6: '- 현금결제시 3% 자체 적립',
 
         },
         {//
             sku_position: mygreek,
-            title :'마이그릭',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/mygreek.jpg',
+            title: '마이그릭',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/mygreek.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 10% 할인(단, 할인 품목 제외)',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sku_position: grandmadarak,
-            title :'할머니 다락방',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/grandmadarak.jpg',
+            title: '할머니 다락방',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/grandmadarak.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 1인 1음료 주문시 디저트 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sku_position: piglove,
-            title :'퇘사랑',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/piglove.jpg',
+            title: '퇘사랑',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/piglove.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sku_position: songgangru,
-            title :'송강루',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/songgangru.jpg',
+            title: '송강루',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/songgangru.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 매장 직접 전화 주문시 세트메뉴 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
-        },{//
+            content6: ''
+        }, {//
             sku_position: skpocha,
-            title :'서경포차',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/skpocha.jpg',
+            title: '서경포차',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/skpocha.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sku_position: ebari,
-            title :'이 바리 꼴로리',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/ebari.jpg',
+            title: '이 바리 꼴로리',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/ebari.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 1만원 이상 현금 및 계좌이체시 5% 할인(최대 3000원)',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sku_position: jokbal,
-            title :'가장 맛있는 족발',
-            sub_title : '서경대 상권',
-            image_url : './assets/sku_markerInfos_img/jokbal.jpg',
+            title: '가장 맛있는 족발',
+            sub_title: '서경대 상권',
+            image_url: './assets/sku_markerInfos_img/jokbal.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체 시 5% 할인',
             content3: '- 학생증 인증 시 테이블 당 음료, 주류, 주먹밥 택 1 제공',
-            content4: '- 포장시 음료 서비스',            
+            content4: '- 포장시 음료 서비스',
             content5: '- 전화로 주문 시 현금, 계좌 배민 가격으로 진행, 리뷰 서비스 동일',
-            content6: ''  
+            content6: ''
         },
     ];
     var jeongneung_markerInfos = [
         {//
             jeongneung_position: donbuza,
-            title:'돈부자',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/donbuza.jpg',
+            title: '돈부자',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/donbuza.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: jueunson,
-            title:'주은이네손맛',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/jueunson.jpg',
+            title: '주은이네손맛',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/jueunson.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: rapleraple,
-            title:'라플라플',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/rapleraple.jpg',
+            title: '라플라플',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/rapleraple.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: yangsanbak,
-            title:'양산박',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/yangsanbak.jpg',
+            title: '양산박',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/yangsanbak.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: taepeungyang,
-            title:'태평양수산',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/taepeungyang.jpg',
+            title: '태평양수산',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/taepeungyang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: zzangsi,
-            title:'짱시 스낵',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/zzangsi.jpg',
+            title: '짱시 스낵',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/zzangsi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: sumakarong,
-            title:'수마카롱',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/sumakarong.jpg',
+            title: '수마카롱',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/sumakarong.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: kaimo,
-            title:'카이모',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/kaimo.jpg',
+            title: '카이모',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/kaimo.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: esulro,
-            title:'이슬로',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/esulro.jpg',
+            title: '이슬로',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/esulro.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: jini,
-            title:'지니',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/jini.jpg',
+            title: '지니',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/jini.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: miso,
-            title:'미소농수산물',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/miso.jpg',
+            title: '미소농수산물',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/miso.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: mantasushi,
-            title:'만타스시',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/mantasushi.jpg',
+            title: '만타스시',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/mantasushi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: thedual,
-            title:'더듀얼로스터즈',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/thedual.jpg',
+            title: '더듀얼로스터즈',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/thedual.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: groompasta,
-            title:'구름파스타',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/groompasta.jpg',
+            title: '구름파스타',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/groompasta.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: ttgaejil,
-            title:'뜨개질방',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/ttgaejil.jpg',
+            title: '뜨개질방',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/ttgaejil.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: jeongneunggalbi,
-            title:'정릉갈비',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/jeongneunggalbi.jpg',
+            title: '정릉갈비',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/jeongneunggalbi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: bok2oldchiken,
-            title:'복이 옛날통닭',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/bok2oldchiken.jpg',
+            title: '복이 옛날통닭',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/bok2oldchiken.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: humanchikenggichi,
-            title:'인류닭꼬치',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/humanchikenggichi.jpg',
+            title: '인류닭꼬치',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/humanchikenggichi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: onebilliard,
-            title:'원당구장',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/onebilliard.jpg',
+            title: '원당구장',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/onebilliard.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: goldcodari,
-            title:'황금코다리 정릉점',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/goldcodari.jpg',
+            title: '황금코다리 정릉점',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/goldcodari.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: sul2rang,
-            title:'술이랑',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/sul2rang.jpg',
+            title: '술이랑',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/sul2rang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: pizzaschool,
-            title:'피자스쿨 정릉점',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/pizzaschool.jpg',
+            title: '피자스쿨 정릉점',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/pizzaschool.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: happy0in,
-            title:'해피공인중개사무소',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/happy0in.jpg',
+            title: '해피공인중개사무소',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/happy0in.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 복비 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 복비 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: miramcos,
-            title:'미람코스메틱',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/miramcos.jpg',
+            title: '미람코스메틱',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/miramcos.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: hopepocha,
-            title:'보국문 호프포차',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/hopepocha.jpg',
+            title: '보국문 호프포차',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/hopepocha.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: sunnong,
-            title:'태양농산물',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/sunnong.jpg',
+            title: '태양농산물',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/sunnong.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: janggogi,
-            title:'장고기',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/janggogi.jpg',
+            title: '장고기',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/janggogi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             jeongneung_position: rarakimbab,
-            title:'라라김밥',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/jeongneung_markerInfos_img/rarakimbab.jpg',
+            title: '라라김밥',
+            sub_title: '정릉골 상권',
+            image_url: './assets/jeongneung_markerInfos_img/rarakimbab.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
 
     ];
     var sswu_markerInfos = [
         {//
             sswu_position: iasi,
-            title :'이자카야 이야시',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/iasi.jpg',
+            title: '이자카야 이야시',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/iasi.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 테이블당 아이스 홍시 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: witchkitchen,
-            title :'마녀주방',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/witchkitchen.jpg',
+            title: '마녀주방',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/witchkitchen.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 학생 인증시 탄산음료 or 에이드 1잔 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sswu_position: kangkumok,
-            title :'강금옥쭈꾸미',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/kangkumok.jpg',
+            title: '강금옥쭈꾸미',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/kangkumok.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 2인분 주문시 볶음밥 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: kimtaewan,
-            title :'김태완스시 성신여대점',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/kimtaewan.jpg',
+            title: '김태완스시 성신여대점',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/kimtaewan.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 랜덤초밥 제공 or 튀김류 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: choidaepae,
-            title :'최대패',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/choidaepae.jpg',
+            title: '최대패',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/choidaepae.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 테이블당 소주 한 병 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: vistro,
-            title :'비스트로홈',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/vistro.jpg',
+            title: '비스트로홈',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/vistro.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 테이블당 디저트 빙수 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sswu_position: lalanoodle,
-            title :'라라면가 ',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/lalanoodle.jpg',
+            title: '라라면가 ',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/lalanoodle.jpg',
             content1: '🔥제휴 내용🔥',
-            content2: '- 매장 방문시 2인 기준 음료수 제공, 공기밥 무료 제공/포장',    
+            content2: '- 매장 방문시 2인 기준 음료수 제공, 공기밥 무료 제공/포장',
             content3: '- 배달(배민한집배달, 배민, 쿠팡이츠)시 요청사항에 원하는 음료 작성시 제공',
-            content4: '', 
-            content5: '', 
-            content6: '' 
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             sswu_position: sukhan,
-            title :'석관 인생곱창',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/sukhan.jpg',
+            title: '석관 인생곱창',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/sukhan.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 서경대생 2인 이상 포함 방문 후 5만원 이상 주문시 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: miu,
-            title :'미우',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/miu.jpg',
+            title: '미우',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/miu.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 테이블당 소주 한 병 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sswu_position: choi,
-            title :'쵸이양식',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/choi.jpg',
+            title: '쵸이양식',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/choi.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 음식 주문 후 인스타 태그 시 음료 제공',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: rainbowbeer,
-            title :'무지개맥주',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/rainbowbeer.jpg',
+            title: '무지개맥주',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/rainbowbeer.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 서경대생 2인 이상 포함 방문 후 5만원 이상 주문시 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: heroboardgame,
-            title :'히어로보드게임카페',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/hero.jpg',
+            title: '히어로보드게임카페',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/hero.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 최종 결제시 20% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''   
+            content6: ''
         },
         {//
             sswu_position: ilu,
-            title :'ILU:일루',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/ilu.jpg',
+            title: 'ILU:일루',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/ilu.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
         {//
             sswu_position: sabukgil,
-            title :'새벽길 빨간오뎅',
-            sub_title : '성신여대 상권',
-            image_url : './assets/sswu_markerInfos_img/sabukgil.jpg',
+            title: '새벽길 빨간오뎅',
+            sub_title: '성신여대 상권',
+            image_url: './assets/sswu_markerInfos_img/sabukgil.jpg',
             content1: '🔥제휴 내용🔥',
             content2: '- 3만원 결제 시 10% 할인',
             content3: '',
-            content4: '',            
+            content4: '',
             content5: '',
-            content6: ''  
+            content6: ''
         },
     ];
     //정릉 시장 정보
     var market_markerInfos = [
         {//
             market_position: badasanghup,
-            title:'바다생협',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/badasanghup.jpg',
+            title: '바다생협',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/badasanghup.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: hanbangjok,
-            title:'한방족발',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/hanbangjok.jpg',
+            title: '한방족발',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/hanbangjok.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: gapeung,
-            title:'가평상회',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/gapeung.jpg',
+            title: '가평상회',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/gapeung.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: sigang,
-            title:'시장순대',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/sigang.jpg',
+            title: '시장순대',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/sigang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: bongha,
-            title:'봉화떡집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/bongha.jpg',
+            title: '봉화떡집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/bongha.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: unninae,
-            title:'언니네 김밥',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/unninae.jpg',
+            title: '언니네 김밥',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/unninae.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: jangtu,
-            title:'장터축산물',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/jangtu.jpg',
+            title: '장터축산물',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/jangtu.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: slowcafe,
-            title:'슬로우카페 달팽이',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/slowcafe.jpg',
+            title: '슬로우카페 달팽이',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/slowcafe.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: samdaegogi,
-            title:'삼대 고깃집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/samdaegogi.jpg',
+            title: '삼대 고깃집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/samdaegogi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: mukguri,
-            title:'먹거리 곱창',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/mukguri.jpg',
+            title: '먹거리 곱창',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/mukguri.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: sun2kimbab,
-            title:'순이김밥',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/sun2kimbab.jpg',
+            title: '순이김밥',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/sun2kimbab.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: dongsungkamja,
-            title:'동숭감자탕',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/dongsungkamja.jpg',
+            title: '동숭감자탕',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/dongsungkamja.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: ggabaegi,
-            title:'꽈배기 스토리',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/ggabaegi.jpg',
+            title: '꽈배기 스토리',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/ggabaegi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: bakgrandma,
-            title:'백할매 고깃집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/bakgrandma.jpg',
+            title: '백할매 고깃집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/bakgrandma.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: pandatanghuru,
-            title:'판다 탕후루',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/pandatanghuru.jpg',
+            title: '판다 탕후루',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/pandatanghuru.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: jongro,
-            title:'종로떡집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/jongro.jpg',
+            title: '종로떡집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/jongro.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: together,
-            title:'같이가치 정릉덮밥',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/together.jpg',
+            title: '같이가치 정릉덮밥',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/together.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: oursaetak,
-            title:'우리동네세탁소',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/oursaetak.jpg',
+            title: '우리동네세탁소',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/oursaetak.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: gogigumtu,
-            title:'무한리필 고기굼터',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/gogigumtu.jpg',
+            title: '무한리필 고기굼터',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/gogigumtu.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: gohang,
-            title:'고향반찬',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/gohang.jpg',
+            title: '고향반찬',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/gohang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: mansingyang,
-            title:'만싱양꼬치',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/mansingyang.jpg',
+            title: '만싱양꼬치',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/mansingyang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: dorimanfish,
-            title:'두리만횟집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/dorimanfish.jpg',
+            title: '두리만횟집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/dorimanfish.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: yogerpresso,
-            title:'요거프레소',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/yogerpresso.jpg',
+            title: '요거프레소',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/yogerpresso.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: illmezip,
-            title:'일미집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/illmezip.jpg',
+            title: '일미집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/illmezip.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: ourgopchang,
-            title:'우리맛 곱창',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/ourgopchang.jpg',
+            title: '우리맛 곱창',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/ourgopchang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: lifesoolzip,
-            title:'인생술집',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/lifesoolzip.jpg',
+            title: '인생술집',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/lifesoolzip.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: dauga,
-            title:'다우가(자사부왕만두)',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/dauga.jpg',
+            title: '다우가(자사부왕만두)',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/dauga.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: deliciusbbq,
-            title:'아주맛있는빠베큐',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/deliciusbbq.jpg',
+            title: '아주맛있는빠베큐',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/deliciusbbq.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: woojonghaejang,
-            title:'우종해장국',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/woojonghaejang.jpg',
+            title: '우종해장국',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/woojonghaejang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: bonganuroongzi,
-            title:'본가누릉지 백숙',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/bonganuroongzi.jpg',
+            title: '본가누릉지 백숙',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/bonganuroongzi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: eunhaekamja,
-            title:'은혜감자탕',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/eunhaekamja.jpg',
+            title: '은혜감자탕',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/eunhaekamja.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: bluesaetak,
-            title:'블루세탁',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/bluesaetak.jpg',
+            title: '블루세탁',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/bluesaetak.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: seoulbulgogi,
-            title:'서울불고기',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/seoulbulgogi.jpg',
+            title: '서울불고기',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/seoulbulgogi.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: theonechicken,
-            title:'더원치킨',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/theonechicken.jpg',
+            title: '더원치킨',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/theonechicken.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: gil2maratang,
-            title:'길이마라탕',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/gil2maratang.jpg',
+            title: '길이마라탕',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/gil2maratang.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: chosunbutumak,
-            title:'조선부뚜막',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/chosunbutumak.jpg',
+            title: '조선부뚜막',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/chosunbutumak.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: jeongneungzzuggume,
-            title:'정릉쭈꾸미',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/jeongneungzzuggume.jpg',
+            title: '정릉쭈꾸미',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/jeongneungzzuggume.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: cookieforest,
-            title:'쿠키포레스트',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/cookieforest.jpg',
+            title: '쿠키포레스트',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/cookieforest.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             market_position: gogosanghae,
-            title:'고고상회',
-            sub_title:'정릉골 상권',
-            image_url:'./assets/market_markerInfos_img/gogosanghae.jpg',
+            title: '고고상회',
+            sub_title: '정릉골 상권',
+            image_url: './assets/market_markerInfos_img/gogosanghae.jpg',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
     ]
     var etc_markerInfos = [
         {//
             etc_position: dongkyeonggudong,
-            title:'이름',
-            sub_title:'기타 제휴 상권',
-            image_url:'./assets/market_markerInfos_img/',
+            title: '이름',
+            sub_title: '기타 제휴 상권',
+            image_url: './assets/market_markerInfos_img/',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
         {//
             etc_position: onensijang,
-            title:'이름',
-            sub_title:'기타 제휴 상권',
-            image_url:'./assets/market_markerInfos_img/',
+            title: '이름',
+            sub_title: '기타 제휴 상권',
+            image_url: './assets/market_markerInfos_img/',
             content1: '🔥제휴 내용🔥',
-            content2:'- 3만원 결제 시 10% 할인',
-            content3:'',
-            content4:'',
-            content5:'',
-            content6:''
+            content2: '- 3만원 결제 시 10% 할인',
+            content3: '',
+            content4: '',
+            content5: '',
+            content6: ''
         },
     ]
     //지역별 마커
@@ -1543,16 +1543,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
     var marker = new naver.maps.Marker(markerOptions);
-    
+
     var marker = new naver.maps.Marker(markerOptions);
     // 각 마커를 생성하고 지도에 추가합니다.
     // 서경대 앞 마커
-    sku_markerInfos.forEach(function(info) {
+    sku_markerInfos.forEach(function (info) {
         var markerOptions = {
             position: info.sku_position,
             map: map,
             icon: {
-                url: HOME_PATH + '/assets/pin_green.png',
+                url: HOME_PATH + '/assets/pin_small.png',
                 size: new naver.maps.Size(50, 52),
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
@@ -1560,16 +1560,16 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트를 추가합니다.
-        naver.maps.Event.addListener(marker, 'click', function() {
-            
-            openModal(info);        
+        naver.maps.Event.addListener(marker, 'click', function () {
+
+            openModal(info);
         });
-        naver.maps.Event.addListener(map, 'click', function() {
+        naver.maps.Event.addListener(map, 'click', function () {
             closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
     // 정릉골 마커 jeongneung_position
-    jeongneung_markerInfos.forEach(function(info) {
+    jeongneung_markerInfos.forEach(function (info) {
         var markerOptions = {
             position: info.jeongneung_position,
             map: map,
@@ -1582,16 +1582,16 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트를 추가합니다.
-        naver.maps.Event.addListener(marker, 'click', function() {
-            openModal(info);        
+        naver.maps.Event.addListener(marker, 'click', function () {
+            openModal(info);
         });
-        naver.maps.Event.addListener(map, 'click', function() {
+        naver.maps.Event.addListener(map, 'click', function () {
             closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
 
     //성신여대역 마커
-    sswu_markerInfos.forEach(function(info) {
+    sswu_markerInfos.forEach(function (info) {
         var markerOptions = {
             position: info.sswu_position,
             map: map,
@@ -1604,21 +1604,21 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트 추가
-        naver.maps.Event.addListener(marker, 'click', function() {
-            openModal(info);        
+        naver.maps.Event.addListener(marker, 'click', function () {
+            openModal(info);
         });
-        naver.maps.Event.addListener(map, 'click', function() {
+        naver.maps.Event.addListener(map, 'click', function () {
             closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
 
     //정릉시장 마커
-    market_markerInfos.forEach(function(info) {
+    market_markerInfos.forEach(function (info) {
         var markerOptions = {
             position: info.market_position,
             map: map,
             icon: {
-                url: HOME_PATH + '/assets/pin_yellow.png',
+                url: HOME_PATH + '/assets/pin_small.png',
                 size: new naver.maps.Size(50, 52),
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
@@ -1626,21 +1626,21 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트 추가
-        naver.maps.Event.addListener(marker, 'click', function() {
-            openModal(info);        
+        naver.maps.Event.addListener(marker, 'click', function () {
+            openModal(info);
         });
-        naver.maps.Event.addListener(map, 'click', function() {
+        naver.maps.Event.addListener(map, 'click', function () {
             closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
 
     //rlxk 마커
-    etc_markerInfos.forEach(function(info) {
+    etc_markerInfos.forEach(function (info) {
         var markerOptions = {
             position: info.etc_position,
             map: map,
             icon: {
-                url: HOME_PATH + '/assets/pin.png',
+                url: HOME_PATH + '/assets/pin_small.png',
                 size: new naver.maps.Size(50, 52),
                 origin: new naver.maps.Point(0, 0),
                 anchor: new naver.maps.Point(25, 26)
@@ -1648,47 +1648,47 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         var marker = new naver.maps.Marker(markerOptions);
         // 클릭 이벤트 추가
-        naver.maps.Event.addListener(marker, 'click', function() {
-            openModal(info);        
+        naver.maps.Event.addListener(marker, 'click', function () {
+            openModal(info);
         });
-        naver.maps.Event.addListener(map, 'click', function() {
+        naver.maps.Event.addListener(map, 'click', function () {
             closeModal(); // 지도 클릭 시 모달 닫기
         });
     });
-    
-   // 모든 버튼 요소를 가져옴.
+
+    // 모든 버튼 요소를 가져옴.
     var buttons = document.querySelectorAll('.control-btn');
-      // 각 버튼에 대해 클릭 이벤트를 추가.
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-              // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원.
-            buttons.forEach(function(btn) {
+    // 각 버튼에 대해 클릭 이벤트를 추가.
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원.
+            buttons.forEach(function (btn) {
                 btn.style.backgroundColor = '#ffffff';
                 btn.style.borderColor = '#e8e9ed';
                 btn.style.color = '#5c5d61';
             });
             // 클릭된 버튼의 배경색을 변경.
             button.style.backgroundColor = '#ff4d26';
-              // 클릭된 버튼의 테두리를 제거.
+            // 클릭된 버튼의 테두리를 제거.
             button.style.borderColor = 'transparent';
-              // 클릭된 버튼의 글자색을 변경.
+            // 클릭된 버튼의 글자색을 변경.
             button.style.color = '#ffffff';
-              // 이후 추가적인 동작을 정의할 수 있습니다.
+            // 이후 추가적인 동작을 정의할 수 있습니다.
         });
     });
 
     //여기부터----------------------------------------------------------------------------
     var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="./my_location.png" alt="내 위치"></a>';
-    naver.maps.Event.once(map, 'init', function() {
+    naver.maps.Event.once(map, 'init', function () {
         //customControl 객체 이용하기
         var customControl = new naver.maps.CustomControl(locationBtnHtml, {
             position: naver.maps.Position.TOP_RIGHT
         });
-    
+
         customControl.setMap(map);
-    
-        naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function() {
-            navigator.geolocation.getCurrentPosition(function(position) {
+
+        naver.maps.Event.addDOMListener(customControl.getElement(), 'click', function () {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 var currentPosition = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude);
                 // 현재 위치로 맵 이동
                 map.panTo(currentPosition);
@@ -1729,7 +1729,7 @@ function openModal(markerInfo) {
     naverMapButton.onclick = openNaverMap;
     naverMapButtonContainer.appendChild(naverMapButton);
 
-    document.getElementById('modal').style.display = 'block';   
+    document.getElementById('modal').style.display = 'block';
 }
 
 // 모달을 닫는 함수
@@ -1744,17 +1744,17 @@ function closeModal() {
 document.getElementById('modal-overlay').addEventListener('click', closeModal);
 
 // 지도를 클릭했을 때 모달을 닫는 이벤트 추가
-naver.maps.Event.addListener(map, 'click', function() {
+naver.maps.Event.addListener(map, 'click', function () {
     closeModal(); // 지도 클릭 시 모달 닫기
 });
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         closeModal();
     }
 };
 
-  // 네이버 지도로 이동하는 함수
+// 네이버 지도로 이동하는 함수
 function openNaverMap() {
     // 가게 주소
     var address = markerInfo.address;
