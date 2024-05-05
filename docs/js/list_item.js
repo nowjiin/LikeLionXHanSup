@@ -1121,25 +1121,49 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     document.getElementById("to-all").addEventListener("click", function() {
         showMarkerInfos(sku_markerInfos.concat(jeongneung_markerInfos, sswu_markerInfos, market_markerInfos, etc_markerInfos));
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     document.getElementById("to-skuniv").addEventListener("click", function() {
         showMarkerInfos(sku_markerInfos);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     
     document.getElementById("to-jeongneungmarket").addEventListener("click", function() {
         showMarkerInfos(jeongneung_markerInfos);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     
     document.getElementById("to-sunshinuniv").addEventListener("click", function() {
         showMarkerInfos(sswu_markerInfos);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     
     document.getElementById("to-jeongneung").addEventListener("click", function() {
         showMarkerInfos(market_markerInfos);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     
     document.getElementById("to-etc").addEventListener("click", function() {
         showMarkerInfos(etc_markerInfos);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
     
     function showMarkerInfos(markerInfos) {
