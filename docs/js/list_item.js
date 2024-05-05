@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
             title: '경성마라탕',
             sub_title: '서경대 상권',
             image_url: './assets/sku_markerInfos_img/kmaratang.jpg',
-            address: '서울 성북구 서경로 96 2층',
             content1: '🔥제휴 내용🔥',
             content2: '- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)',
             content3: '- 쿠폰10장 꿔바로우 제공',
@@ -1069,12 +1068,31 @@ document.addEventListener("DOMContentLoaded", function() {
         modalTitle.id = 'modal-title'; 
         modalTitle.innerText = markerInfo.title; 
         modalContainer.appendChild(modalTitle); 
-    
+        // 부모 요소 생성
+        var subtitleNButtonContainer = document.createElement('div');
+        subtitleNButtonContainer.classList.add('subtitle-n-button-container');
+        modalContainer.appendChild(subtitleNButtonContainer);
+
+        // 부제목 생성 및 추가
         var subTitle = document.createElement('div'); 
         subTitle.id = 'sub-title'; 
         subTitle.innerText = markerInfo.sub_title; 
-        modalContainer.appendChild(subTitle); 
-    
+        subtitleNButtonContainer.appendChild(subTitle); 
+
+        // 네이버 지도 열기 버튼 추가
+        var naverMapButton = document.createElement('button');
+        naverMapButton.id = 'naver-map-button'; // 버튼에 ID 할당
+        naverMapButton.addEventListener('click', function() {
+            openNaverMap(markerInfo.title);
+        });
+        subtitleNButtonContainer.appendChild(naverMapButton);
+
+        // // 버튼 스타일 수정
+        // naverMapButton.style.position = 'relative'; // 부모 요소에 대한 상대 포지셔닝 사용
+        // naverMapButton.style.float = 'right'; // 오른쪽으로 이동
+        // naverMapButton.style.marginTop = '10px'; // 버튼 위쪽 여백 추가
+        // naverMapButton.style.marginRight = '10px'; // 버튼 오른쪽 여백 추가
+
         var imageContainer = document.createElement('div'); 
         var image = document.createElement('img'); 
         image.id = 'image'; 
@@ -1095,8 +1113,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
         modalContainer.appendChild(contentContainer); 
         
+
+
+    
         document.body.appendChild(modalContainer); 
     }
+    
 
     window.onload = function() {
         showMarkerInfos(sku_markerInfos.concat(jeongneung_markerInfos, sswu_markerInfos, market_markerInfos, etc_markerInfos));
@@ -1141,4 +1163,17 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.remove(); // 모달을 삭제하여 새로 열릴 수 있도록 함
         });
     }
+
+    // 네이버 지도로 이동하는 함수
+function openNaverMap(title) {
+    // 가게 이름
+    var mapaddress = title;
+
+    // 네이버 지도 검색 URL
+    var searchURL = "https://map.naver.com/v5/search/" + encodeURIComponent(mapaddress);
+
+    // 새 창에서 네이버 지도 열기
+    window.open(searchURL, '_blank');
+}
+
 });    
