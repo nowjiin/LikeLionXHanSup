@@ -1821,7 +1821,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function openModal(markerInfo) {
   var modalTitle = document.getElementById("modal-title")
-  var modalContent = document.getElementById("modal-content")
   var modalsub_title = document.getElementById("sub-title")
   var modalImage = document.getElementById("image")
   var modalContent1 = document.getElementById("modal-content1")
@@ -1830,7 +1829,7 @@ function openModal(markerInfo) {
   var modalContent4 = document.getElementById("modal-content4")
   var modalContent5 = document.getElementById("modal-content5")
   var modalContent6 = document.getElementById("modal-content6")
-  var naverMapButtonContainer = document.getElementById("naverMapButton")
+//  var naverMapButtonContainer = document.getElementById("naverMapButton")
 
   modalTitle.innerText = markerInfo.title
   modalsub_title.innerText = markerInfo.sub_title
@@ -1842,10 +1841,10 @@ function openModal(markerInfo) {
   modalContent5.innerText = markerInfo.content5
   modalContent6.innerText = markerInfo.content6
 
-  var naverMapButton = document.createElement("button")
-  naverMapButton.textContent = "네이버 지도로 이동"
-  naverMapButton.onclick = openNaverMap
-  naverMapButtonContainer.appendChild(naverMapButton)
+//  var naverMapButton = document.createElement("button")
+//  naverMapButton.textContent = "네이버 지도로 이동"
+//  naverMapButton.onclick = openNaverMap
+//  naverMapButtonContainer.appendChild(naverMapButton)
 
   document.getElementById("modal").style.display = "block"
 }
@@ -1872,14 +1871,3 @@ window.onclick = function (event) {
   }
 }
 
-// 네이버 지도로 이동하는 함수
-function openNaverMap() {
-  // 가게 주소
-  var address = markerInfo.address
-
-  // 네이버 앱으로 이동하는 URL
-  var naverAppUrl = "intent://map/geocode?query=" + encodeURI(address) + "#Intent;scheme=navermaps;package=com.nhn.android.nmap;end"
-
-  // 네이버 앱으로 이동 또는 웹에서 네이버 지도 열기
-  window.location.href = naverAppUrl
-}

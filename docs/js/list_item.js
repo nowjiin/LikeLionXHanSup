@@ -1087,11 +1087,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         subtitleNButtonContainer.appendChild(naverMapButton);
 
-        // // 버튼 스타일 수정
-        // naverMapButton.style.position = 'relative'; // 부모 요소에 대한 상대 포지셔닝 사용
-        // naverMapButton.style.float = 'right'; // 오른쪽으로 이동
-        // naverMapButton.style.marginTop = '10px'; // 버튼 위쪽 여백 추가
-        // naverMapButton.style.marginRight = '10px'; // 버튼 오른쪽 여백 추가
+
 
         var imageContainer = document.createElement('div'); 
         var image = document.createElement('img'); 
