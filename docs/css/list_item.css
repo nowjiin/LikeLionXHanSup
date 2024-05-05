@@ -104,3 +104,7 @@
   display: flex;
   justify-content: space-between;
 }
+
+#list_all{
+  z-index: 100;
+}

@@ -1060,6 +1060,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
     ]
 
+
     function openModal(markerInfo) {
         var modalContainer = document.createElement('div');
         modalContainer.classList.add('modal'); 
@@ -1068,7 +1069,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modalTitle.id = 'modal-title'; 
         modalTitle.innerText = markerInfo.title; 
         modalContainer.appendChild(modalTitle); 
-        // 부모 요소 생성
+        
         var subtitleNButtonContainer = document.createElement('div');
         subtitleNButtonContainer.classList.add('subtitle-n-button-container');
         modalContainer.appendChild(subtitleNButtonContainer);
@@ -1110,10 +1111,9 @@ document.addEventListener("DOMContentLoaded", function() {
         modalContainer.appendChild(contentContainer); 
         
 
-
-    
-        document.body.appendChild(modalContainer); 
-    }
+        var listAll = document.getElementById('list_all');
+        listAll.appendChild(modalContainer);
+        }
     
 
     window.onload = function() {
