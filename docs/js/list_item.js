@@ -1097,59 +1097,48 @@ document.addEventListener("DOMContentLoaded", function() {
         
         document.body.appendChild(modalContainer); 
     }
-for (var i = 0; i < sku_markerInfos.length; i++) {
-    openModal(sku_markerInfos[i]);
-}
-for (var i = 0; i < jeongneung_markerInfos.length; i++) {
-    openModal(jeongneung_markerInfos[i]);
-}
-for (var i = 0; i < sswu_markerInfos.length; i++) {
-    openModal(sswu_markerInfos[i]);
-}
-for (var i = 0; i < market_markerInfos.length; i++) {
-    openModal(market_markerInfos[i]);
-}
-for (var i = 0; i < etc_markerInfos.length; i++) {
-    openModal(etc_markerInfos[i]);
-}
 
-document.getElementById("to-skuniv").addEventListener("click", function() {
-    showMarkerInfos(sku_markerInfos);
-});
-
-document.getElementById("to-jeongneungmarket").addEventListener("click", function() {
-    showMarkerInfos(jeongneung_markerInfos);
-});
-
-document.getElementById("to-sunshinuniv").addEventListener("click", function() {
-    showMarkerInfos(sswu_markerInfos);
-});
-
-document.getElementById("to-jeongneung").addEventListener("click", function() {
-    showMarkerInfos(market_markerInfos);
-});
-
-document.getElementById("to-etc").addEventListener("click", function() {
-    showMarkerInfos(etc_markerInfos);
-});
-
-function showMarkerInfos(markerInfos) {
-    // 모든 모달을 닫음
-    closeAllModals();
-
-    // 선택한 배열의 모달만 열기
-    for (var i = 0; i < markerInfos.length; i++) {
-        openModal(markerInfos[i]);
-    }
-}
-
-// 모든 모달을 닫는 함수
-function closeAllModals() {
-    var modals = document.querySelectorAll('.list');
-    modals.forEach(function(modal) {
-        modal.style.display = 'none';
+    window.onload = function() {
+        showMarkerInfos(sku_markerInfos.concat(jeongneung_markerInfos, sswu_markerInfos, market_markerInfos, etc_markerInfos));
+    };
+    document.getElementById("to-all").addEventListener("click", function() {
+        showMarkerInfos(sku_markerInfos.concat(jeongneung_markerInfos, sswu_markerInfos, market_markerInfos, etc_markerInfos));
     });
-}
-
-
-});
+    document.getElementById("to-skuniv").addEventListener("click", function() {
+        showMarkerInfos(sku_markerInfos);
+    });
+    
+    document.getElementById("to-jeongneungmarket").addEventListener("click", function() {
+        showMarkerInfos(jeongneung_markerInfos);
+    });
+    
+    document.getElementById("to-sunshinuniv").addEventListener("click", function() {
+        showMarkerInfos(sswu_markerInfos);
+    });
+    
+    document.getElementById("to-jeongneung").addEventListener("click", function() {
+        showMarkerInfos(market_markerInfos);
+    });
+    
+    document.getElementById("to-etc").addEventListener("click", function() {
+        showMarkerInfos(etc_markerInfos);
+    });
+    
+    function showMarkerInfos(markerInfos) {
+        // 모든 모달을 닫음
+        closeAllModals();
+    
+        // 선택한 배열의 모달만 열기
+        for (var i = 0; i < markerInfos.length; i++) {
+            openModal(markerInfos[i]);
+        }
+    }
+    
+    // 모든 모달을 닫는 함수
+    function closeAllModals() {
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function(modal) {
+            modal.remove(); // 모달을 삭제하여 새로 열릴 수 있도록 함
+        });
+    }
+});    
