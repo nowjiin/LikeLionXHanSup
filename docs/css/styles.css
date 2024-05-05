@@ -22,7 +22,7 @@ body {
   /* 폰트를 전체 페이지에 적용합니다 */
   margin: 0px;
   width: 100%;
-  max-width: 728px;
+  max-width: 500px;
 }
 
 .btn_mylct {
@@ -35,7 +35,7 @@ body {
   left: 5px; */
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(58, 70, 88, .45);
+  border: 1px solid rgba(58, 70, 88, 0.45);
   border-radius: 2px;
   background: #fcfcfd;
   text-align: center;
@@ -43,4 +43,29 @@ body {
   justify-content: center;
   -webkit-background-clip: padding;
   background-clip: padding-box;
+}
+
+.subtitle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(to right, #edda34, #6bc924);
+
+  font-family: Pretendard;
+  font-size: 12px;
+
+  height: 35%;
+
+  padding: 8px 15px 8px 15px;
+}
+
+.subtitle-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.subtitle-subtext {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.5);
 }
