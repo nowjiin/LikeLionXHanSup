@@ -222,11 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // ...
   ]
   var sku_position = [
-    //서경대 앞 음식점 목록
-    kmaratang, //경성 마라탕
-    mkpocha, //민규형 포차
-    tongtongpig, //통통 돼지
-    hola, //올라
     wawapocha, //와와닭발
     mygreek, //마이그릭
     grandmadarak, //할머니 다락방
@@ -1723,6 +1718,15 @@ document.addEventListener("DOMContentLoaded", function () {
     })
   })
 
+  {
+    /* <div style="display: inline-block; text-align: center; border-radius: 999px; padding: 1px 5px">
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <img src="./assets/pin_small.png" />
+        <div style="font-weight: bold">TEST</div>
+      </div>
+    </div> */
+  }
+
   //정릉시장 마커
   market_markerInfos.forEach(function (info) {
     var markerOptions = {
@@ -1730,9 +1734,9 @@ document.addEventListener("DOMContentLoaded", function () {
       map: map,
       icon: {
         content:
-          '<div style="display: inline-block; background-color: rgba(255, 255, 255, 0.7); text-align:center;' +
-          'border:1px solid #000000; border-radius: 999px; padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; align-items: center;">' +
+          '<div style="display: inline-block; text-align:center;' +
+          'padding: 1px 10px 1px 5px; ">' +
+          '<div style="display: flex; flex-direction: column; align-items: center;">' +
           ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
           info.title +
           "</div>" +

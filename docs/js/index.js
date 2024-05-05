@@ -1644,9 +1644,9 @@ document.addEventListener("DOMContentLoaded", function () {
       map: map,
       icon: {
         content:
-          '<div style="display: inline-block; background-color: rgba(255, 255, 255, 0.7); text-align:center;' +
-          'border:1px solid #000000; border-radius: 999px; padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; align-items: center;">' +
+          '<div style="display: inline-block; text-align:center;' +
+          'padding: 1px 10px 1px 5px; ">' +
+          '<div style="display: flex; flex-direction: column; align-items: center;">' +
           ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
           info.title +
           "</div>" +
@@ -1672,9 +1672,9 @@ document.addEventListener("DOMContentLoaded", function () {
       map: map,
       icon: {
         content:
-          '<div style="display: inline-block; background-color: rgba(255, 255, 255, 0.7); text-align:center;' +
-          'border:1px solid #000000; border-radius: 999px; padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; align-items: center;">' +
+          '<div style="display: inline-block; text-align:center;' +
+          'padding: 1px 10px 1px 5px; ">' +
+          '<div style="display: flex; flex-direction: column; align-items: center;">' +
           ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
           info.title +
           "</div>" +
@@ -1701,9 +1701,9 @@ document.addEventListener("DOMContentLoaded", function () {
       map: map,
       icon: {
         content:
-          '<div style="display: inline-block; background-color: rgba(255, 255, 255, 0.7); text-align:center;' +
-          'border:1px solid #000000; border-radius: 999px; padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; align-items: center;">' +
+          '<div style="display: inline-block; text-align:center;' +
+          'padding: 1px 10px 1px 5px; ">' +
+          '<div style="display: flex; flex-direction: column; align-items: center;">' +
           ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
           info.title +
           "</div>" +
@@ -1730,9 +1730,9 @@ document.addEventListener("DOMContentLoaded", function () {
       map: map,
       icon: {
         content:
-          '<div style="display: inline-block; background-color: rgba(255, 255, 255, 0.7); text-align:center;' +
-          'border:1px solid #000000; border-radius: 999px; padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; align-items: center;">' +
+          '<div style="display: inline-block; text-align:center;' +
+          'padding: 1px 10px 1px 5px; ">' +
+          '<div style="display: flex; flex-direction: column; align-items: center;">' +
           ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
           info.title +
           "</div>" +
