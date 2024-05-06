@@ -1822,6 +1822,8 @@ document.addEventListener("DOMContentLoaded", function () {
 function openModal(markerInfo) {
   var modalTitle = document.getElementById("modal-title")
   var modalsub_title = document.getElementById("sub-title")
+  var subtitleNButtonContainer = document.getElementById("subtitleNButtonContainer")
+  var naverMapButton = document.getElementById('naver-map-button') 
   var modalImage = document.getElementById("image")
   var modalContent1 = document.getElementById("modal-content1")
   var modalContent2 = document.getElementById("modal-content2")
@@ -1829,7 +1831,13 @@ function openModal(markerInfo) {
   var modalContent4 = document.getElementById("modal-content4")
   var modalContent5 = document.getElementById("modal-content5")
   var modalContent6 = document.getElementById("modal-content6")
-//  var naverMapButtonContainer = document.getElementById("naverMapButton")
+
+        // 네이버 지도 열기 버튼 추가
+  naverMapButton.addEventListener('click', function() {
+        openNaverMap(markerInfo.title);
+    });
+  subtitleNButtonContainer.appendChild(naverMapButton);
+
 
   modalTitle.innerText = markerInfo.title
   modalsub_title.innerText = markerInfo.sub_title
@@ -1870,4 +1878,15 @@ window.onclick = function (event) {
     closeModal()
   }
 }
-
+    // 네이버 지도로 이동하는 함수
+    function openNaverMap(title) {
+      // 가게 이름
+      var mapaddress = title;
+  
+      // 네이버 지도 검색 URL
+      var searchURL = "https://map.naver.com/v5/search/" + encodeURIComponent(mapaddress);
+  
+      // 새 창에서 네이버 지도 열기
+      window.open(searchURL, '_blank');
+  }
+  

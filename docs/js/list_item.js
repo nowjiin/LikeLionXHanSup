@@ -1088,11 +1088,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         subtitleNButtonContainer.appendChild(naverMapButton);
 
-
-
         var imageContainer = document.createElement('div'); 
         var image = document.createElement('img'); 
         image.id = 'image'; 
+        imageContainer.id = 'imageContainer'
         image.alt = '이미지'; 
         image.src = markerInfo.image_url; 
         imageContainer.appendChild(image); 

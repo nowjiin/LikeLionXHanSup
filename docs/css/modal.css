@@ -1,7 +1,5 @@
-/* 모달 스타일 */
 .modal {
   position: fixed;
-  width: 95%; /* 너비를 화면 전체에 맞춤 */
   display: none; /* 초기에는 숨겨진 상태 */
   z-index: 1000;
   bottom: 0;
@@ -15,11 +13,11 @@
   margin: 0 auto; /* 수평 가운데 정렬 */
   transition: max-height 0.3s ease-out, transform 0.3s ease-out; /* transform 추가 */
 }
+
 #modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* 반투명한 검은 배경 */
   display: none; /* 초기에는 숨겨진 상태 */
@@ -31,6 +29,27 @@
   padding-left: 9px;
   margin: 10px;
 }
+
+#naver-map-button{
+  position: relative;
+  float: right;
+  background-image: url('../../assets/image.png');
+  background-size: cover; 
+  background-color: white;
+  width: 30px; 
+  height: 30px; 
+  border: none; 
+  cursor: pointer;
+  margin-right: 5%;
+  margin-bottom: 1%;
+}
+
+.subtitle-n-button-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+
 #sub-title{
   border: 2px solid #FF4D26;
   width: fit-content; 
@@ -45,14 +64,14 @@
 #modal-title{
   margin-bottom: 10px;
   margin-left: 5%;
-  margin-top: 0px;
+  margin-top: 2%px;
 }
 #image_container{
   text-align: center;
 }
 #image{
-  height: 30vh;
-  width: 95%;
+  height: 20vh;
+  width: 90%;
   border-radius: 5px;
   padding-bottom: 2%;
 }
@@ -74,20 +93,40 @@
 }
 #modal-content1{
   margin-bottom: 3px;
+  font-size: large;
 }
 #modal-content2{
   margin-bottom: 3px;
+  font-size: medium;
+
 }
 #modal-content3{
   margin-bottom: 3px;
+  font-size: medium;
 }
+
+#modal-content4{
+  margin-bottom: 3px;
+  font-size: medium;
+}
+
+#modal-content5{
+  margin-bottom: 3px;
+  font-size: medium;
+}
+
+#modal-content6{
+  margin-bottom: 3px;
+  font-size: medium;
+}
+
+
 /* 모달 컨테이너 스타일 */
 .modal-container {
   z-index: 2;
   position: absolute;
   left: 0px;
   bottom: 0px;
-  width: 100%;
   background-color: rgb(255, 255, 255);
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
