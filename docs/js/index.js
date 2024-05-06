@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var map = new naver.maps.Map("map", {
     center: new naver.maps.LatLng(37.59855, 127.015065),
     
-    zoom: 14,
+    zoom: 14.5,
     zoomControl: true,
     zoomControlOptions: {
         position: naver.maps.Position.TOP_LEFT,
@@ -685,7 +685,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content4: "",
       content5: "",
       content6: "",
-      address: new naver.maps.LatLng(37.6120971, 127.0095129),
+      address: new naver.maps.LatLng(37.612097, 127.0095129),
     },
     {
       jeongneung_position: groompasta,
@@ -698,7 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content4: "",
       content5: "",
       content6: "",
-      address: new naver.maps.LatLng(37.6120971, 127.0095129),
+      address: new naver.maps.LatLng(37.612200, 127.0095129),
     },
     {
       jeongneung_position: ttgaejil,
@@ -737,7 +737,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content4: "",
       content5: "",
       content6: "",
-      address: new naver.maps.LatLng(37.6120971, 127.0095129),
+      address: new naver.maps.LatLng(37.6120100, 127.0095129),
     },
     {
       jeongneung_position: humanchikenggichi,
@@ -1686,7 +1686,7 @@ htmlMarker5 = {
 // Cluster markers
 var markerClustering = new MarkerClustering({
     minClusterSize: 2,
-    maxZoom: 13,
+    maxZoom: 18,
     map: map,
     markers: markers, // markers 배열을 사용하여 클러스터링 마커 생성
     disableClickZoom: false,
