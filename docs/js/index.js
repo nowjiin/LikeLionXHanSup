@@ -1614,19 +1614,18 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
-  var markers = [],
-    data = sku_markerInfos
-      .concat(jeongneung_markerInfos)
-      .concat(sswu_markerInfos)
-      .concat(market_markerInfos)
-      .concat(etc_markerInfos);
+  var markers = [];
+  var data = sku_markerInfos
+    .concat(jeongneung_markerInfos)
+    .concat(sswu_markerInfos)
+    .concat(market_markerInfos)
+    .concat(etc_markerInfos);
 
   // 개별 마커 생성 및 markers 배열에 추가
   for (var i = 0, ii = 2000; i < ii; i++) {
     var spot = data[i];
     if (spot && spot.address) {
       var latlng = spot.address;
-
       var marker = new naver.maps.Marker({
         position: latlng,
         map: map,
@@ -1644,6 +1643,8 @@ document.addEventListener("DOMContentLoaded", function () {
           anchor: new naver.maps.Point(25, 26),
         },
       });
+      // markers 배열에 마커를 추가합니다.
+      markers.push(marker);
 
       // 모든 마커에 대해 클릭 이벤트를 추가합니다.
       markers.forEach(function (marker) {
@@ -1658,9 +1659,6 @@ document.addEventListener("DOMContentLoaded", function () {
       naver.maps.Event.addListener(map, "click", function () {
         closeModal();
       });
-
-      // markers 배열에 마커를 추가합니다.
-      markers.push(marker);
     }
   }
 
@@ -1711,7 +1709,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  //  //지역별 마커
+  //지역별 마커
   //  //서경대 마커
   //  var markerOptions = {
   //    position: skuniv,
@@ -1886,8 +1884,8 @@ document.addEventListener("DOMContentLoaded", function () {
   //      closeModal() // 지도 클릭 시 모달 닫기
   //    })
   //  })
-  //
-  //  // 모든 버튼 요소를 가져옴.
+
+  // 모든 버튼 요소를 가져옴.
   var buttons = document.querySelectorAll(".control-btn");
   // 각 버튼에 대해 클릭 이벤트를 추가.
   buttons.forEach(function (button) {
