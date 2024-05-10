@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       //
-      title: "통통 돼지 ",
+      title: "통통숯불돼지 ",
       sub_title: "서경대 상권",
       image_url: "./assets/sku_markerInfos_img/tongtongpig.jpg",
       content1: "🔥제휴 내용🔥",
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sub_title: "성신여대 상권",
       image_url: "./assets/sswu_markerInfos_img/sukhan.jpg",
       content1: "🔥제휴 내용🔥",
-      content2: "- 서경대생 2인 이상 포함 방문 후 5만원 이상 주문시 10% 할인",
+      content2: "- 테이블당 소주 or 맥주 한 병 제공",
       content3: "",
       content4: "",
       content5: "",
