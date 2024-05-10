@@ -1600,28 +1600,30 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       //
       etc_position: dongkyeonggudong,
-      title: "이름",
+      title: "동경규동",
       sub_title: "기타 제휴 상권",
-      image_url: "./assets/market_markerInfos_img/",
+      image_url: "./assets/etc_markerInfos_img/dongkyeonggudong.jpg",
       content1: "🔥제휴 내용🔥",
       content2: "- 3만원 결제 시 10% 할인",
       content3: "",
       content4: "",
       content5: "",
       content6: "",
+      address: new naver.maps.LatLng(37.60957, 127.0196195),
     },
     {
       //
       etc_position: onensijang,
       title: "시장을 여는 사람들",
       sub_title: "기타 제휴 상권",
-      image_url: "./assets/market_markerInfos_img/",
+      image_url: "./assets/etc_markerInfos_img/opensijang.jpg",
       content1: "🔥제휴 내용🔥",
       content2: "- 3만원 결제 시 10% 할인",
       content3: "",
       content4: "",
       content5: "",
       content6: "",
+      address : new naver.maps.LatLng(37.6386984, 127.0253296),
     },
     {
       //
