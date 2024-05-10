@@ -10,11 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // yeonggochi = new naver.map.LatLng(37.591072, 127.017381),
-  // 연꼬치 성신여대 : 성신여대(성신) 서경대 학생 : 현금 or 계좌이체시 10프로 할인
-  // hwahwapig = new naver.maps.LatLng(37.582507, 126.99987);
-  // 화화돈 : 혜화 (기타) 방문시 에이드 제공 매번 새로운 프로모션 진행
-
   //var로 식당별 위,경도 설정
   var all = new naver.maps.LatLng(37.59855, 127.015065),
     skuniv = new naver.maps.LatLng(37.611087, 127.014065),
@@ -80,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     heroboardgame = new naver.maps.LatLng(37.590872, 127.018815),
     ilu = new naver.maps.LatLng(37.5917375, 127.0171492),
     sabukgil = new naver.maps.LatLng(37.591506, 127.016874),
+    yeonggochi = new naver.maps.LatLng(37.591058, 127.017400),
     // 정릉 시장 상권
     badasanghup = new naver.maps.LatLng(37.608725, 127.009207),
     hanbangjok = new naver.maps.LatLng(37.608579, 127.009178),
@@ -87,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sigang = new naver.maps.LatLng(37.608578, 127.009214),
     bongha = new naver.maps.LatLng(37.608465, 127.009288),
     unninae = new naver.maps.LatLng(37.608547, 127.008768),
-    jangtu = new naver.maps.LatLng(37.608465, 127.009681), //
+    jangtu = new naver.maps.LatLng(37.608465, 127.009681),
     slowcafe = new naver.maps.LatLng(37.609382, 127.008528),
     samdaegogi = new naver.maps.LatLng(37.608763, 127.008739),
     mukguri = new naver.maps.LatLng(37.608489, 127.007833),
@@ -122,7 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     gogosanghae = new naver.maps.LatLng(37.609138, 127.00787),
     //기타
     dongkyeonggudong = new naver.maps.LatLng(37.60957, 127.0196195),
-    onensijang = new naver.maps.LatLng(37.6386984, 127.0253296);
+    onensijang = new naver.maps.LatLng(37.6386984, 127.0253296),
+    hwahwapig = new naver.maps.LatLng(37.582507, 126.99987);
   //버튼 클릭 이벤트 처리
   $("#to-all").css({
     backgroundColor: "#ff4d26",
@@ -292,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
     heroboardgame, //히어로 보드게임
     ilu, //일루
     sabukgil, // 새벽길 빨간오뎅
+    yeonggochi, //연꼬치
   ];
   var market_position = [
     badasanghup, //바다생협
@@ -334,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cookieforest, //쿠기 포레스트
     gogosanghae, //고고상회
   ];
-  var etc_position = [dongkyeonggudong, onensijang];
+  var etc_position = [dongkyeonggudong, onensijang, hwahwapig];
   // 각 마커에 대한 정보를 정의합니다.
   var sku_marker = [
     {
@@ -1073,6 +1071,19 @@ document.addEventListener("DOMContentLoaded", function () {
       content6: "",
       address: new naver.maps.LatLng(37.591506, 127.016874),
     },
+    {
+      sswu_position: yeonggochi,
+      title: "연꽃치 성신여대",
+      sub_title: "성신여대 상권",
+      image_url: "./assets/sswu_markerInfos_img/yeonggochi.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 서경대 학생 : 현금 or 계좌이체시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.591058, 127.017400),
+    },
   ];
   //정릉 시장 정보
   var market_markerInfos = [
@@ -1602,7 +1613,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       //
       etc_position: onensijang,
-      title: "이름",
+      title: "시장을 여는 사람들",
       sub_title: "기타 제휴 상권",
       image_url: "./assets/market_markerInfos_img/",
       content1: "🔥제휴 내용🔥",
@@ -1612,10 +1623,25 @@ document.addEventListener("DOMContentLoaded", function () {
       content5: "",
       content6: "",
     },
+    {
+      //
+      etc_position: hwahwapig,
+      title: "화화돈",
+      sub_title: "혜화 제휴 상권",
+      image_url: "./assets/etc_markerInfos_img/hwahwapig.png",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 방문시 에이드 제공",
+      content3: "- 매번 새로운 프로모션 진행",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.582507, 126.99987),
+    },
   ];
 
   var markers = [];
-  var data = sku_markerInfos
+  var data = [];
+  data = sku_markerInfos
     .concat(jeongneung_markerInfos)
     .concat(sswu_markerInfos)
     .concat(market_markerInfos)
