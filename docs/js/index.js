@@ -1,14 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   var map = new naver.maps.Map("map", {
     center: new naver.maps.LatLng(37.59855, 127.015065),
-    
+
     zoom: 14.5,
     zoomControl: true,
     zoomControlOptions: {
-        position: naver.maps.Position.TOP_LEFT,
-        style: naver.maps.ZoomControlStyle.SMALL
-    }
-  })
+      position: naver.maps.Position.TOP_LEFT,
+      style: naver.maps.ZoomControlStyle.SMALL,
+    },
+  });
+
+  // yeonggochi = new naver.map.LatLng(37.591072, 127.017381),
+  // 연꼬치 성신여대 : 성신여대(성신) 서경대 학생 : 현금 or 계좌이체시 10프로 할인
+  // hwahwapig = new naver.maps.LatLng(37.582507, 126.99987);
+  // 화화돈 : 혜화 (기타) 방문시 에이드 제공 매번 새로운 프로모션 진행
 
   //var로 식당별 위,경도 설정
   var all = new naver.maps.LatLng(37.59855, 127.015065),
@@ -117,48 +122,48 @@ document.addEventListener("DOMContentLoaded", function () {
     gogosanghae = new naver.maps.LatLng(37.609138, 127.00787),
     //기타
     dongkyeonggudong = new naver.maps.LatLng(37.60957, 127.0196195),
-    onensijang = new naver.maps.LatLng(37.6386984, 127.0253296)
+    onensijang = new naver.maps.LatLng(37.6386984, 127.0253296);
   //버튼 클릭 이벤트 처리
   $("#to-all").css({
     backgroundColor: "#ff4d26",
     borderColor: "transparent",
     color: "#ffffff",
-  })
+  });
   $("#to-all").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(14, true)
-    map.panTo(all)
-  })
+    e.preventDefault();
+    map.setZoom(14, true);
+    map.panTo(all);
+  });
   $("#to-skuniv").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(17, true)
-    map.panTo(skuniv)
-  })
+    e.preventDefault();
+    map.setZoom(17, true);
+    map.panTo(skuniv);
+  });
   $("#to-etc").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(17, true)
-    map.panTo(etc)
-  })
+    e.preventDefault();
+    map.setZoom(17, true);
+    map.panTo(etc);
+  });
   $("#to-jeongneungmarket").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(17, true)
-    map.panTo(jeongneungmarket)
-  })
+    e.preventDefault();
+    map.setZoom(17, true);
+    map.panTo(jeongneungmarket);
+  });
   $("#to-jeongneung").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(17, true)
-    map.panTo(jeongneung)
-  })
+    e.preventDefault();
+    map.setZoom(17, true);
+    map.panTo(jeongneung);
+  });
   $("#to-sunshinuniv").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(16, true)
-    map.panTo(sunshinuniv)
-  })
+    e.preventDefault();
+    map.setZoom(16, true);
+    map.panTo(sunshinuniv);
+  });
   $("#reset").on("click", function (e) {
-    e.preventDefault()
-    map.setZoom(7, true)
-    map.setCenter(37.60700258639104, 126.95625001298839)
-  })
+    e.preventDefault();
+    map.setZoom(7, true);
+    map.setCenter(37.60700258639104, 126.95625001298839);
+  });
   //성신여대 polyline
   var polyline = new naver.maps.Polyline({
     map: map,
@@ -170,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
       new naver.maps.LatLng(37.589483, 127.019808),
       new naver.maps.LatLng(37.588011, 127.017786),
     ],
-  })
+  });
   //보국문 polyline
   var polyline = new naver.maps.Polyline({
     map: map,
@@ -186,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
       new naver.maps.LatLng(37.613764, 127.009723), //
       new naver.maps.LatLng(37.613853, 127.010299), //무슨 아동센터
     ],
-  })
+  });
   //학교앞 상권 polyline
   var polyline = new naver.maps.Polyline({
     map: map,
@@ -201,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
       new naver.maps.LatLng(37.611658, 127.012345), // 8번째
       new naver.maps.LatLng(37.612369, 127.013418), // 연꽃 어린이집(polyline시작)
     ],
-  })
+  });
   //정릉시장 상권 polyline
   var polyline = new naver.maps.Polyline({
     map: map,
@@ -215,10 +220,10 @@ document.addEventListener("DOMContentLoaded", function () {
       new naver.maps.LatLng(37.609365, 127.009026), // 같이가치
       new naver.maps.LatLng(37.608133, 127.010238), // 농협은행 정릉지점
     ],
-  })
+  });
 
   //마커 marker
-  var HOME_PATH = window.HOME_PATH || "."
+  var HOME_PATH = window.HOME_PATH || ".";
   var position = [
     skuniv, // 북악
     etc,
@@ -226,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
     jeongneungmarket, //정릉시장
     // new naver.maps.LatLng(latitude, longitude),
     // ...
-  ]
+  ];
   var sku_position = [
     //서경대 앞 음식점 목록
     kmaratang, //경성 마라탕
@@ -241,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
     skpocha, //서경포차
     ebari, //이 바리 꼴로리
     jokbal, //가장 맛있는 족발
-  ]
+  ];
   var jeongneung_position = [
     donbuza, //정릉돈부자
     jueunson, //주은이네손맛
@@ -271,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
     sunnong, //태양농산물
     janggogi, //장고기
     rarakimbab, //라라 김밥
-  ]
+  ];
   var sswu_position = [
     iasi, //이야시
     witchkitchen, //마녀주방
@@ -287,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
     heroboardgame, //히어로 보드게임
     ilu, //일루
     sabukgil, // 새벽길 빨간오뎅
-  ]
+  ];
   var market_position = [
     badasanghup, //바다생협
     hanbangjok, //한방족발
@@ -328,8 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
     jeongneungzzuggume, //정릉쭈꾸미
     cookieforest, //쿠기 포레스트
     gogosanghae, //고고상회
-  ]
-  var etc_position = [dongkyeonggudong, onensijang]
+  ];
+  var etc_position = [dongkyeonggudong, onensijang];
   // 각 마커에 대한 정보를 정의합니다.
   var sku_marker = [
     {
@@ -338,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<h3>서경대학교</h3>\
               <div>서경대 정보</div>",
     },
-  ]
+  ];
   var sswu_marker = [
     {
       position: sunshinuniv,
@@ -346,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "<h3>성신여대</h3>\
                   <div>성신여대 정보</div>",
     },
-  ]
+  ];
   var etc_marker = [
     {
       position: etc,
@@ -354,246 +359,246 @@ document.addEventListener("DOMContentLoaded", function () {
         "<h3>길음역</h3>\
                   <div>길음역 정보</div>",
     },
-  ]
+  ];
 
   //핀 정보 설정
   var sku_markerInfos = [
     {
-        sku_position: kmaratang,
-        title: "경성마라탕",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/kmaratang.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)",
-        content3: "- 쿠폰10장 꿔바로우 제공",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6115258, 127.0136753)
+      sku_position: kmaratang,
+      title: "경성마라탕",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/kmaratang.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 현금 및 계좌이체시 캔음료 제공(중국음료는 1000원 추가)",
+      content3: "- 쿠폰10장 꿔바로우 제공",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6115258, 127.0136753),
     },
     {
-        sku_position: mkpocha,
-        title: "민규형 포차",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/mkpocha.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 안주류 2만원 이상 결제시 황도 제공",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6105983, 127.01427)
+      sku_position: mkpocha,
+      title: "민규형 포차",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/mkpocha.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 안주류 2만원 이상 결제시 황도 제공",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6105983, 127.01427),
     },
     {
-        sku_position: tongtongpig,
-        title: "통통 돼지 ",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/tongtongpig.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 고기 3+1 제공(기간X)",
-        content3: "- 현금 결제시 5% 할인",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6104824, 127.0143755)
+      sku_position: tongtongpig,
+      title: "통통 돼지 ",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/tongtongpig.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 고기 3+1 제공(기간X)",
+      content3: "- 현금 결제시 5% 할인",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6104824, 127.0143755),
     },
     {
-        sku_position: hola,
-        title: "올라",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/hola.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 현금 및 계좌이체시 10% 할인",
-        content3: "- 생맥주 3500원, 병소주 4000원",
-        content4: "- 10만원 이상 주문시 서비스 제공",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6104563, 127.0151146)
+      sku_position: hola,
+      title: "올라",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/hola.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 현금 및 계좌이체시 10% 할인",
+      content3: "- 생맥주 3500원, 병소주 4000원",
+      content4: "- 10만원 이상 주문시 서비스 제공",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6104563, 127.0151146),
     },
     {
-        sku_position: wawapocha,
-        title: "와와 닭발 & 포차",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/wawapocha.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 4만원 이상 주문시 간단한 안주 제공",
-        content3: "- 요청시 소주 라벨링 작업(좋은데이)",
-        content4: "- 15명 이상 현수막 제작",
-        content5: "- 컨디션 스틱 한병당 1개",
-        content6: "- 현금결제시 3% 자체 적립",
-        address: new naver.maps.LatLng(37.6117386, 127.0131451)
+      sku_position: wawapocha,
+      title: "와와 닭발 & 포차",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/wawapocha.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 4만원 이상 주문시 간단한 안주 제공",
+      content3: "- 요청시 소주 라벨링 작업(좋은데이)",
+      content4: "- 15명 이상 현수막 제작",
+      content5: "- 컨디션 스틱 한병당 1개",
+      content6: "- 현금결제시 3% 자체 적립",
+      address: new naver.maps.LatLng(37.6117386, 127.0131451),
     },
     {
-        sku_position: mygreek,
-        title: "마이그릭",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/mygreek.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 10% 할인(단, 할인 품목 제외)",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.610395, 127.014684)
+      sku_position: mygreek,
+      title: "마이그릭",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/mygreek.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 10% 할인(단, 할인 품목 제외)",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.610395, 127.014684),
     },
     {
-        sku_position: grandmadarak,
-        title: "할머니 다락방",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/grandmadarak.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 1인 1음료 주문시 디저트 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.610447, 127.014368)
+      sku_position: grandmadarak,
+      title: "할머니 다락방",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/grandmadarak.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 1인 1음료 주문시 디저트 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.610447, 127.014368),
     },
     {
-        sku_position: piglove,
-        title: "퇘사랑",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/piglove.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 현금 및 계좌이체시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6103857, 127.014516)
+      sku_position: piglove,
+      title: "퇘사랑",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/piglove.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 현금 및 계좌이체시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6103857, 127.014516),
     },
     {
-        sku_position: songgangru,
-        title: "송강루",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/songgangru.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 매장 직접 전화 주문시 세트메뉴 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.6111966, 127.0136037)
+      sku_position: songgangru,
+      title: "송강루",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/songgangru.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 매장 직접 전화 주문시 세트메뉴 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.6111966, 127.0136037),
     },
     {
-        sku_position: skpocha,
-        title: "서경포차",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/skpocha.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 현금 및 계좌이체시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.610268, 127.01456)
+      sku_position: skpocha,
+      title: "서경포차",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/skpocha.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 현금 및 계좌이체시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.610268, 127.01456),
     },
     {
-        sku_position: ebari,
-        title: "이 바리 꼴로리",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/ebari.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 1만원 이상 현금 및 계좌이체시 5% 할인(최대 3000원)",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.612023, 127.013426)
+      sku_position: ebari,
+      title: "이 바리 꼴로리",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/ebari.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 1만원 이상 현금 및 계좌이체시 5% 할인(최대 3000원)",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.612023, 127.013426),
     },
     {
-        sku_position: jokbal,
-        title: "가장 맛있는 족발",
-        sub_title: "서경대 상권",
-        image_url: "./assets/sku_markerInfos_img/jokbal.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 현금 및 계좌이체 시 5% 할인",
-        content3: "- 학생증 인증 시 테이블 당 음료, 주류, 주먹밥 택 1 제공",
-        content4: "- 포장시 음료 서비스",
-        content5: "- 전화로 주문 시 현금, 계좌 배민 가격으로 진행, 리뷰 서비스 동일",
-        content6: "",
-        address: new naver.maps.LatLng(37.610355, 127.015119)
+      sku_position: jokbal,
+      title: "가장 맛있는 족발",
+      sub_title: "서경대 상권",
+      image_url: "./assets/sku_markerInfos_img/jokbal.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 현금 및 계좌이체 시 5% 할인",
+      content3: "- 학생증 인증 시 테이블 당 음료, 주류, 주먹밥 택 1 제공",
+      content4: "- 포장시 음료 서비스",
+      content5:
+        "- 전화로 주문 시 현금, 계좌 배민 가격으로 진행, 리뷰 서비스 동일",
+      content6: "",
+      address: new naver.maps.LatLng(37.610355, 127.015119),
     },
-];
+  ];
   var jeongneung_markerInfos = [
-      {
-        jeongneung_position: donbuza,
-        title: "돈부자",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/donbuza.jpg",
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
-        address: new naver.maps.LatLng(37.610419, 127.009644),
-
+    {
+      jeongneung_position: donbuza,
+      title: "돈부자",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/donbuza.jpg",
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
+      address: new naver.maps.LatLng(37.610419, 127.009644),
     },
     {
-        jeongneung_position: jueunson,
-        title: "주은이네손맛",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/jueunson.jpg",
-        address: new naver.maps.LatLng(37.613675, 127.009906),
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
+      jeongneung_position: jueunson,
+      title: "주은이네손맛",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/jueunson.jpg",
+      address: new naver.maps.LatLng(37.613675, 127.009906),
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
     },
     {
-        jeongneung_position: rapleraple,
-        title: "라플라플",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/rapleraple.jpg",
-        address: new naver.maps.LatLng(37.613652, 127.009983),
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
+      jeongneung_position: rapleraple,
+      title: "라플라플",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/rapleraple.jpg",
+      address: new naver.maps.LatLng(37.613652, 127.009983),
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
     },
     {
-        jeongneung_position: yangsanbak,
-        title: "양산박",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/yangsanbak.jpg",
-        address: new naver.maps.LatLng(37.6136407, 127.0100206),
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
+      jeongneung_position: yangsanbak,
+      title: "양산박",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/yangsanbak.jpg",
+      address: new naver.maps.LatLng(37.6136407, 127.0100206),
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
     },
     {
-        jeongneung_position: taepeungyang,
-        title: "태평양수산",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/taepeungyang.jpg",
-        address: new naver.maps.LatLng(37.613259, 127.01039),
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
+      jeongneung_position: taepeungyang,
+      title: "태평양수산",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/taepeungyang.jpg",
+      address: new naver.maps.LatLng(37.613259, 127.01039),
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
     },
     {
-        jeongneung_position: zzangsi,
-        title: "짱시 스낵",
-        sub_title: "정릉골 상권",
-        image_url: "./assets/jeongneung_markerInfos_img/zzangsi.jpg",
-        address: new naver.maps.LatLng(37.612993, 127.010401),
-        content1: "🔥제휴 내용🔥",
-        content2: "- 3만원 결제 시 10% 할인",
-        content3: "",
-        content4: "",
-        content5: "",
-        content6: "",
+      jeongneung_position: zzangsi,
+      title: "짱시 스낵",
+      sub_title: "정릉골 상권",
+      image_url: "./assets/jeongneung_markerInfos_img/zzangsi.jpg",
+      address: new naver.maps.LatLng(37.612993, 127.010401),
+      content1: "🔥제휴 내용🔥",
+      content2: "- 3만원 결제 시 10% 할인",
+      content3: "",
+      content4: "",
+      content5: "",
+      content6: "",
     },
     {
       //
@@ -698,7 +703,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content4: "",
       content5: "",
       content6: "",
-      address: new naver.maps.LatLng(37.612200, 127.0095129),
+      address: new naver.maps.LatLng(37.6122, 127.0095129),
     },
     {
       jeongneung_position: ttgaejil,
@@ -737,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content4: "",
       content5: "",
       content6: "",
-      address: new naver.maps.LatLng(37.6120100, 127.0095129),
+      address: new naver.maps.LatLng(37.61201, 127.0095129),
     },
     {
       jeongneung_position: humanchikenggichi,
@@ -881,7 +886,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content5: "",
       content6: "",
       address: new naver.maps.LatLng(37.612396, 127.009769),
-    }
+    },
   ];
 
   var sswu_markerInfos = [
@@ -970,7 +975,8 @@ document.addEventListener("DOMContentLoaded", function () {
       image_url: "./assets/sswu_markerInfos_img/lalanoodle.jpg",
       content1: "🔥제휴 내용🔥",
       content2: "- 매장 방문시 2인 기준 음료수 제공, 공기밥 무료 제공/포장",
-      content3: "- 배달(배민한집배달, 배민, 쿠팡이츠)시 요청사항에 원하는 음료 작성시 제공",
+      content3:
+        "- 배달(배민한집배달, 배민, 쿠팡이츠)시 요청사항에 원하는 음료 작성시 제공",
       content4: "",
       content5: "",
       content6: "",
@@ -1066,7 +1072,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content5: "",
       content6: "",
       address: new naver.maps.LatLng(37.591506, 127.016874),
-    }
+    },
   ];
   //정릉 시장 정보
   var market_markerInfos = [
@@ -1578,7 +1584,7 @@ document.addEventListener("DOMContentLoaded", function () {
       content6: "",
       address: new naver.maps.LatLng(37.609138, 127.00787),
     },
-  ]
+  ];
   var etc_markerInfos = [
     {
       //
@@ -1606,85 +1612,92 @@ document.addEventListener("DOMContentLoaded", function () {
       content5: "",
       content6: "",
     },
-  ]
-
-
+  ];
 
   var markers = [],
-  data = sku_markerInfos.concat(jeongneung_markerInfos).concat(sswu_markerInfos).concat(market_markerInfos).concat(etc_markerInfos);
+    data = sku_markerInfos
+      .concat(jeongneung_markerInfos)
+      .concat(sswu_markerInfos)
+      .concat(market_markerInfos)
+      .concat(etc_markerInfos);
 
-// 개별 마커 생성 및 markers 배열에 추가
-for (var i = 0, ii = 1000; i < ii; i++) {
-  var spot = data[i];
-  if (spot && spot.address) {
-    var latlng = spot.address;
+  // 개별 마커 생성 및 markers 배열에 추가
+  for (var i = 0, ii = 2000; i < ii; i++) {
+    var spot = data[i];
+    if (spot && spot.address) {
+      var latlng = spot.address;
 
-    var marker = new naver.maps.Marker({
-      position: latlng,
-      map: map,
-      icon: {
-        content:
-          '<div style="display: inline-block; text-align:center;' +
-          'padding: 1px 10px 1px 5px; ">' +
-          '<div style="display: flex; flex-direction: column; align-items: center;">' +
-          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
-          spot.title + 
-          "</div>" +
-          "</div> </div>",
-        size: new naver.maps.Size(50, 52),
-        origin: new naver.maps.Point(0, 0),
-        anchor: new naver.maps.Point(25, 26)
-      }
-    });
+      var marker = new naver.maps.Marker({
+        position: latlng,
+        map: map,
+        icon: {
+          content:
+            '<div style="display: inline-block; text-align:center;' +
+            'padding: 1px 10px 1px 5px; ">' +
+            '<div style="display: flex; flex-direction: column; align-items: center;">' +
+            ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
+            spot.title +
+            "</div>" +
+            "</div> </div>",
+          size: new naver.maps.Size(50, 52),
+          origin: new naver.maps.Point(0, 0),
+          anchor: new naver.maps.Point(25, 26),
+        },
+      });
 
- // 모든 마커에 대해 클릭 이벤트를 추가합니다.
-markers.forEach(function(marker) {
-  naver.maps.Event.addListener(marker, "click", function () {
-      var markerIndex = markers.indexOf(marker); // 클릭된 마커의 인덱스를 가져옴
-      var markerInfo = data[markerIndex]; // 해당 인덱스에 해당하는 객체를 가져옴
-      openModal(markerInfo); // 클릭된 마커에 대한 정보를 모달에 전달
-  });
-});
+      // 모든 마커에 대해 클릭 이벤트를 추가합니다.
+      markers.forEach(function (marker) {
+        naver.maps.Event.addListener(marker, "click", function () {
+          var markerIndex = markers.indexOf(marker); // 클릭된 마커의 인덱스를 가져옴
+          var markerInfo = data[markerIndex]; // 해당 인덱스에 해당하는 객체를 가져옴
+          openModal(markerInfo); // 클릭된 마커에 대한 정보를 모달에 전달
+        });
+      });
 
-    // 지도 클릭 시 모달을 닫는 이벤트를 추가합니다.
-    naver.maps.Event.addListener(map, "click", function () {
-      closeModal();
-    });
+      // 지도 클릭 시 모달을 닫는 이벤트를 추가합니다.
+      naver.maps.Event.addListener(map, "click", function () {
+        closeModal();
+      });
 
-    // markers 배열에 마커를 추가합니다.
-    markers.push(marker);
+      // markers 배열에 마커를 추가합니다.
+      markers.push(marker);
+    }
   }
-}
 
-// Cluster markers
-var htmlMarker1 = {
-    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-1.png);background-size:contain;"></div>',
-    size: N.Size(40, 40),
-    anchor: N.Point(20, 20)
-},
-htmlMarker2 = {
-    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-2.png);background-size:contain;"></div>',
-    size: N.Size(40, 40),
-    anchor: N.Point(20, 20)
-},
-htmlMarker3 = {
-    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-3.png);background-size:contain;"></div>',
-    size: N.Size(40, 40),
-    anchor: N.Point(20, 20)
-},
-htmlMarker4 = {
-    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-4.png);background-size:contain;"></div>',
-    size: N.Size(40, 40),
-    anchor: N.Point(20, 20)
-},
-htmlMarker5 = {
-    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-5.png);background-size:contain;"></div>',
-    size: N.Size(40, 40),
-    anchor: N.Point(20, 20)
-};
+  // Cluster markers
+  var htmlMarker1 = {
+      content:
+        '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-1.png);background-size:contain;"></div>',
+      size: N.Size(40, 40),
+      anchor: N.Point(20, 20),
+    },
+    htmlMarker2 = {
+      content:
+        '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-2.png);background-size:contain;"></div>',
+      size: N.Size(40, 40),
+      anchor: N.Point(20, 20),
+    },
+    htmlMarker3 = {
+      content:
+        '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-3.png);background-size:contain;"></div>',
+      size: N.Size(40, 40),
+      anchor: N.Point(20, 20),
+    },
+    htmlMarker4 = {
+      content:
+        '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-4.png);background-size:contain;"></div>',
+      size: N.Size(40, 40),
+      anchor: N.Point(20, 20),
+    },
+    htmlMarker5 = {
+      content:
+        '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(./images/cluster-marker-5.png);background-size:contain;"></div>',
+      size: N.Size(40, 40),
+      anchor: N.Point(20, 20),
+    };
 
-// Cluster markers
-var markerClustering = new MarkerClustering({
+  // Cluster markers
+  var markerClustering = new MarkerClustering({
     minClusterSize: 2,
     maxZoom: 18,
     map: map,
@@ -1693,299 +1706,305 @@ var markerClustering = new MarkerClustering({
     gridSize: 120,
     icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
     indexGenerator: [10, 100, 200, 500, 1000],
-    stylingFunction: function(clusterMarker, count) {
-        $(clusterMarker.getElement()).find('div:first-child').text(count);
-    }
-});
-//
-//
-//  //지역별 마커
-//  //서경대 마커
-//  var markerOptions = {
-//    position: skuniv,
-//    map: map,
-//    icon: {
-//      url: HOME_PATH + "/assets/pin_sku.png",
-//      size: new naver.maps.Size(50, 52),
-//      origin: new naver.maps.Point(0, 0),
-//      anchor: new naver.maps.Point(25, 26),
-//    },
-//  }
-//  var marker = new naver.maps.Marker(markerOptions)
-//  //성신여대 마커
-//  var markerOptions = {
-//    position: sunshinuniv,
-//    map: map,
-//    icon: {
-//      url: HOME_PATH + "/assets/pin_sswu.png",
-//      size: new naver.maps.Size(50, 52),
-//      origin: new naver.maps.Point(0, 0),
-//      anchor: new naver.maps.Point(25, 26),
-//    },
-//  }
-//  var marker = new naver.maps.Marker(markerOptions)
-//  //보국문역 (정릉골) 마커
-//  var markerOptions = {
-//    position: jeongneungmarket,
-//    map: map,
-//    icon: {
-//      url: HOME_PATH + "/assets/pin_jeongneung.png",
-//      size: new naver.maps.Size(50, 52),
-//      origin: new naver.maps.Point(0, 0),
-//      anchor: new naver.maps.Point(25, 26),
-//    },
-//  }
-//  var marker = new naver.maps.Marker(markerOptions)
-//
-//  // 각 마커를 생성하고 지도에 추가합니다.
-//  // 서경대 앞 마커
-//  sku_markerInfos.forEach(function (info) {
-//    var markerOptions = {
-//      position: info.sku_position,
-//      map: map,
-//      icon: {
-//        content:
-//          '<div style="display: inline-block; text-align:center;' +
-//          'padding: 1px 10px 1px 5px; ">' +
-//          '<div style="display: flex; flex-direction: column; align-items: center;">' +
-//          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
-//          info.title +
-//          "</div>" +
-//          "</div> </div>",
-//        size: new naver.maps.Size(50, 52),
-//        origin: new naver.maps.Point(0, 0),
-//        anchor: new naver.maps.Point(25, 26),
-//      },
-//    }
-//    var marker = new naver.maps.Marker(markerOptions)
-//    // 클릭 이벤트를 추가합니다.
-//    naver.maps.Event.addListener(marker, "click", function () {
-//      openModal(info)
-//    })
-//    naver.maps.Event.addListener(map, "click", function () {
-//      closeModal() // 지도 클릭 시 모달 닫기
-//    })
-//  })
-//  // 정릉골 마커 jeongneung_position
-//  jeongneung_markerInfos.forEach(function (info) {
-//    var markerOptions = {
-//      position: info.jeongneung_position,
-//      map: map,
-//      icon: {
-//        content:
-//          '<div style="display: inline-block; text-align:center;' +
-//          'padding: 1px 10px 1px 5px; ">' +
-//          '<div style="display: flex; flex-direction: column; align-items: center;">' +
-//          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
-//          info.title +
-//          "</div>" +
-//          "</div> </div>",
-//        size: new naver.maps.Size(50, 52),
-//        origin: new naver.maps.Point(0, 0),
-//        anchor: new naver.maps.Point(25, 26),
-//      },
-//    }
-//    var marker = new naver.maps.Marker(markerOptions)
-//    // 클릭 이벤트를 추가합니다.
-//    naver.maps.Event.addListener(marker, "click", function () {
-//      openModal(info)
-//    })
-//    naver.maps.Event.addListener(map, "click", function () {
-//      closeModal() // 지도 클릭 시 모달 닫기
-//    })
-//  })
-//
-//  //성신여대역 마커
-//  sswu_markerInfos.forEach(function (info) {
-//    var markerOptions = {
-//      position: info.sswu_position,
-//      map: map,
-//      icon: {
-//        content:
-//          '<div style="display: inline-block; text-align:center;' +
-//          'padding: 1px 10px 1px 5px; ">' +
-//          '<div style="display: flex; flex-direction: column; align-items: center;">' +
-//          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
-//          info.title +
-//          "</div>" +
-//          "</div> </div>",
-//        size: new naver.maps.Size(50, 52),
-//        origin: new naver.maps.Point(0, 0),
-//        anchor: new naver.maps.Point(25, 26),
-//      },
-//    }
-//    var marker = new naver.maps.Marker(markerOptions)
-//    // 클릭 이벤트 추가
-//    naver.maps.Event.addListener(marker, "click", function () {
-//      openModal(info)
-//    })
-//    naver.maps.Event.addListener(map, "click", function () {
-//      closeModal() // 지도 클릭 시 모달 닫기
-//    })
-//  })
-//
-//  //정릉시장 마커
-//  market_markerInfos.forEach(function (info) {
-//    var markerOptions = {
-//      position: info.market_position,
-//      map: map,
-//      icon: {
-//        content:
-//          '<div style="display: inline-block; text-align:center;' +
-//          'padding: 1px 10px 1px 5px; ">' +
-//          '<div style="display: flex; flex-direction: column; align-items: center;">' +
-//          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
-//          info.title +
-//          "</div>" +
-//          "</div> </div>",
-//        size: new naver.maps.Size(50, 52),
-//        origin: new naver.maps.Point(0, 0),
-//        anchor: new naver.maps.Point(25, 26),
-//      },
-//    }
-//    var marker = new naver.maps.Marker(markerOptions)
-//    // 클릭 이벤트 추가
-//    naver.maps.Event.addListener(marker, "click", function () {
-//      openModal(info)
-//    })
-//    naver.maps.Event.addListener(map, "click", function () {
-//      closeModal() // 지도 클릭 시 모달 닫기
-//    })
-//  })
-//
-//  //rlxk 마커
-//  etc_markerInfos.forEach(function (info) {
-//    var markerOptions = {
-//      position: info.etc_position,
-//      map: map,
-//      icon: {
-//        url: HOME_PATH + "/assets/pin_small.png",
-//        size: new naver.maps.Size(50, 52),
-//        origin: new naver.maps.Point(0, 0),
-//        anchor: new naver.maps.Point(25, 26),
-//      },
-//    }
-//    var marker = new naver.maps.Marker(markerOptions)
-//    // 클릭 이벤트 추가
-//    naver.maps.Event.addListener(marker, "click", function () {
-//      openModal(info)
-//    })
-//    naver.maps.Event.addListener(map, "click", function () {
-//      closeModal() // 지도 클릭 시 모달 닫기
-//    })
-//  })
-//
-//  // 모든 버튼 요소를 가져옴.
-  var buttons = document.querySelectorAll(".control-btn")
+    stylingFunction: function (clusterMarker, count) {
+      $(clusterMarker.getElement()).find("div:first-child").text(count);
+    },
+  });
+
+  //  //지역별 마커
+  //  //서경대 마커
+  //  var markerOptions = {
+  //    position: skuniv,
+  //    map: map,
+  //    icon: {
+  //      url: HOME_PATH + "/assets/pin_sku.png",
+  //      size: new naver.maps.Size(50, 52),
+  //      origin: new naver.maps.Point(0, 0),
+  //      anchor: new naver.maps.Point(25, 26),
+  //    },
+  //  }
+  //  var marker = new naver.maps.Marker(markerOptions)
+  //  //성신여대 마커
+  //  var markerOptions = {
+  //    position: sunshinuniv,
+  //    map: map,
+  //    icon: {
+  //      url: HOME_PATH + "/assets/pin_sswu.png",
+  //      size: new naver.maps.Size(50, 52),
+  //      origin: new naver.maps.Point(0, 0),
+  //      anchor: new naver.maps.Point(25, 26),
+  //    },
+  //  }
+  //  var marker = new naver.maps.Marker(markerOptions)
+  //  //보국문역 (정릉골) 마커
+  //  var markerOptions = {
+  //    position: jeongneungmarket,
+  //    map: map,
+  //    icon: {
+  //      url: HOME_PATH + "/assets/pin_jeongneung.png",
+  //      size: new naver.maps.Size(50, 52),
+  //      origin: new naver.maps.Point(0, 0),
+  //      anchor: new naver.maps.Point(25, 26),
+  //    },
+  //  }
+  //  var marker = new naver.maps.Marker(markerOptions)
+  //
+  //  // 각 마커를 생성하고 지도에 추가합니다.
+  //  // 서경대 앞 마커
+  //  sku_markerInfos.forEach(function (info) {
+  //    var markerOptions = {
+  //      position: info.sku_position,
+  //      map: map,
+  //      icon: {
+  //        content:
+  //          '<div style="display: inline-block; text-align:center;' +
+  //          'padding: 1px 10px 1px 5px; ">' +
+  //          '<div style="display: flex; flex-direction: column; align-items: center;">' +
+  //          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
+  //          info.title +
+  //          "</div>" +
+  //          "</div> </div>",
+  //        size: new naver.maps.Size(50, 52),
+  //        origin: new naver.maps.Point(0, 0),
+  //        anchor: new naver.maps.Point(25, 26),
+  //      },
+  //    }
+  //    var marker = new naver.maps.Marker(markerOptions)
+  //    // 클릭 이벤트를 추가합니다.
+  //    naver.maps.Event.addListener(marker, "click", function () {
+  //      openModal(info)
+  //    })
+  //    naver.maps.Event.addListener(map, "click", function () {
+  //      closeModal() // 지도 클릭 시 모달 닫기
+  //    })
+  //  })
+  //  // 정릉골 마커 jeongneung_position
+  //  jeongneung_markerInfos.forEach(function (info) {
+  //    var markerOptions = {
+  //      position: info.jeongneung_position,
+  //      map: map,
+  //      icon: {
+  //        content:
+  //          '<div style="display: inline-block; text-align:center;' +
+  //          'padding: 1px 10px 1px 5px; ">' +
+  //          '<div style="display: flex; flex-direction: column; align-items: center;">' +
+  //          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
+  //          info.title +
+  //          "</div>" +
+  //          "</div> </div>",
+  //        size: new naver.maps.Size(50, 52),
+  //        origin: new naver.maps.Point(0, 0),
+  //        anchor: new naver.maps.Point(25, 26),
+  //      },
+  //    }
+  //    var marker = new naver.maps.Marker(markerOptions)
+  //    // 클릭 이벤트를 추가합니다.
+  //    naver.maps.Event.addListener(marker, "click", function () {
+  //      openModal(info)
+  //    })
+  //    naver.maps.Event.addListener(map, "click", function () {
+  //      closeModal() // 지도 클릭 시 모달 닫기
+  //    })
+  //  })
+  //
+  //  //성신여대역 마커
+  //  sswu_markerInfos.forEach(function (info) {
+  //    var markerOptions = {
+  //      position: info.sswu_position,
+  //      map: map,
+  //      icon: {
+  //        content:
+  //          '<div style="display: inline-block; text-align:center;' +
+  //          'padding: 1px 10px 1px 5px; ">' +
+  //          '<div style="display: flex; flex-direction: column; align-items: center;">' +
+  //          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
+  //          info.title +
+  //          "</div>" +
+  //          "</div> </div>",
+  //        size: new naver.maps.Size(50, 52),
+  //        origin: new naver.maps.Point(0, 0),
+  //        anchor: new naver.maps.Point(25, 26),
+  //      },
+  //    }
+  //    var marker = new naver.maps.Marker(markerOptions)
+  //    // 클릭 이벤트 추가
+  //    naver.maps.Event.addListener(marker, "click", function () {
+  //      openModal(info)
+  //    })
+  //    naver.maps.Event.addListener(map, "click", function () {
+  //      closeModal() // 지도 클릭 시 모달 닫기
+  //    })
+  //  })
+  //
+  //  //정릉시장 마커
+  //  market_markerInfos.forEach(function (info) {
+  //    var markerOptions = {
+  //      position: info.market_position,
+  //      map: map,
+  //      icon: {
+  //        content:
+  //          '<div style="display: inline-block; text-align:center;' +
+  //          'padding: 1px 10px 1px 5px; ">' +
+  //          '<div style="display: flex; flex-direction: column; align-items: center;">' +
+  //          ' <img src="./assets/pin_small.png"> <div style="font-weight: bold; font-size: 12px">' +
+  //          info.title +
+  //          "</div>" +
+  //          "</div> </div>",
+  //        size: new naver.maps.Size(50, 52),
+  //        origin: new naver.maps.Point(0, 0),
+  //        anchor: new naver.maps.Point(25, 26),
+  //      },
+  //    }
+  //    var marker = new naver.maps.Marker(markerOptions)
+  //    // 클릭 이벤트 추가
+  //    naver.maps.Event.addListener(marker, "click", function () {
+  //      openModal(info)
+  //    })
+  //    naver.maps.Event.addListener(map, "click", function () {
+  //      closeModal() // 지도 클릭 시 모달 닫기
+  //    })
+  //  })
+  //
+  //  //rlxk 마커
+  //  etc_markerInfos.forEach(function (info) {
+  //    var markerOptions = {
+  //      position: info.etc_position,
+  //      map: map,
+  //      icon: {
+  //        url: HOME_PATH + "/assets/pin_small.png",
+  //        size: new naver.maps.Size(50, 52),
+  //        origin: new naver.maps.Point(0, 0),
+  //        anchor: new naver.maps.Point(25, 26),
+  //      },
+  //    }
+  //    var marker = new naver.maps.Marker(markerOptions)
+  //    // 클릭 이벤트 추가
+  //    naver.maps.Event.addListener(marker, "click", function () {
+  //      openModal(info)
+  //    })
+  //    naver.maps.Event.addListener(map, "click", function () {
+  //      closeModal() // 지도 클릭 시 모달 닫기
+  //    })
+  //  })
+  //
+  //  // 모든 버튼 요소를 가져옴.
+  var buttons = document.querySelectorAll(".control-btn");
   // 각 버튼에 대해 클릭 이벤트를 추가.
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
       // 모든 버튼의 배경색, 테두리 색상, 글자색을 원래대로 복원.
       buttons.forEach(function (btn) {
-        btn.style.backgroundColor = "#ffffff"
-        btn.style.borderColor = "#e8e9ed"
-        btn.style.color = "#5c5d61"
-      })
+        btn.style.backgroundColor = "#ffffff";
+        btn.style.borderColor = "#e8e9ed";
+        btn.style.color = "#5c5d61";
+      });
       // 클릭된 버튼의 배경색을 변경.
-      button.style.backgroundColor = "#ff4d26"
+      button.style.backgroundColor = "#ff4d26";
       // 클릭된 버튼의 테두리를 제거.
-      button.style.borderColor = "transparent"
+      button.style.borderColor = "transparent";
       // 클릭된 버튼의 글자색을 변경.
-      button.style.color = "#ffffff"
+      button.style.color = "#ffffff";
       // 이후 추가적인 동작을 정의할 수 있습니다.
-    })
-  })
+    });
+  });
   // //여기부터----------------------------------------------------------------------------
-  var locationBtnHtml = '<a href="#" class="btn_mylct"><img src="./my_location.png" alt="내 위치"></a>'
+  var locationBtnHtml =
+    '<a href="#" class="btn_mylct"><img src="./my_location.png" alt="내 위치"></a>';
   naver.maps.Event.once(map, "init", function () {
     //customControl 객체 이용하기
     var customControl = new naver.maps.CustomControl(locationBtnHtml, {
       position: naver.maps.Position.TOP_RIGHT,
-    })
-    customControl.setMap(map)
-    naver.maps.Event.addDOMListener(customControl.getElement(), "click", function () {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var currentPosition = new naver.maps.LatLng(position.coords.latitude, position.coords.longitude)
-        // 현재 위치로 맵 이동
-        map.panTo(currentPosition)
-
-        var marker = new naver.maps.Marker({
-          position: currentPosition,
-          map: map,
-          icon: {
-            url: "https://map.pstatic.net/ncp/june/gr/br/v1/sprite/pin_blue_2d11f2.png",
-          },
-        })
-      })
-      map.setZoom(16, true)
-    })
-  })
-  //여기까지 내 위치 마커 표시(버튼)
-})
-
-// ----------------------------------------------------------------
-
-function openModal(markerInfo) {
-  var modalTitle = document.getElementById("modal-title")
-  var modalsub_title = document.getElementById("sub-title")
-  var subtitleNButtonContainer = document.getElementById("subtitleNButtonContainer")
-  var naverMapButton = document.getElementById('naver-map-button') 
-  var modalImage = document.getElementById("image")
-  var modalContent1 = document.getElementById("modal-content1")
-  var modalContent2 = document.getElementById("modal-content2")
-  var modalContent3 = document.getElementById("modal-content3")
-  var modalContent4 = document.getElementById("modal-content4")
-  var modalContent5 = document.getElementById("modal-content5")
-  var modalContent6 = document.getElementById("modal-content6")
-
-        // 네이버 지도 열기 버튼 추가
-  naverMapButton.addEventListener('click', function() {
-        openNaverMap(markerInfo.title);
     });
+    customControl.setMap(map);
+    naver.maps.Event.addDOMListener(
+      customControl.getElement(),
+      "click",
+      function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          var currentPosition = new naver.maps.LatLng(
+            position.coords.latitude,
+            position.coords.longitude
+          );
+          // 현재 위치로 맵 이동
+          map.panTo(currentPosition);
+
+          var marker = new naver.maps.Marker({
+            position: currentPosition,
+            map: map,
+            icon: {
+              url: "https://map.pstatic.net/ncp/june/gr/br/v1/sprite/pin_blue_2d11f2.png",
+            },
+          });
+        });
+        map.setZoom(16, true);
+      }
+    );
+  });
+  //여기까지 내 위치 마커 표시(버튼)
+});
+
+//ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ모달
+function openModal(markerInfo) {
+  var modalTitle = document.getElementById("modal-title");
+  var modalsub_title = document.getElementById("sub-title");
+  var subtitleNButtonContainer = document.getElementById(
+    "subtitleNButtonContainer"
+  );
+  var naverMapButton = document.getElementById("naver-map-button");
+  var modalImage = document.getElementById("image");
+  var modalContent1 = document.getElementById("modal-content1");
+  var modalContent2 = document.getElementById("modal-content2");
+  var modalContent3 = document.getElementById("modal-content3");
+  var modalContent4 = document.getElementById("modal-content4");
+  var modalContent5 = document.getElementById("modal-content5");
+  var modalContent6 = document.getElementById("modal-content6");
+
+  // 네이버 지도 열기 버튼 추가
+  naverMapButton.addEventListener("click", function () {
+    openNaverMap(markerInfo.title);
+  });
   subtitleNButtonContainer.appendChild(naverMapButton);
 
-  modalTitle.innerText = markerInfo.title
-  modalsub_title.innerText = markerInfo.sub_title
-  modalImage.src = markerInfo.image_url
-  modalContent1.innerText = markerInfo.content1
-  modalContent2.innerText = markerInfo.content2
-  modalContent3.innerText = markerInfo.content3
-  modalContent4.innerText = markerInfo.content4
-  modalContent5.innerText = markerInfo.content5
-  modalContent6.innerText = markerInfo.content6
+  modalTitle.innerText = markerInfo.title;
+  modalsub_title.innerText = markerInfo.sub_title;
+  modalImage.src = markerInfo.image_url;
+  modalContent1.innerText = markerInfo.content1;
+  modalContent2.innerText = markerInfo.content2;
+  modalContent3.innerText = markerInfo.content3;
+  modalContent4.innerText = markerInfo.content4;
+  modalContent5.innerText = markerInfo.content5;
+  modalContent6.innerText = markerInfo.content6;
 
-  document.getElementById("modal").style.display = "block"
+  document.getElementById("modal").style.display = "block";
 }
 
 // 모달을 닫는 함수
 function closeModal() {
-  var modal = document.getElementById("modal")
-  var modalOverlay = document.getElementById("modal-overlay")
-  modal.style.display = "none"
-  modalOverlay.style.display = "none"
+  var modal = document.getElementById("modal");
+  var modalOverlay = document.getElementById("modal-overlay");
+  modal.style.display = "none";
+  modalOverlay.style.display = "none";
 }
 
-// 모달 외부를 클릭했을 때 모달을 닫는 이벤트 추가
-document.getElementById("modal-overlay").addEventListener("click", closeModal)
-
 // 지도를 클릭했을 때 모달을 닫는 이벤트 추가
-naver.maps.Event.addListener(map, "click", function () {
-  closeModal() // 지도 클릭 시 모달 닫기
-})
+naver.maps.Event.addListener("click", function () {
+  closeModal(); // 지도 클릭 시 모달 닫기
+});
 
 window.onclick = function (event) {
   if (event.target == modal) {
-    closeModal()
+    closeModal();
   }
+};
+// 네이버 지도로 이동하는 함수
+function openNaverMap(title) {
+  // 가게 이름
+  var mapaddress = title;
+
+  // 네이버 지도 검색 URL
+  var searchURL =
+    "https://map.naver.com/v5/search/" + encodeURIComponent(mapaddress);
+
+  // 새 창에서 네이버 지도 열기
+  window.open(searchURL, "_blank");
 }
-    // 네이버 지도로 이동하는 함수
-    function openNaverMap(title) {
-      // 가게 이름
-      var mapaddress = title;
-  
-      // 네이버 지도 검색 URL
-      var searchURL = "https://map.naver.com/v5/search/" + encodeURIComponent(mapaddress);
-  
-      // 새 창에서 네이버 지도 열기
-      window.open(searchURL, '_blank');
-  }
