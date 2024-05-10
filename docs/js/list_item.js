@@ -1225,8 +1225,39 @@ document.addEventListener("DOMContentLoaded", function () {
     var listAll = document.getElementById("list_all");
     listAll.appendChild(modalContainer);
   }
-
+  //버튼 스타일
+  function applyButtonStyle(clickedButton) {
+    // List of all button IDs
+    const buttonIds = [
+      "to-all",
+      "to-skuniv",
+      "to-jeongneungmarket",
+      "to-sunshinuniv",
+      "to-jeongneung",
+      "to-etc"
+    ];
+  
+    // Get all button elements
+    const buttons = buttonIds.map((id) => document.getElementById(id));
+  
+    // Loop through each button and reset its style
+    buttons.forEach((btn) => {
+      // Reset all buttons to their default style
+      btn.style.backgroundColor = "#ffffff";
+      btn.style.borderColor = "#e8e9ed";
+      btn.style.color = "#5c5d61";
+    });
+  
+    // Apply new style to the clicked button
+    clickedButton.style.backgroundColor = "#ff4d26";
+    clickedButton.style.borderColor = "transparent";
+    clickedButton.style.color = "#ffffff";
+  }
+  
+  // Event listeners to apply new styles on click and show the correct markers
   window.onload = function () {
+    // Initially apply styles to the "to-all" button
+    applyButtonStyle(document.getElementById("to-all"));
     showMarkerInfos(
       sku_markerInfos.concat(
         jeongneung_markerInfos,
@@ -1236,7 +1267,9 @@ document.addEventListener("DOMContentLoaded", function () {
       )
     );
   };
+  
   document.getElementById("to-all").addEventListener("click", function () {
+    applyButtonStyle(this);
     showMarkerInfos(
       sku_markerInfos.concat(
         jeongneung_markerInfos,
@@ -1250,45 +1283,45 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
+  
   document.getElementById("to-skuniv").addEventListener("click", function () {
+    applyButtonStyle(this);
     showMarkerInfos(sku_markerInfos);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   });
-
-  document
-    .getElementById("to-jeongneungmarket")
-    .addEventListener("click", function () {
-      showMarkerInfos(jeongneung_markerInfos);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+  
+  document.getElementById("to-jeongneungmarket").addEventListener("click", function () {
+    applyButtonStyle(this);
+    showMarkerInfos(jeongneung_markerInfos);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-
-  document
-    .getElementById("to-sunshinuniv")
-    .addEventListener("click", function () {
-      showMarkerInfos(sswu_markerInfos);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+  });
+  
+  document.getElementById("to-sunshinuniv").addEventListener("click", function () {
+    applyButtonStyle(this);
+    showMarkerInfos(sswu_markerInfos);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-
-  document
-    .getElementById("to-jeongneung")
-    .addEventListener("click", function () {
-      showMarkerInfos(market_markerInfos);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+  });
+  
+  document.getElementById("to-jeongneung").addEventListener("click", function () {
+    applyButtonStyle(this);
+    showMarkerInfos(market_markerInfos);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-
+  });
+  
   document.getElementById("to-etc").addEventListener("click", function () {
+    applyButtonStyle(this);
     showMarkerInfos(etc_markerInfos);
     window.scrollTo({
       top: 0,
@@ -1326,4 +1359,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // 새 창에서 네이버 지도 열기
     window.open(searchURL, "_blank");
   }
+
+
 });
